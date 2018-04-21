@@ -37,7 +37,7 @@ chmod +x /usr/local/bin/docker-compose
 echo "docker_user  ALL=(ALL)  NOPASSWD: /usr/local/bin/docker-compose" >> /etc/sudoers
 echo "alias docker-compose=\"sudo /usr/local/bin/docker-compose\"" >> /home/docker_user/.bash_profile
 
-# Copy the "curricula_setup.sh" config file from the vagrant directory and run it.
+# Copy the "docker_user_setup.sh" config file from the vagrant directory and run it.
 cp /vagrant/scripts/docker_user_setup.sh /home/docker_user/
 chown docker_user:docker_user /home/docker_user/docker_user_setup.sh
 chmod +x /home/docker_user/docker_user_setup.sh
