@@ -1,4 +1,4 @@
-# Oracle 12.2 on Fedore 28
+# Oracle 12.2 on Fedora 28
 
 A simple Vagrant build for Oracle Database 12.2 on Fedora 28.
 
