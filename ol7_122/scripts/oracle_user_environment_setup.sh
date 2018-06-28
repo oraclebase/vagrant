@@ -32,6 +32,7 @@ export PDB_NAME="pdb1"
 export PDB_PASSWORD="PdbPassword1"
 export APEX_EMAIL="me@example.com"
 export APEX_PASSWORD="ApexPassword1"
+export DATA_DIR=/u02/oradata
 
 
 # ORDS installation settings.
