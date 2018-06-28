@@ -41,9 +41,7 @@ dnf install sysstat -y
 dnf install unixODBC -y
 dnf install unixODBC-devel -y
 dnf install elfutils-libelf-devel -y
-
 #dnf update -y
-
 
 
 # Kernel parameters.
@@ -65,7 +63,6 @@ net.ipv4.ip_local_port_range = 9000 65500
 EOF
 
 /sbin/sysctl -p
-
 
 
 # Limits
@@ -91,7 +88,6 @@ sed -i -e "s|SELINUX=enabled|SELINUX=permissive|g" /etc/selinux/config
 setenforce permissive
 
 
-
 # User setup.
 groupadd -g 54321 oinstall
 groupadd -g 54322 dba
@@ -100,19 +96,10 @@ groupadd -g 54323 oper
 useradd -u 54321 -g oinstall -G dba,oper oracle
 
 
-
-# Setup paths.
-mkdir -p /u01/app/oracle/product/12.2.0.1/db_1
-chown -R oracle:oinstall /u01
-chmod -R 775 /u01
-
-
-
 # Fake OS.
 cat > /etc/redhat-release <<EOF
 redhat release 7
 EOF
-
 
 
 # Fix for Oracle on F28.
@@ -120,9 +107,36 @@ ln -s /usr/lib64/libnsl.so.2.0.0 /usr/lib64/libnsl.so.1
 ln -s /usr/lib/libnsl.so.2.0.0 /usr/lib/libnsl.so.1
 
 
+# Set up evironment for one-off actions.
+export ORACLE_BASE=/u01/app/oracle
+export ORACLE_HOME=${ORACLE_BASE}/product/12.2.0.1/db_1
+export SOFTWARE_DIR=/u01/software
+export ORA_INVENTORY=/u01/app/oraInventory
+export SCRIPTS_DIR=/home/oracle/scripts
+export DATA_DIR=/u02/oradata
 
-# Copy the "docker_user_setup.sh" config file from the vagrant directory and run it.
-cp /vagrant/scripts/oracle_setup.sh /home/oracle/
-chown oracle:oinstall /home/oracle/oracle_setup.sh
-chmod +x /home/oracle/oracle_setup.sh
-sudo su - oracle -c '/home/oracle/oracle_setup.sh'
+mkdir -p ${SCRIPTS_DIR}
+mkdir -p ${SOFTWARE_DIR}
+mkdir -p ${DATA_DIR}
+chown -R oracle.oinstall ${SCRIPTS_DIR} /u01 /u02
+
+
+# Copy the "oracle_setup.sh" config file from the vagrant directory and run it.
+cp -f /vagrant/scripts/* ${SOFTWARE_DIR}
+cp -f /vagrant/software/* ${SOFTWARE_DIR}
+chown -R oracle.oinstall ${SOFTWARE_DIR}
+chmod +x ${SOFTWARE_DIR}/*.sh
+
+
+# Prepare environment and install the software.
+su - oracle -c '/u01/software/oracle_user_environment_setup.sh'
+su - oracle -c '/u01/software/oracle_software_installation.sh'
+
+
+# Run root scripts.
+sh ${ORA_INVENTORY}/orainstRoot.sh
+sh ${ORACLE_HOME}/root.sh
+
+
+# Create the database.
+su - oracle -c '/u01/software/oracle_create_database.sh'
