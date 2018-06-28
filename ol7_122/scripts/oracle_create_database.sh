@@ -13,7 +13,7 @@ fi
 
 
 # Check if database already exists.
-if [ ! -d /u02/oradata/${ORACLE_SID} ]; then
+if [ ! -d ${DATA_DIR}/${ORACLE_SID} ]; then
 
   # The database files don't exist, so create a new database.
   lsnrctl start
@@ -32,14 +32,14 @@ if [ ! -d /u02/oradata/${ORACLE_SID} ]; then
     -automaticMemoryManagement false                                           \
     -totalMemory 1536                                                          \
     -storageType FS                                                            \
-    -datafileDestination "/u02/oradata/"                                       \
+    -datafileDestination "${DATA_DIR}"                                         \
     -redoLogFileSize 50                                                        \
     -emConfiguration NONE                                                      \
     -ignorePreReqs
 
   # Set the PDB to auto-start.
   sqlplus / as sysdba <<EOF
-alter system set db_create_file_dest='/u02/oradata';
+alter system set db_create_file_dest='${DATA_DIR}';
 alter pluggable database ${PDB_NAME} save state;
 alter system set local_listener='localhost';
 exit;
