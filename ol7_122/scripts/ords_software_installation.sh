@@ -1,25 +1,25 @@
 # Unpack all the software.
-mkdir /u01/java                                                        
-cd /u01/java                                                           
-tar -xzf ${SOFTWARE_DIR}/${JAVA_SOFTWARE}                              
+mkdir /u01/java
+cd /u01/java
+tar -xzf ${SOFTWARE_DIR}/${JAVA_SOFTWARE}
 TEMP_FILE=`ls`
-mv ${TEMP_FILE}/* .                                                    
-rmdir ${TEMP_FILE}                                                     
-mkdir /u01/tomcat                                                      
-cd /u01/tomcat                                                         
-tar -xzf ${SOFTWARE_DIR}/${TOMCAT_SOFTWARE}                            
-TEMP_FILE=`ls`                                                         
-mv ${TEMP_FILE}/* .                                                    
-rmdir ${TEMP_FILE}                                                     
-mkdir -p ${ORDS_CONF}                                                  
-cd ${ORDS_HOME}                                                        
-unzip ${SOFTWARE_DIR}/${ORDS_SOFTWARE}                                 
-cd /u01                                                                
-unzip ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}                                
-cd ${SOFTWARE_DIR}                                                     
-rm -Rf ${CATALINA_HOME}/webapps/*                                      
-mkdir -p ${CATALINA_HOME}/webapps/i/                                   
-cp -R ${SOFTWARE_DIR}/apex/images/* ${CATALINA_HOME}/webapps/i/        
+mv ${TEMP_FILE}/* .
+rmdir ${TEMP_FILE}
+mkdir /u01/tomcat
+cd /u01/tomcat
+tar -xzf ${SOFTWARE_DIR}/${TOMCAT_SOFTWARE}
+TEMP_FILE=`ls`
+mv ${TEMP_FILE}/* .
+rmdir ${TEMP_FILE}
+mkdir -p ${ORDS_CONF}
+cd ${ORDS_HOME}
+unzip ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
+cd /u01
+unzip ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}
+cd ${SOFTWARE_DIR}
+rm -Rf ${CATALINA_HOME}/webapps/*
+mkdir -p ${CATALINA_HOME}/webapps/i/
+cp -R ${SOFTWARE_DIR}/apex/images/* ${CATALINA_HOME}/webapps/i/
 
 
 # Prep the ORDS parameter file.
