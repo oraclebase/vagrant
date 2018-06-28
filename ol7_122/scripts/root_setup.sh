@@ -12,10 +12,11 @@ export ORACLE_HOME=${ORACLE_BASE}/product/12.2.0.1/db_1
 export SOFTWARE_DIR=/u01/software
 export ORA_INVENTORY=/u01/app/oraInventory
 export SCRIPTS_DIR=/home/oracle/scripts
+export DATA_DIR=/u02/oradata
 
 mkdir -p ${SCRIPTS_DIR}
 mkdir -p ${SOFTWARE_DIR}
-mkdir -p /u02/oradata
+mkdir -p ${DATA_DIR}
 chown -R oracle.oinstall ${SCRIPTS_DIR} /u01 /u02
 
 # Copy the "oracle_setup.sh" config file from the vagrant directory and run it.
