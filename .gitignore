@@ -4,3 +4,5 @@
 *.zip
 *.jar
 .vagrant
+.bin
+.vdi
