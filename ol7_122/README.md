@@ -26,7 +26,6 @@ $ tree
 +--- software
 |   +--- apache-tomcat-9.0.8.tar.gz
 |   +--- apex_18.1_en.zip
-|   +--- autorest_demo.zip
 |   +--- jdk-10.0.1_linux-x64_bin.tar.gz
 |   +--- linuxx64_12201_database.zip
 |   +--- ords.18.1.1.95.1251.zip
