@@ -5,10 +5,10 @@ echo "export JAVA_HOME=/home/docker_user/java/latest" >> ~/.bash_profile
 echo "alias sql=\"/home/docker_user/sqlcl/bin/sql\"" >> ~/.bash_profile
 
 cd ~
-unzip /vagrant/software/sqlcl-18.2.0.zip
+unzip -oq /vagrant/software/sqlcl-18.2.0.zip
 mkdir ~/java
 cd ~/java
-tar -xvf /vagrant/software/jdk-10.0.1_linux-x64_bin.tar.gz
+tar -xf /vagrant/software/jdk-10.0.2_linux-x64_bin.tar.gz
 ln -s ./j* ./latest
 cd ~
 unzip /vagrant/software/autorest_demo.zip
@@ -19,15 +19,18 @@ cp /vagrant/software/apex_18.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.10.tar.gz .
 cp /vagrant/software/ords-18.2.0.zip .
 cp /vagrant/software/sqlcl-18.2.0.zip .
-cp /vagrant/software/jdk-10.0.1_linux-x64_bin.tar.gz .
+cp /vagrant/software/jdk-10.0.2_linux-x64_bin.tar.gz .
 cd ..
 docker build -t ol7_ords:latest .
 
 # Copy database software and do build.
-cd ~/dockerfiles/database/ol7_122/software
-cp /vagrant/software/linuxx64_12201_database.zip .
+cd ~/dockerfiles/database/ol7_183/software
+cp /vagrant/software/LINUX.X64_180000_db_home.zip .
 cp /vagrant/software/apex_18.1_en.zip .
 cd ..
-docker build -t ol7_122:latest .
+docker build -t ol7_183:latest .
 
+# Start application.
 
+cd ~/dockerfiles/compose/ol7_183_ords
+docker-compose up
