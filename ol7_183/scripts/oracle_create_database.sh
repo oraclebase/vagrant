@@ -17,7 +17,7 @@ fi
 echo "******************************************************************************"
 echo "Check if database already exists." `date`
 echo "******************************************************************************"
-if [ ! -d ${DATA_DIR}/${ORACLE_SID} ]; then
+if [ ! -d ${DATA_DIR}/${ORACLE_SID^^} ]; then
 
   echo "******************************************************************************"
   echo "The database files don't exist, so create a new database." `date`
