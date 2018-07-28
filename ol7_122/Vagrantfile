@@ -1,6 +1,13 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# Variables
+var_box            = 'bento/oracle-7.5'  # 'bento/oracle-6.9'
+var_vm_name        = 'ol7_122_vagrant'
+var_mem_size       = 4096  # More would be better.
+var_cpus           = 2
+var_non_rotational = 'on' # SSD
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -12,7 +19,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "bento/oracle-7.5"
+  config.vm.box = var_box
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -53,12 +60,11 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "4096"
-    vb.cpus = 2
-    vb.name = "ol7_122_vagrant"
-    
-    # Set as SSD.
-    vb.customize ['setextradata', 'ol7_122_vagrant', 'VBoxInternal/Devices/ahci/0/Config/Port0/NonRotational', '1']
+    vb.memory = var_mem_size
+    vb.cpus   = var_cpus
+    vb.name   = var_vm_name
+
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', '0', '--nonrotational', var_non_rotational]
   end
 
   #
@@ -69,6 +75,6 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-     sh /vagrant/scripts/setup.sh
+    #sh /vagrant/scripts/setup.sh
   SHELL
 end
