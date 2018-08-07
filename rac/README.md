@@ -17,7 +17,7 @@ You will also need to download the 18c grid and database software.
 
 ## Clone Repository
 
-Pick and area on your file system to act as the base for this git repository and issue the following command.
+Pick an area on your file system to act as the base for this git repository and issue the following command.
 
 git clone https://github.com/oraclebase/vagrant.git
 
