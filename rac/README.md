@@ -76,7 +76,7 @@ $
 
 ## Amend File Paths
 
-The "config" directory contains a "install.env" and a "vagrant.yml" file. The combination of these two files contain all the config used for this build. You can alter the configuration of the build here, but remember to make sure the combination of the two say consistent.
+The "config" directory contains a "install.env" and a "vagrant.yml" file. The combination of these two files contain all the config used for this build. You can alter the configuration of the build here, but remember to make sure the combination of the two stay consistent.
 
 At minimum you will have to amend the following paths in the "vagrant.yml" file, providing suitable paths for the shared disks.
 
@@ -89,7 +89,7 @@ At minimum you will have to amend the following paths in the "vagrant.yml" file,
 
 ## Build the RAC
 
-The following commands will leave you with a functioning RAC installations.
+The following commands will leave you with a functioning RAC installation.
 
 Start the DNS server.
 
@@ -105,7 +105,7 @@ cd ../node2
 vagrant up
 ```
 
-Start the first node of the cluster. This will perform all of the installations operations. Depending on the spec of the host system, this could take a long time. On one of my servers it took about 2.5 hours to complete.
+Start the first node of the cluster. This will perform all of the installations operations. Depending on the spec of the host system, this could take a long time. On one of my servers it took about 3.5 hours to complete.
 
 ```
 cd ../node1
