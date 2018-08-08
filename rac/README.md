@@ -2,9 +2,13 @@
 
 The Vagrant scripts here will allow you to build a 18c Real Application Clusters (RAC) system by just starting the VMs in the correct order.
 
+If you need a more detailed description of this build, check out the article here.
+
+* [Oracle Database 18c RAC On Oracle Linux 7 Using VirtualBox and Vagrant](https://oracle-base.com/articles/18c/oracle-db-18c-rac-installation-on-oracle-linux-7-using-virtualbox)
+
 ## Required Software
 
-You need to install the following software to use these Vagrant builds.
+Download and install the following software. If you can't figure out this step, you probably shouldn't be considering a RAC installation.
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -70,7 +74,7 @@ Copy the Oracle software under the "..../node1/software/" directory. From the "r
 $ 
 ```
 
-## Amend file paths.
+## Amend File Paths
 
 The "config" directory contains a "install.env" and a "vagrant.yml" file. The combination of these two files contain all the config used for this build. You can alter the configuration of the build here, but remember to make sure the combination of the two say consistent.
 
@@ -123,7 +127,7 @@ cd dns
 vagrant halt
 ```
 
-## Remove whole RAC
+## Remove Whole RAC
 
 The following commands will destroy all VMs and the associated files, so you can run the process again.
 
