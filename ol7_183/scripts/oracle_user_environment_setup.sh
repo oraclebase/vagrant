@@ -39,7 +39,7 @@ export DATA_DIR=/u02/oradata
 
 # ORDS installation settings.
 export JAVA_SOFTWARE="jdk-10.0.2_linux-x64_bin.tar.gz"
-export TOMCAT_SOFTWARE="apache-tomcat-9.0.10.tar.gz"
+export TOMCAT_SOFTWARE="apache-tomcat-9.0.11.tar.gz"
 export ORDS_SOFTWARE="ords-18.2.0.zip"
 export APEX_SOFTWARE="apex_18.1_en.zip"
 export SQLCL_SOFTWARE="sqlcl-18.2.0.zip"
