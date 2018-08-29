@@ -1,11 +1,14 @@
-# Unzip software
-cd ${SOFTWARE_DIR}
-unzip -o ${DB_SOFTWARE}
+echo "Unzip software." `date`
+echo "******************************************************************************"
+mkdir -p ${ORACLE_HOME}
+cd ${ORACLE_HOME}
+unzip -oq ${SOFTWARE_DIR}/${DB_SOFTWARE}
 
-# Do software-only installation
-${SOFTWARE_DIR}/database/runInstaller -ignoreSysPrereqs -ignorePrereq          \
-    -waitforcompletion -showProgress -silent                                   \
-    -responseFile $SOFTWARE_DIR/database/response/db_install.rsp               \
+echo "******************************************************************************"
+echo "Do software-only installation." `date`
+echo "******************************************************************************"
+${ORACLE_HOME}/runInstaller -ignorePrereq -waitforcompletion -silent           \
+    -responseFile ${ORACLE_HOME}/install/response/db_install.rsp               \
     oracle.install.option=INSTALL_DB_SWONLY                                    \
     ORACLE_HOSTNAME=${ORACLE_HOSTNAME}                                         \
     UNIX_GROUP_NAME=oinstall                                                   \
@@ -21,4 +24,3 @@ ${SOFTWARE_DIR}/database/runInstaller -ignoreSysPrereqs -ignorePrereq          \
     oracle.install.db.OSRACDBA_GROUP=dba                                       \
     SECURITY_UPDATES_VIA_MYORACLESUPPORT=false                                 \
     DECLINE_SECURITY_UPDATES=true
-
