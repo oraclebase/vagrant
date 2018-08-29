@@ -1,17 +1,7 @@
-echo "******************************************************************************"
-echo "Prepare yum with the latest repos." `date`
-echo "******************************************************************************"
-cd /etc/yum.repos.d
-#rm -f public-yum-ol6.repo
-#wget http://yum.oracle.com/public-yum-ol6.repo
-rm -f public-yum-ol7.repo
-wget http://yum.oracle.com/public-yum-ol7.repo
-yum -y install yum-utils zip unzip
-yum -y install oracle-database-preinstall-18c
-#yum -y update
+sh /vagrant/scripts/install_os_packages.sh
 
 echo "******************************************************************************"
-echo "Set up evironment for one-off actions." `date`
+echo "Set up environment for one-off actions." `date`
 echo "******************************************************************************"
 export ORACLE_BASE=/u01/app/oracle
 export ORACLE_HOME=${ORACLE_BASE}/product/18.0.0/dbhome_1
