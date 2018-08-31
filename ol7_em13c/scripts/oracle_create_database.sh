@@ -81,7 +81,7 @@ alter system set local_listener='LISTENER';
 alter system set "_allow_insert_with_update_check"=true scope=both;
 alter system set session_cached_cursors=200 scope=spfile;
 alter system set sga_target=800M scope=both;
-alter system set sga_target=450M scope=both;
+alter system set pga_aggregate_target=450M scope=both;
 exit;
 EOF
 
