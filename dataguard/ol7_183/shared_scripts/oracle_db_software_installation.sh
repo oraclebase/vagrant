@@ -24,9 +24,5 @@ ${ORACLE_HOME}/runInstaller -ignorePrereq -waitforcompletion -silent \
         oracle.install.db.OSDGDBA_GROUP=dba \
         oracle.install.db.OSKMDBA_GROUP=dba \
         oracle.install.db.OSRACDBA_GROUP=dba \
-        oracle.install.db.isRACOneInstall=false \
-        oracle.install.db.rac.serverpoolCardinality=0 \
-        oracle.install.db.config.starterdb.type=GENERAL_PURPOSE \
-        oracle.install.db.ConfigureAsContainerDB=false \
         SECURITY_UPDATES_VIA_MYORACLESUPPORT=false \
         DECLINE_SECURITY_UPDATES=true
