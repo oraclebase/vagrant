@@ -4,7 +4,7 @@ The Vagrant scripts here will allow you to build a 12cR1 Data Guard system by ju
 
 If you need a more detailed description of this build, check out the article here.
 
-* [Data Guard Physical Standby Setup Using the Data Guard Broker in Oracle Database 12c Release 1](https://oracle-base.com/articles/12c/data-guard-setup-using-broker-12cR1)
+* [Data Guard Physical Standby Setup Using the Data Guard Broker in Oracle Database 12c Release 1](https://oracle-base.com/articles/12c/data-guard-setup-using-broker-12cr1)
 
 ## Required Software
 
