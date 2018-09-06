@@ -9,5 +9,5 @@ wget http://yum.oracle.com/public-yum-ol7.repo
 yum install -y yum-utils
 yum-config-manager --enable ol7_developer_EPEL
 yum install -y zip unzip # sshpass 
-yum install -y oracle-database-preinstall-18c
+yum install -y oracle-database-server-12cR2-preinstall
 #yum -y update
