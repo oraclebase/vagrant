@@ -103,7 +103,6 @@ DUPLICATE TARGET DATABASE
   DORECOVER
   SPFILE
     SET db_unique_name='${NODE2_DB_UNIQUE_NAME}' COMMENT 'Is standby'
-    SET log_archive_dest_2=''
   NOFILENAMECHECK;
   
 exit;
