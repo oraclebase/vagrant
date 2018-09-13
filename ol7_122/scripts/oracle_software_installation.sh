@@ -1,8 +1,12 @@
-# Unzip software
+echo "******************************************************************************"
+echo "Unzip software." `date`
+echo "******************************************************************************"
 cd ${SOFTWARE_DIR}
 unzip -o ${DB_SOFTWARE}
 
-# Do software-only installation
+echo "******************************************************************************"
+echo "Do software-only installation." `date`
+echo "******************************************************************************"
 ${SOFTWARE_DIR}/database/runInstaller -ignoreSysPrereqs -ignorePrereq          \
     -waitforcompletion -showProgress -silent                                   \
     -responseFile $SOFTWARE_DIR/database/response/db_install.rsp               \

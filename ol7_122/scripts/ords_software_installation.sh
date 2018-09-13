@@ -1,4 +1,6 @@
-# Unpack all the software.
+echo "******************************************************************************"
+echo "Unpack all the software." `date`
+echo "******************************************************************************"
 mkdir /u01/java
 cd /u01/java
 tar -xzf ${SOFTWARE_DIR}/${JAVA_SOFTWARE}
@@ -22,7 +24,9 @@ mkdir -p ${CATALINA_HOME}/webapps/i/
 cp -R ${SOFTWARE_DIR}/apex/images/* ${CATALINA_HOME}/webapps/i/
 
 
-# Prep the ORDS parameter file.
+echo "******************************************************************************"
+echo "Prep the ORDS parameter file." `date`
+echo "******************************************************************************"
 cat > ${ORDS_HOME}/params/ords_params.properties <<EOF
 db.hostname=${ORACLE_HOSTNAME}
 db.port=${DB_PORT}
@@ -50,14 +54,18 @@ sys.password=${SYS_PASSWORD}
 EOF
 
 
-# Configure ORDS. Safe to run on DB with existing config.
+echo "******************************************************************************"
+echo "Configure ORDS. Safe to run on DB with existing config." `date`
+echo "******************************************************************************"
 cd ${ORDS_HOME}
 $JAVA_HOME/bin/java -jar ords.war configdir ${ORDS_CONF}
 $JAVA_HOME/bin/java -jar ords.war
 cp ords.war ${CATALINA_HOME}/webapps/
 
 
-# Configure HTTPS
+echo "******************************************************************************"
+echo "Configure HTTPS." `date`
+echo "******************************************************************************"
 if [ ! -f ${KEYSTORE_DIR}/keystore.jks ]; then
   mkdir -p ${KEYSTORE_DIR}
   cd ${KEYSTORE_DIR}
@@ -70,7 +78,9 @@ if [ ! -f ${KEYSTORE_DIR}/keystore.jks ]; then
 fi;
 
 
-# Restart everything.
+echo "******************************************************************************"
+echo "Restart everything." `date`
+echo "******************************************************************************"
 ${SCRIPTS_DIR}/stop_all.sh
 ${SCRIPTS_DIR}/start_all.sh
 

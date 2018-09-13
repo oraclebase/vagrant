@@ -1,4 +1,6 @@
-# Create environment script.
+echo "******************************************************************************"
+echo "Create environment script." `date`
+echo "******************************************************************************"
 cat > /home/oracle/scripts/setEnv.sh <<EOF
 # Regular settings.
 export TMP=/tmp
@@ -61,11 +63,15 @@ export KEYSTORE_PASSWORD="KeystorePassword1"
 EOF
 
 
-# Add it to the .bash_profile.
+echo "******************************************************************************"
+echo "Add it to the .bash_profile." `date`
+echo "******************************************************************************"
 echo ". /home/oracle/scripts/setEnv.sh" >> /home/oracle/.bash_profile
 
 
-# Create start/stop scripts.
+echo "******************************************************************************"
+echo "Create start/stop scripts." `date`
+echo "******************************************************************************"
 . /home/oracle/scripts/setEnv.sh
 
 cat > /home/oracle/scripts/start_all.sh <<EOF
