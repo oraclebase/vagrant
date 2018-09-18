@@ -21,9 +21,11 @@ You will also need to download the 18c grid and database software.
 
 ## Clone Repository
 
-Pick an area on your file system to act as the base for this git repository and issue the following command.
+Pick an area on your file system to act as the base for this git repository and issue the following command. If you are working on Windows, remember to check your Git settings for line terminators. If the bash scripts are converted to Windows terminators you will have problems.
 
+```
 git clone https://github.com/oraclebase/vagrant.git
+```
 
 Copy the Oracle software under the "..../node1/software/" directory. From the "rac" subdirectory, the structure should look like this.
 
