@@ -19,7 +19,7 @@ dbca -silent -createDatabase \
   -redoLogFileSize 50 \
   -emConfiguration NONE \
   -ignorePreReqs \
-  -nodelist ol7-183-rac1,ol7-183-rac2 \
+  -nodelist ${NODE1_HOSTNAME},${NODE2_HOSTNAME} \
   -storageType ASM \
   -diskGroupName +DATA \
   -recoveryGroupName +DATA \
