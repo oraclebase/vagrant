@@ -18,7 +18,7 @@ ${GRID_HOME}/gridSetup.sh -silent -executeConfigTools \
         oracle.install.crs.config.gpnp.configureGNS=false \
         oracle.install.crs.config.autoConfigureClusterNodeVIP=false \
         oracle.install.crs.config.clusterNodes=${NODE1_FQ_HOSTNAME}:${NODE1_FQ_VIPNAME}:HUB,${NODE2_FQ_HOSTNAME}:${NODE2_FQ_VIPNAME}:HUB \
-        oracle.install.crs.config.networkInterfaceList=eth1:${PUBLIC_SUBNET}:1,eth2:${PRIVATE_SUBNET}:5 \
+        oracle.install.crs.config.networkInterfaceList=${NET_DEVICE1}:${PUBLIC_SUBNET}:1,${NET_DEVICE2}:${PRIVATE_SUBNET}:5 \
         oracle.install.asm.configureGIMRDataDG=false \
         oracle.install.crs.config.useIPMI=false \
         oracle.install.asm.storageOption=ASM \
