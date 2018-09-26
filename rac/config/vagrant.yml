@@ -8,7 +8,7 @@ shared:
   asm_disk_size: 20
 
 dns:
-  vm_name: ol7_dns
+  vm_name: ol7_183_dns
   mem_size: 1024
   cpus: 1
   public_ip: 192.168.56.100
