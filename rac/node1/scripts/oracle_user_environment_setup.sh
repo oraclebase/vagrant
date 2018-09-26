@@ -62,12 +62,16 @@ echo "**************************************************************************
 echo "Passwordless SSH Setup for oracle." `date`
 echo "******************************************************************************"
 mkdir -p ~/.ssh
+chmod 700 ~/.ssh
 cd ~/.ssh
 rm -f *
+cat /dev/zero | ssh-keygen -t dsa -q -N "" > /dev/null
+cat id_dsa.pub >> authorized_keys
+ssh ${NODE1_HOSTNAME} date
+echo "${ORACLE_PASSWORD}" > /tmp/temp2.txt
+
 ssh-keyscan -H ${NODE1_HOSTNAME} >> ~/.ssh/known_hosts
 ssh-keyscan -H ${NODE2_HOSTNAME} >> ~/.ssh/known_hosts
-cat /dev/zero | ssh-keygen -t rsa -q -N "" > /dev/null
-echo "${ORACLE_PASSWORD}" > /tmp/temp2.txt
 sshpass -f /tmp/temp2.txt ssh-copy-id ${NODE2_HOSTNAME}
 
 cat > /tmp/ssh-setup.sh <<EOF
