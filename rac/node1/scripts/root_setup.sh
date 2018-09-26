@@ -46,7 +46,7 @@ ssh-keyscan -H ${NODE2_HOSTNAME} >> ~/.ssh/known_hosts
 sshpass -f /tmp/temp1.txt ssh-copy-id ${NODE1_HOSTNAME}
 EOF
 
-ssh ol7-183-rac2 'bash -s' < /tmp/ssh-setup.sh
+ssh ${NODE2_HOSTNAME} 'bash -s' < /tmp/ssh-setup.sh
 
 echo "******************************************************************************"
 echo "Install cvuqdisk package." `date`
