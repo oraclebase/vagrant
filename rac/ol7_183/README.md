@@ -30,7 +30,7 @@ git clone https://github.com/oraclebase/vagrant.git
 Copy the Oracle software under the "..../node1/software/" directory. From the "rac" subdirectory, the structure should look like this.
 
 ```
- tree
+$ tree
 .
 |-- config
 |   |-- install.env
@@ -72,7 +72,6 @@ Copy the Oracle software under the "..../node1/software/" directory. From the "r
     |-- install_os_packages.sh
     `-- prepare_u01_disk.sh
 
-9 directories, 30 files
 $ 
 ```
 
@@ -87,6 +86,15 @@ At minimum you will have to amend the following paths in the "vagrant.yml" file,
   asm_disk_2: /u05/VirtualBox/shared/ol7_183_rac/asm_disk_2.vdi
   asm_disk_3: /u05/VirtualBox/shared/ol7_183_rac/asm_disk_3.vdi
   asm_disk_4: /u05/VirtualBox/shared/ol7_183_rac/asm_disk_4.vdi
+```
+
+For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol7_183_rac" and use the following settings.
+
+```
+  asm_disk_1: C:\VirtualBox\shared\ol7_183_rac\asm_disk_1.vdi
+  asm_disk_2: C:\VirtualBox\shared\ol7_183_rac\asm_disk_2.vdi
+  asm_disk_3: C:\VirtualBox\shared\ol7_183_rac\asm_disk_3.vdi
+  asm_disk_4: C:\VirtualBox\shared\ol7_183_rac\asm_disk_4.vdi
 ```
 
 ## Build the RAC
