@@ -82,5 +82,6 @@ echo "**************************************************************************
 echo "Restart everything." `date`
 echo "******************************************************************************"
 ${SCRIPTS_DIR}/stop_all.sh
-${SCRIPTS_DIR}/start_all.sh
+# Get rid of start, as this is none done using the service.
+#${SCRIPTS_DIR}/start_all.sh
 
