@@ -16,7 +16,10 @@ $ tree
 .
 +--- README.md
 +--- scripts
+|   +--- dbora.service
+|   +--- install_os_packages.sh
 |   +--- oracle_create_database.sh
+|   +--- oracle_service_setup.sh
 |   +--- oracle_software_installation.sh
 |   +--- oracle_user_environment_setup.sh
 |   +--- ords_software_installation.sh
@@ -24,13 +27,13 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.8.tar.gz
-|   +--- apex_18.1_en.zip
-|   +--- jdk-10.0.1_linux-x64_bin.tar.gz
+|   +--- apache-tomcat-9.0.12.tar.gz
+|   +--- apex_18.2_en.zip
 |   +--- linuxx64_12201_database.zip
-|   +--- ords.18.1.1.95.1251.zip
+|   +--- openjdk-11_linux-x64_bin.tar.gz
+|   +--- ords-18.2.0.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-18.1.1.zip
+|   +--- sqlcl-18.2.0.zip
 +--- Vagrantfile
 $
 ```
