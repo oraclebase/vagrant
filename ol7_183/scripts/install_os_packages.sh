@@ -1,11 +1,12 @@
 echo "******************************************************************************"
 echo "Prepare yum with the latest repos." `date`
 echo "******************************************************************************"
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+
 cd /etc/yum.repos.d
-#rm -f public-yum-ol6.repo
-#wget http://yum.oracle.com/public-yum-ol6.repo
 rm -f public-yum-ol7.repo
-wget http://yum.oracle.com/public-yum-ol7.repo
-yum -y install yum-utils zip unzip
-yum -y install oracle-database-preinstall-18c
-#yum -y update
+wget https://yum.oracle.com/public-yum-ol7.repo
+
+yum install -y yum-utils zip unzip
+yum install -y oracle-database-preinstall-18c
+#yum update -y
