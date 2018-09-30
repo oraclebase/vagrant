@@ -1,10 +1,4 @@
-# Prepare yum with the latest repos.
-cd /etc/yum.repos.d
-rm -f public-yum-ol7.repo
-wget http://yum.oracle.com/public-yum-ol7.repo
-yum -y install yum-utils zip unzip
-yum -y install oracle-database-server-12cR2-preinstall
-#yum -y update
+sh /vagrant/scripts/install_os_packages.sh
 
 echo "******************************************************************************"
 echo "Set up environment for one-off actions." `date`
