@@ -24,7 +24,7 @@ export ORA_INVENTORY=/u01/app/oraInventory
 # Database installation settings.
 export SOFTWARE_DIR=/u01/software
 export DB_SOFTWARE="LINUX.X64_180000_db_home.zip"
-export APEX_SOFTWARE="apex_18.1_en.zip"
+export APEX_SOFTWARE="apex_18.2_en.zip"
 export ORACLE_PASSWORD="oracle"
 export SCRIPTS_DIR=/home/oracle/scripts
 
@@ -38,10 +38,10 @@ export DATA_DIR=/u02/oradata
 
 
 # ORDS installation settings.
-export JAVA_SOFTWARE="jdk-10.0.2_linux-x64_bin.tar.gz"
+export JAVA_SOFTWARE="openjdk-11_linux-x64_bin.tar.gz"
 export TOMCAT_SOFTWARE="apache-tomcat-9.0.12.tar.gz"
 export ORDS_SOFTWARE="ords-18.2.0.zip"
-export APEX_SOFTWARE="apex_18.1_en.zip"
+export APEX_SOFTWARE="apex_18.2_en.zip"
 export SQLCL_SOFTWARE="sqlcl-18.2.0.zip"
 export SOFTWARE_DIR="/u01/software"
 export KEYSTORE_DIR="/u01/keystore"
@@ -49,6 +49,7 @@ export ORDS_HOME="/u01/ords"
 export ORDS_CONF="/u01/ords/conf"
 export JAVA_HOME="/u01/java"
 export CATALINA_HOME="/u01/tomcat"
+export CATALINA_BASE=\$CATALINA_HOME
 
 export DB_PORT="1521"
 export DB_SERVICE="pdb1"
@@ -84,7 +85,7 @@ export ORAENV_ASK=YES
 
 dbstart \$ORACLE_HOME
 
-\$CATALINA_HOME/bin/startup.sh
+\$CATALINA_BASE/bin/startup.sh
 EOF
 
 
@@ -92,7 +93,7 @@ cat > /home/oracle/scripts/stop_all.sh <<EOF
 #!/bin/bash
 . /home/oracle/scripts/setEnv.sh
 
-\$CATALINA_HOME/bin/shutdown.sh
+\$CATALINA_BASE/bin/shutdown.sh
 
 export ORAENV_ASK=NO
 . oraenv
