@@ -31,9 +31,9 @@ $ tree
 |   +--- apex_18.2_en.zip
 |   +--- LINUX.X64_180000_db_home.zip
 |   +--- openjdk-11_linux-x64_bin.tar.gz
-|   +--- ords-18.2.0.zip
+|   +--- ords-18.3.0.270.1456.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-18.2.0.zip
+|   +--- sqlcl-18.3.0.259.2029.zip
 +--- Vagrantfile
 $
 ```
