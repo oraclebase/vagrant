@@ -5,10 +5,10 @@ echo "export JAVA_HOME=/home/docker_user/java/latest" >> ~/.bash_profile
 echo "alias sql=\"/home/docker_user/sqlcl/bin/sql\"" >> ~/.bash_profile
 
 cd ~
-unzip -oq /vagrant/software/sqlcl-18.2.0.zip
+unzip -oq /vagrant/software/sqlcl-18.3.0.259.2029.zip
 mkdir ~/java
 cd ~/java
-tar -xf /vagrant/software/openjdk-11_linux-x64_bin.tar.gz
+tar -xf /vagrant/software/jdk-11_linux-x64_bin.tar.gz
 ln -s ./j* ./latest
 cd ~
 unzip /vagrant/software/autorest_demo.zip
@@ -17,10 +17,9 @@ unzip /vagrant/software/autorest_demo.zip
 cd ~/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_18.2_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.12.tar.gz .
-cp /vagrant/software/ords-18.2.0.zip .
-cp /vagrant/software/sqlcl-18.2.0.zip .
-cp /vagrant/software/openjdk-11_linux-x64_bin.tar.gz .
-cp /vagrant/software/jdk-10.0.2_linux-x64_bin.tar.gz .
+cp /vagrant/software/ords-18.3.0.270.1456.zip .
+cp /vagrant/software/sqlcl-18.3.0.259.2029.zip .
+cp /vagrant/software/jdk-8u181-linux-x64.tar.gz .
 cd ~/dockerfiles/ords/ol7_ords
 docker build --squash -t ol7_ords:latest .
 
