@@ -6,3 +6,4 @@
 .vagrant
 *.bin
 *.vdi
+*.rpm
