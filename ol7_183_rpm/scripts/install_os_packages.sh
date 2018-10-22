@@ -12,7 +12,7 @@ yum install -y yum-utils zip unzip
 echo "******************************************************************************"
 echo "Install Oracle prerequisite package." `date`
 echo "******************************************************************************"
-yum install -y install oracle-database-preinstall-18c
+yum install -y oracle-database-preinstall-18c
 
 echo "******************************************************************************"
 echo "Install Oracle RPM." `date`
