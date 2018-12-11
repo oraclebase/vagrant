@@ -84,18 +84,20 @@ EOF
   cp -f /tmp/oratab /etc/oratab
 
 
-  echo "******************************************************************************"
-  echo " Unzip APEX software." `date`
-  echo "******************************************************************************"
-  cd ${SOFTWARE_DIR}
-  unzip ${APEX_SOFTWARE}
-  cd apex
+  if [ "$INSTALL_APEX" = "true" ]; then
+
+    echo "******************************************************************************"
+    echo " Unzip APEX software." `date`
+    echo "******************************************************************************"
+    cd ${SOFTWARE_DIR}
+    unzip ${APEX_SOFTWARE}
+    cd apex
 
 
-  echo "******************************************************************************"
-  echo "Install APEX." `date`
-  echo "******************************************************************************"
-  sqlplus / as sysdba <<EOF
+    echo "******************************************************************************"
+    echo "Install APEX." `date`
+    echo "******************************************************************************"
+    sqlplus / as sysdba <<EOF
 create tablespace apex datafile size 1m autoextend on next 1m;
 @apexins.sql APEX APEX TEMP /i/
 BEGIN
@@ -116,5 +118,7 @@ END;
 alter user APEX_PUBLIC_USER identified by ${APEX_PASSWORD} account unlock;
 exit;
 EOF
+
+  fi
 
 fi
