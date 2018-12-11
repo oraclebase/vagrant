@@ -36,6 +36,8 @@ export APEX_EMAIL="me@example.com"
 export APEX_PASSWORD="ApexPassword1"
 export DATA_DIR=/u02/oradata
 
+export INSTALL_APEX="true"
+
 
 # ORDS installation settings.
 export JAVA_SOFTWARE="openjdk-11.0.1_linux-x64_bin.tar.gz"
