@@ -9,7 +9,8 @@ export TMPDIR=\$TMP
 export ORACLE_HOSTNAME=`hostname`
 export ORACLE_UNQNAME=db11g
 export ORACLE_BASE=/u01/app/oracle
-export ORACLE_HOME=\$ORACLE_BASE/product/11.2.0.1/db_1
+#export ORACLE_HOME=\$ORACLE_BASE/product/11.2.0.1/db_1
+export ORACLE_HOME=\$ORACLE_BASE/product/11.2.0.4/db_1
 export ORACLE_SID=db11g
 
 export PATH=/usr/sbin:/usr/local/bin:\$PATH
@@ -23,7 +24,8 @@ export ORA_INVENTORY=/u01/app/oraInventory
 
 # Database installation settings.
 export SOFTWARE_DIR=/u01/software
-export DB_SOFTWARE="linux.x64_11gR2_database_*of2.zip"
+#export DB_SOFTWARE="linux.x64_11gR2_database_*of2.zip"
+export DB_SOFTWARE="p13390677_112040_Linux-x86-64_*of7.zip"
 export APEX_SOFTWARE="apex_18.2_en.zip"
 export ORACLE_PASSWORD="oracle"
 export SCRIPTS_DIR=/home/oracle/scripts
@@ -33,6 +35,9 @@ export SYS_PASSWORD="SysPassword1"
 export APEX_EMAIL="me@example.com"
 export APEX_PASSWORD="ApexPassword1"
 export DATA_DIR=/u02/oradata
+
+#export INSTALL_APEX="true"
+export INSTALL_APEX="false"
 
 
 # ORDS installation settings.
