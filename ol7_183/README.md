@@ -6,8 +6,14 @@ A simple Vagrant build for Oracle Database 18.3 on Oracle Linux 7.
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [Oracle Database](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle18c-linux-180000-5022980.html)
+* [Oracle REST Data Services (ORDS)](https://www.oracle.com/technetwork/developer-tools/rest-data-services/downloads/index.html)
+* [Oracle SQLcl](https://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html)
+* [Oracle Application Express (APEX)](https://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html)
+* [OpenJDK 11](http://jdk.java.net/11/)
+* [Tomcat 9](https://tomcat.apache.org/download-90.cgi)
 
-Place the Oracle database software in the "software" directory before calling the `vagrant up` command.
+Place the software in the "software" directory before calling the `vagrant up` command.
 
 Directory contents when software is included.
 
@@ -27,10 +33,10 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.12.tar.gz
+|   +--- apache-tomcat-9.0.14.tar.gz
 |   +--- apex_18.2_en.zip
 |   +--- LINUX.X64_180000_db_home.zip
-|   +--- openjdk-11_linux-x64_bin.tar.gz
+|   +--- openjdk-11.0.1_linux-x64_bin.tar.gz
 |   +--- ords-18.3.0.270.1456.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-18.3.0.259.2029.zip
