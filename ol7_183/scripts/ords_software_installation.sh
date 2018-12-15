@@ -1,27 +1,37 @@
 echo "******************************************************************************"
 echo "Unpack all the software." `date`
 echo "******************************************************************************"
-mkdir /u01/java
+# Java
+mkdir -p /u01/java
 cd /u01/java
 tar -xzf ${SOFTWARE_DIR}/${JAVA_SOFTWARE}
 TEMP_FILE=`ls`
-mv ${TEMP_FILE}/* .
-rmdir ${TEMP_FILE}
-mkdir /u01/tomcat
+ln -s ${TEMP_FILE} latest
+# Tomcat
+mkdir -p /u01/tomcat
 cd /u01/tomcat
 tar -xzf ${SOFTWARE_DIR}/${TOMCAT_SOFTWARE}
 TEMP_FILE=`ls`
-mv ${TEMP_FILE}/* .
-rmdir ${TEMP_FILE}
+ln -s ${TEMP_FILE} latest
+# CATALINA_BASE
+mkdir -p ${CATALINA_BASE}
+cp -r ${CATALINA_HOME}/conf $CATALINA_BASE
+cp -r ${CATALINA_HOME}/logs $CATALINA_BASE
+cp -r ${CATALINA_HOME}/temp $CATALINA_BASE
+cp -r ${CATALINA_HOME}/webapps $CATALINA_BASE
+cp -r ${CATALINA_HOME}/work $CATALINA_BASE
+# ORDS
 mkdir -p ${ORDS_CONF}
 cd ${ORDS_HOME}
 unzip ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
+# SQLcl
 cd /u01
 unzip ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}
 cd ${SOFTWARE_DIR}
-rm -Rf ${CATALINA_HOME}/webapps/*
-mkdir -p ${CATALINA_HOME}/webapps/i/
-cp -R ${SOFTWARE_DIR}/apex/images/* ${CATALINA_HOME}/webapps/i/
+# APEX Images
+rm -Rf ${CATALINA_BASE}/webapps/*
+mkdir -p ${CATALINA_BASE}/webapps/i/
+cp -R ${SOFTWARE_DIR}/apex/images/* ${CATALINA_BASE}/webapps/i/
 
 
 echo "******************************************************************************"
@@ -60,7 +70,7 @@ echo "**************************************************************************
 cd ${ORDS_HOME}
 $JAVA_HOME/bin/java -jar ords.war configdir ${ORDS_CONF}
 $JAVA_HOME/bin/java -jar ords.war
-cp ords.war ${CATALINA_HOME}/webapps/
+cp ords.war ${CATALINA_BASE}/webapps/
 
 
 echo "******************************************************************************"
@@ -74,7 +84,7 @@ if [ ! -f ${KEYSTORE_DIR}/keystore.jks ]; then
      -storepass ${KEYSTORE_PASSWORD} -validity 3600 -keysize 2048 -keypass ${KEYSTORE_PASSWORD}
   sed -i -e "s|###KEYSTORE_DIR###|${KEYSTORE_DIR}|g" ${SOFTWARE_DIR}/server.xml
   sed -i -e "s|###KEYSTORE_PASSWORD###|${KEYSTORE_PASSWORD}|g" ${SOFTWARE_DIR}/server.xml
-  cp ${SOFTWARE_DIR}/server.xml ${CATALINA_HOME}/conf
+  cp ${SOFTWARE_DIR}/server.xml ${CATALINA_BASE}/conf/
 fi;
 
 
