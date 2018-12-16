@@ -16,7 +16,7 @@ unzip -oq /vagrant/software/autorest_demo.zip
 # Copy ORDS software and do build.
 cd ~/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_18.2_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.13.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.14.tar.gz .
 cp /vagrant/software/ords-18.3.0.270.1456.zip .
 cp /vagrant/software/sqlcl-18.3.0.259.2029.zip .
 cp /vagrant/software/openjdk-11.0.1_linux-x64_bin.tar.gz .
@@ -37,9 +37,23 @@ cp /vagrant/software/apex_18.2_en.zip .
 cd ~/dockerfiles/database/ol7_122
 #docker build --squash -t ol7_122:latest .
 
+# Setup file system to allow docker_user to interact
+# with docker host volumes.
+
+mkdir -p /home/docker_user/volumes/ol7_183_ords_tomcat
+mkdir -p /home/docker_user/volumes/ol7_183_ords_db
+
+# As root user.
+groupadd -g 1042 docker_fg
+chown -R :docker_fg /home/docker_user/volumes
+chmod -R 775 /home/docker_user/volumes
+chmod -R g+s /home/docker_user/volumes
+usermod -aG docker_fg docker_user
+
 # Start application.
 
 cd ~/dockerfiles/compose/ol7_183_ords
+docker-compose rm -vf
 docker-compose up
 
 #cd ~/dockerfiles/compose/ol7_122_ords
