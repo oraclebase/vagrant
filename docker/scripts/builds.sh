@@ -40,9 +40,9 @@ cd ~/dockerfiles/database/ol7_122
 # Setup file system to allow docker_user to interact
 # with docker host volumes.
 
+# This setup is now in the root_setup.sh
 mkdir -p /home/docker_user/volumes/ol7_183_ords_tomcat
 mkdir -p /home/docker_user/volumes/ol7_183_ords_db
-
 # As root user.
 groupadd -g 1042 docker_fg
 chown -R :docker_fg /home/docker_user/volumes

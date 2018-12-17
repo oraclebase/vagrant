@@ -40,14 +40,21 @@ systemctl status docker.service
 echo "******************************************************************************"
 echo "Create non-root docker user." `date`
 echo "******************************************************************************"
-useradd docker_user
+groupadd -g 1042 docker_fg
+useradd -G docker_fg docker_user
+mkdir -p /home/docker_user/volumes/ol7_183_ords_tomcat
+mkdir -p /home/docker_user/volumes/ol7_183_ords_db
+chown -R docker_user:docker_fg /home/docker_user/volumes
+chmod -R 775 /home/docker_user/volumes
+chmod -R g+s /home/docker_user/volumes
+
 echo "docker_user  ALL=(ALL)  NOPASSWD: /usr/bin/docker" >> /etc/sudoers
 echo "alias docker=\"sudo /usr/bin/docker\"" >> /home/docker_user/.bash_profile
 
 echo "******************************************************************************"
 echo "Configure docker-compose." `date`
 echo "******************************************************************************"
-curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 echo "docker_user  ALL=(ALL)  NOPASSWD: /usr/local/bin/docker-compose" >> /etc/sudoers
 echo "alias docker-compose=\"sudo /usr/local/bin/docker-compose\"" >> /home/docker_user/.bash_profile
