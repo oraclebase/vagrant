@@ -53,7 +53,7 @@ usermod -aG docker_fg docker_user
 # Start application.
 
 cd ~/dockerfiles/compose/ol7_183_ords
-docker-compose rm -vf
+docker-compose rm -vfs
 docker-compose up
 
 #cd ~/dockerfiles/compose/ol7_122_ords
