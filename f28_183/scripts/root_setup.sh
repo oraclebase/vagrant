@@ -149,7 +149,7 @@ chown -R oracle.oinstall ${SCRIPTS_DIR} /u01 /u02
 
 
 echo "******************************************************************************"
-echo "Copy software ans scripts from the vagrant directory." `date`
+echo "Copy software and scripts from the vagrant directory." `date`
 echo "******************************************************************************" 
 cp -f /vagrant/scripts/* ${SOFTWARE_DIR}
 cp -f /vagrant/software/* ${SOFTWARE_DIR}
