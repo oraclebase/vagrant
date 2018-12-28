@@ -10,3 +10,5 @@ wget https://yum.oracle.com/public-yum-ol7.repo
 yum install -y yum-utils zip unzip
 yum install -y oracle-database-preinstall-18c
 #yum update -y
+#yum groupinstall -y "Server with GUI"
+#systemctl set-default graphical.target
