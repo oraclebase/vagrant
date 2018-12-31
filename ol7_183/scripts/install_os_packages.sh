@@ -9,6 +9,16 @@ wget https://yum.oracle.com/public-yum-ol7.repo
 
 yum install -y yum-utils zip unzip
 yum install -y oracle-database-preinstall-18c
+
+# Configure rlwrap for SQL*PLus command history.
+yum-config-manager --enable ol7_developer_EPEL
+yum install -y rlwrap
+
+cat >> /home/oracle/.bash_profile <<EOF
+alias sqlplus='rlwrap sqlplus'
+alias rman='rlwrap rman'
+EOF
+
 #yum update -y
 #yum groupinstall -y "Server with GUI"
 #systemctl set-default graphical.target
