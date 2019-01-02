@@ -116,6 +116,8 @@ cd ../node2
 vagrant up
 ```
 
+Ignore the final "default: Host key verification failed." message at the end. That's fine.
+
 Start the first node of the cluster. This will perform all of the installations operations. Depending on the spec of the host system, this could take a long time. On one of my servers it took about 3.5 hours to complete.
 
 ```
