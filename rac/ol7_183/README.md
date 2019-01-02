@@ -8,6 +8,12 @@ If you need a more detailed description of this build, check out the article her
 
 ## Required Software
 
+I've completed RAC installations using this method on the following host operating systems.
+
+* Windows 10
+* Oracle Linux 7
+* macOS Mojave
+
 Download and install the following software. If you can't figure out this step, you probably shouldn't be considering a RAC installation.
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -18,6 +24,36 @@ You will also need to download the 18c grid and database software.
 
 * [LINUX.X64_180000_grid_home.zip](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle18c-linux-180000-5022980.html)
 * [LINUX.X64_180000_db_home.zip](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle18c-linux-180000-5022980.html)
+
+## Warning
+
+This installation requires a lot of memory. The default settings require a total of 21G RAM just for the VMs, not including the memory for the host system.
+
+```
+dns:
+  mem_size: 1024
+
+node1:
+  mem_size: 10240
+
+node2:
+  mem_size: 10240
+```
+
+The smallest system I've completed this on had 16G RAM, with the VM memory settings as follows and nothing else running.
+
+```
+dns:
+  mem_size: 1024
+
+node1:
+  mem_size: 7168
+
+node2:
+  mem_size: 6144
+```
+
+If you try less memory, don't be surprised if it fails.
 
 ## Clone Repository
 
