@@ -80,7 +80,7 @@ $
 
 The "config" directory contains a "install.env" and a "vagrant.yml" file. The combination of these two files contain all the config used for this build. You can alter the configuration of the build here, but remember to make sure the combination of the two stay consistent.
 
-At minimum you will have to amend the following paths in the "vagrant.yml" file, providing suitable paths for the shared disks.
+You may want to amend the following paths in the "vagrant.yml" file, providing suitable paths for the shared disks.
 
 ```
   asm_disk_1: /u05/VirtualBox/shared/ol7_122_rac/asm_disk_1.vdi
@@ -97,6 +97,8 @@ For example, if you were working on a Windows PC, you might create a path called
   asm_disk_3: C:\VirtualBox\shared\ol7_122_rac\asm_disk_3.vdi
   asm_disk_4: C:\VirtualBox\shared\ol7_122_rac\asm_disk_4.vdi
 ```
+
+If you don't alter them, they will get written to "C:\u05\VirtualBox\shared\ol7_122_rac".
 
 ## Build the RAC
 
@@ -154,3 +156,5 @@ vagrant destroy -f
 cd dns
 vagrant destroy -f
 ```
+
+Check all the shared disks have been removed as expected. If they are left behind they will be reused, which will cause problems.

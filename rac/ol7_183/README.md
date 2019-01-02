@@ -97,6 +97,8 @@ For example, if you were working on a Windows PC, you might create a path called
   asm_disk_4: C:\VirtualBox\shared\ol7_183_rac\asm_disk_4.vdi
 ```
 
+If you don't alter them, they will get written to "C:\u05\VirtualBox\shared\ol7_183_rac".
+
 ## Build the RAC
 
 The following commands will leave you with a functioning RAC installation.
@@ -153,3 +155,5 @@ vagrant destroy -f
 cd dns
 vagrant destroy -f
 ```
+
+Check all the shared disks have been removed as expected. If they are left behind they will be reused, which will cause problems.
