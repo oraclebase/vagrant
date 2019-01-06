@@ -1,4 +1,4 @@
-sh /vagrant/scripts/prepare_u01_disk.sh
+sh /vagrant/scripts/prepare_u01_u02_disks.sh
 
 echo "******************************************************************************"
 echo "Prepare dnf with the latest repos." `date`
