@@ -11,7 +11,7 @@ export TMPDIR=\$TMP
 export ORACLE_HOSTNAME=`hostname`
 export ORACLE_UNQNAME=cdb1
 export ORACLE_BASE=/u01/app/oracle
-export ORACLE_HOME=\$ORACLE_BASE/product/18.0.1/dbhome_1
+export ORACLE_HOME=\$ORACLE_BASE/product/18.0.0/dbhome_1
 export ORACLE_SID=cdb1
 
 export PATH=/usr/sbin:/usr/local/bin:\$PATH
