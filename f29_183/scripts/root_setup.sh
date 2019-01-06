@@ -59,7 +59,7 @@ dnf install -y unixODBC
 # New for F29
 dnf install -y libnsl2
 dnf install -y libnsl2.i686
-dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.28.9000-27.fc30.x86_64.rpm
+dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.28.9000-28.fc30.x86_64.rpm
 
 #dnf update -y
 
