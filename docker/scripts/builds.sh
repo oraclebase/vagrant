@@ -5,10 +5,10 @@ echo "export JAVA_HOME=/home/docker_user/java/latest" >> ~/.bash_profile
 echo "alias sql=\"/home/docker_user/sqlcl/bin/sql\"" >> ~/.bash_profile
 
 cd ~
-unzip -oq /vagrant/software/sqlcl-18.3.0.259.2029.zip
+unzip -oq /vagrant/software/sqlcl-18.4.0.007.1818.zip
 mkdir ~/java
 cd ~/java
-tar -xf /vagrant/software/openjdk-11.0.1_linux-x64_bin.tar.gz
+tar -xf /vagrant/software/openjdk-11.0.2_linux-x64_bin.tar.gz
 ln -s ./j* ./latest
 cd ~
 unzip -oq /vagrant/software/autorest_demo.zip
@@ -17,9 +17,9 @@ unzip -oq /vagrant/software/autorest_demo.zip
 cd ~/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_18.2_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.14.tar.gz .
-cp /vagrant/software/ords-18.3.0.270.1456.zip .
-cp /vagrant/software/sqlcl-18.3.0.259.2029.zip .
-cp /vagrant/software/openjdk-11.0.1_linux-x64_bin.tar.gz .
+cp /vagrant/software/ords-18.4.0.354.1002.zip .
+cp /vagrant/software/sqlcl-18.4.0.007.1818.zip .
+cp /vagrant/software/openjdk-11.0.2_linux-x64_bin.tar.gz .
 cd ~/dockerfiles/ords/ol7_ords
 docker build --squash -t ol7_ords:latest .
 
@@ -52,9 +52,32 @@ usermod -aG docker_fg docker_user
 
 # Start application.
 
+# Compose
 cd ~/dockerfiles/compose/ol7_183_ords
 docker-compose rm -vfs
 docker-compose up
 
 #cd ~/dockerfiles/compose/ol7_122_ords
 #docker-compose up
+
+
+# Swarm
+docker swarm init
+cd ~/dockerfiles/swarm/ol7_183_ords
+docker stack deploy --compose-file ./docker-stack.yml ords-stack
+
+docker stack ls
+docker service ls
+docker stack ps ords-stack
+docker ps -a
+
+docker service scale ords-stack_ords=5
+docker stack ps ords-stack
+
+docker service scale ords-stack_ords=2
+docker stack ps ords-stack
+
+docker stack rm ords-stack
+docker stack ps ords-stack
+
+docker swarm leave -f
