@@ -7,8 +7,10 @@ var_vm_name        = 'docker_vagrant'
 var_mem_size       = 6144  # More would be better.
 var_cpus           = 2
 var_non_rotational = 'on' # SSD
-var_disk_name      = './docker-images.vdi'
-var_disk_size      = 100
+var_disk1_name      = './docker-u01.vdi'
+var_disk1_size      = 100
+var_disk2_name      = './docker-images.vdi'
+var_disk2_size      = 150
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -70,10 +72,15 @@ Vagrant.configure("2") do |config|
     
     vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', '0', '--nonrotational', var_non_rotational]
 
-    unless File.exist?(var_disk_name)
-      vb.customize ['createhd', '--filename', var_disk_name, '--size', var_disk_size * 1024]
+    unless File.exist?(var_disk1_name)
+      vb.customize ['createhd', '--filename', var_disk1_name, '--size', var_disk1_size * 1024]
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--nonrotational', var_non_rotational, '--medium', var_disk_name]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--nonrotational', var_non_rotational, '--medium', var_disk1_name]
+
+    unless File.exist?(var_disk2_name)
+      vb.customize ['createhd', '--filename', var_disk2_name, '--size', var_disk2_size * 1024]
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--nonrotational', var_non_rotational, '--medium', var_disk2_name]
  end
 
   #

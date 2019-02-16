@@ -1,3 +1,5 @@
+sh /vagrant/scripts/prepare_u01_disk.sh
+
 echo "******************************************************************************"
 echo "Prepare Yum with the latest repos." `date`
 echo "******************************************************************************"
@@ -21,9 +23,9 @@ echo "**************************************************************************
 echo "Prepare the drive for the docker images." `date`
 echo "******************************************************************************"
 ls /dev/sd*
-echo -e "n\np\n\n\n\nw" | fdisk /dev/sdb
+echo -e "n\np\n\n\n\nw" | fdisk /dev/sdc
 ls /dev/sd*
-docker-storage-config -s btrfs -d /dev/sdb1
+docker-storage-config -s btrfs -d /dev/sdc1
 
 echo "******************************************************************************"
 echo "Enable experimental features." `date`
@@ -42,11 +44,11 @@ echo "Create non-root docker user." `date`
 echo "******************************************************************************"
 groupadd -g 1042 docker_fg
 useradd -G docker_fg docker_user
-mkdir -p /home/docker_user/volumes/ol7_183_ords_tomcat
-mkdir -p /home/docker_user/volumes/ol7_183_ords_db
-chown -R docker_user:docker_fg /home/docker_user/volumes
-chmod -R 775 /home/docker_user/volumes
-chmod -R g+s /home/docker_user/volumes
+mkdir -p /u01/volumes/ol7_183_ords_tomcat
+mkdir -p /u01/volumes/ol7_183_ords_db
+chown -R docker_user:docker_fg /u01
+chmod -R 775 /u01
+chmod -R g+s /u01
 
 echo "docker_user  ALL=(ALL)  NOPASSWD: /usr/bin/docker" >> /etc/sudoers
 echo "alias docker=\"sudo /usr/bin/docker\"" >> /home/docker_user/.bash_profile
