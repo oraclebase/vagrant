@@ -50,6 +50,10 @@ chown -R docker_user:docker_fg /u01
 chmod -R 775 /u01
 chmod -R g+s /u01
 
+# Add users so host reports process ownership properly. Not required.
+useradd -u 500 oracle
+useradd -u 501 tomcat
+
 echo "docker_user  ALL=(ALL)  NOPASSWD: /usr/bin/docker" >> /etc/sudoers
 echo "alias docker=\"sudo /usr/bin/docker\"" >> /home/docker_user/.bash_profile
 
