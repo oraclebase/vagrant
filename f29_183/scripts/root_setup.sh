@@ -59,7 +59,7 @@ dnf install -y unixODBC
 # New for F29
 dnf install -y libnsl2
 dnf install -y libnsl2.i686
-dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.28.9000-28.fc30.x86_64.rpm
+dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.29-7.fc30.x86_64.rpm
 
 #dnf update -y
 
@@ -160,7 +160,7 @@ chown -R oracle.oinstall ${SCRIPTS_DIR} /u01 /u02
 
 
 echo "******************************************************************************"
-echo "Copy software ans scripts from the vagrant directory." `date`
+echo "Copy software and scripts from the vagrant directory." `date`
 echo "******************************************************************************" 
 cp -f /vagrant/scripts/* ${SOFTWARE_DIR}
 cp -f /vagrant/software/* ${SOFTWARE_DIR}
