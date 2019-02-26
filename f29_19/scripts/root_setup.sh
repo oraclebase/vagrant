@@ -15,7 +15,7 @@ yum install -y compat-libstdc++-33
 #yum install -y dtrace-modules
 #yum install -y dtrace-modules-headers
 #yum install -y dtrace-modules-provider-headers
-yum install -y dtrace-utils
+#yum install -y dtrace-utils
 yum install -y elfutils-libelf
 yum install -y elfutils-libelf-devel
 yum install -y fontconfig-devel
@@ -24,7 +24,7 @@ yum install -y glibc-devel
 yum install -y ksh
 yum install -y libaio
 yum install -y libaio-devel
-yum install -y libdtrace-ctf-devel
+#yum install -y libdtrace-ctf-devel
 yum install -y libXrender
 yum install -y libXrender-devel
 yum install -y libX11
@@ -154,7 +154,7 @@ chown -R oracle.oinstall ${SCRIPTS_DIR} /u01 /u02
 
 
 echo "******************************************************************************"
-echo "Copy software ans scripts from the vagrant directory." `date`
+echo "Copy software and scripts from the vagrant directory." `date`
 echo "******************************************************************************" 
 cp -f /vagrant/scripts/* ${SOFTWARE_DIR}
 cp -f /vagrant/software/* ${SOFTWARE_DIR}
