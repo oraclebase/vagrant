@@ -24,11 +24,17 @@ cd /u01/dockerfiles/ords/ol7_ords
 docker build --squash -t ol7_ords:latest .
 
 # Copy database software and do build.
+cd /u01/dockerfiles/database/ol7_19/software
+cp /vagrant/software/V981623-01.zip .
+cp /vagrant/software/apex_18.2_en.zip .
+cd /u01/dockerfiles/database/ol7_19
+docker build --squash -t ol7_19:latest .
+
 cd /u01/dockerfiles/database/ol7_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
 cp /vagrant/software/apex_18.2_en.zip .
 cd /u01/dockerfiles/database/ol7_183
-docker build --squash -t ol7_183:latest .
+#docker build --squash -t ol7_183:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_122/software
@@ -48,6 +54,8 @@ cd /u01/dockerfiles/database/ol7_121
 # with docker host volumes.
 
 # This setup is now in the root_setup.sh
+mkdir -p /u01/volumes/ol7_19_ords_tomcat
+mkdir -p /u01/volumes/ol7_19_ords_db
 mkdir -p /u01/volumes/ol7_183_ords_tomcat
 mkdir -p /u01/volumes/ol7_183_ords_db
 # As root user.
@@ -60,9 +68,13 @@ usermod -aG docker_fg docker_user
 # Start application.
 
 # Compose
-cd /u01/dockerfiles/compose/ol7_183_ords
+cd /u01/dockerfiles/compose/ol7_19_ords
 docker-compose rm -vfs
 docker-compose up
+
+#cd /u01/dockerfiles/compose/ol7_183_ords
+#docker-compose rm -vfs
+#docker-compose up
 
 #cd /u01/dockerfiles/compose/ol7_122_ords
 #docker-compose up
@@ -70,7 +82,7 @@ docker-compose up
 
 # Swarm
 docker swarm init
-cd /u01/dockerfiles/swarm/ol7_183_ords
+cd /u01/dockerfiles/swarm/ol7_19_ords
 docker stack deploy --compose-file ./docker-stack.yml ords-stack
 
 docker stack ls
