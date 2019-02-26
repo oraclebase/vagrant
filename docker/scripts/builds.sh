@@ -61,8 +61,8 @@ mkdir -p /u01/volumes/ol7_183_ords_db
 # As root user.
 groupadd -g 1042 docker_fg
 chown -R :docker_fg /u01
-chmod -R 775 /u01
-chmod -R g+s /u01
+chmod -R 775 /u01/volumes
+chmod -R g+s /u01/volumes
 usermod -aG docker_fg docker_user
 
 # Start application.
