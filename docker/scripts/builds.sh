@@ -16,7 +16,7 @@ unzip -oq /vagrant/software/autorest_demo.zip
 # Copy ORDS software and do build.
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_18.2_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.14.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.16.tar.gz .
 cp /vagrant/software/ords-18.4.0.354.1002.zip .
 cp /vagrant/software/sqlcl-18.4.0.007.1818.zip .
 cp /vagrant/software/openjdk-11.0.2_linux-x64_bin.tar.gz .
