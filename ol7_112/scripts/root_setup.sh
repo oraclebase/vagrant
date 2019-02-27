@@ -4,7 +4,8 @@ echo "**************************************************************************
 echo "Set up environment for one-off actions." `date`
 echo "******************************************************************************"
 export ORACLE_BASE=/u01/app/oracle
-export ORACLE_HOME=${ORACLE_BASE}/product/11.2.0.1/db_1
+#export ORACLE_HOME=${ORACLE_BASE}/product/11.2.0.1/db_1
+export ORACLE_HOME=${ORACLE_BASE}/product/11.2.0.4/db_1
 export SOFTWARE_DIR=/u01/software
 export ORA_INVENTORY=/u01/app/oraInventory
 export SCRIPTS_DIR=/home/oracle/scripts
