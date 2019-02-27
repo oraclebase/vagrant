@@ -15,9 +15,9 @@ mv ${TEMP_FILE}/* .
 rmdir ${TEMP_FILE}
 mkdir -p ${ORDS_CONF}
 cd ${ORDS_HOME}
-unzip ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
+unzip -oq ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
 cd /u01
-unzip ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}
+unzip -oq ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}
 cd ${SOFTWARE_DIR}
 rm -Rf ${CATALINA_HOME}/webapps/*
 mkdir -p ${CATALINA_HOME}/webapps/i/

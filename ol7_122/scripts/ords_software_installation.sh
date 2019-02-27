@@ -23,10 +23,10 @@ cp -r ${CATALINA_HOME}/work $CATALINA_BASE
 # ORDS
 mkdir -p ${ORDS_CONF}
 cd ${ORDS_HOME}
-unzip ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
+unzip -oq ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
 # SQLcl
 cd /u01
-unzip ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}
+unzip -oq ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}
 cd ${SOFTWARE_DIR}
 # APEX Images
 rm -Rf ${CATALINA_BASE}/webapps/*
