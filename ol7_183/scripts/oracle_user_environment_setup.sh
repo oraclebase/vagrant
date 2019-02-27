@@ -41,7 +41,7 @@ export INSTALL_APEX="true"
 
 # ORDS installation settings.
 export JAVA_SOFTWARE="openjdk-11.0.2_linux-x64_bin.tar.gz"
-export TOMCAT_SOFTWARE="apache-tomcat-9.0.14.tar.gz"
+export TOMCAT_SOFTWARE="apache-tomcat-9.0.16.tar.gz"
 export ORDS_SOFTWARE="ords-18.4.0.354.1002.zip"
 export APEX_SOFTWARE="apex_18.2_en.zip"
 export SQLCL_SOFTWARE="sqlcl-18.4.0.007.1818.zip"
