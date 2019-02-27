@@ -49,9 +49,9 @@ export SOFTWARE_DIR="/u01/software"
 export KEYSTORE_DIR="/u01/keystore"
 export ORDS_HOME="/u01/ords"
 export ORDS_CONF="/u01/ords/conf"
-export JAVA_HOME="/u01/java"
-export CATALINA_HOME="/u01/tomcat"
-export CATALINA_BASE=\$CATALINA_HOME
+export JAVA_HOME="/u01/java/latest"
+export CATALINA_HOME="/u01/tomcat/latest"
+export CATALINA_BASE="/u01/config/instance1"
 
 export DB_PORT="1521"
 export DB_SERVICE="pdb1"
