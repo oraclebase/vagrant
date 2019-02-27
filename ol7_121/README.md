@@ -34,13 +34,13 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.12.tar.gz
+|   +--- apache-tomcat-9.0.16.tar.gz
 |   +--- apex_18.2_en.zip
 |   +--- linuxx64_12201_database.zip
-|   +--- openjdk-11_linux-x64_bin.tar.gz
-|   +--- ords-18.3.0.270.1456.zip
+|   +--- openjdk-11.0.2_linux-x64_bin.tar.gz
+|   +--- ords-18.4.0.354.1002.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-18.3.0.259.2029.zip
+|   +--- sqlcl-18.4.0.007.1818.zip
 +--- Vagrantfile
 $
 ```
