@@ -11,6 +11,7 @@ echo -e "${ROOT_PASSWORD}\n${ROOT_PASSWORD}" | passwd
 echo -e "${ORACLE_PASSWORD}\n${ORACLE_PASSWORD}" | passwd oracle
 chown -R oracle:oinstall /u01
 chmod -R 775 /u01
+usermod -aG vagrant oracle
 
 sh /vagrant_scripts/configure_hosts_base.sh
 
