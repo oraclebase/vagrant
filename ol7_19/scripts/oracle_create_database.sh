@@ -96,7 +96,7 @@ EOF
     echo " Unzip APEX software." `date`
     echo "******************************************************************************"
     cd ${SOFTWARE_DIR}
-    unzip ${APEX_SOFTWARE}
+    unzip -oq ${APEX_SOFTWARE}
     cd apex
 
 
