@@ -10,7 +10,7 @@ A simple Vagrant build for Oracle Database 18.3 on Oracle Linux 7.
 * [Oracle REST Data Services (ORDS)](https://www.oracle.com/technetwork/developer-tools/rest-data-services/downloads/index.html)
 * [Oracle SQLcl](https://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html)
 * [Oracle Application Express (APEX)](https://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html)
-* [OpenJDK 11](http://jdk.java.net/11/)
+* [OpenJDK 12](http://jdk.java.net/12/)
 * [Tomcat 9](https://tomcat.apache.org/download-90.cgi)
 
 Place the software in the "software" directory before calling the `vagrant up` command.
