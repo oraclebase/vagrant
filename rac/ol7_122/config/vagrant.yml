@@ -15,7 +15,7 @@ dns:
 
 node1:
   vm_name: ol7_122_rac1
-  mem_size: 10240
+  mem_size: 14336
   cpus: 2
   public_ip: 192.168.56.101
   private_ip: 192.168.1.101
@@ -23,8 +23,14 @@ node1:
 
 node2:
   vm_name: ol7_122_rac2
-  mem_size: 10240
+  mem_size: 12288
   cpus: 2
   public_ip: 192.168.56.102
   private_ip: 192.168.1.102
   u01_disk: ./ol7_122_rac2_u01.vdi
+
+client:
+  vm_name: ol7_122_client
+  mem_size: 1024
+  cpus: 1
+  public_ip: 192.168.56.110
