@@ -17,8 +17,8 @@ unzip -oq /vagrant/software/autorest_demo.zip
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_19.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.17.tar.gz .
-cp /vagrant/software/ords-18.4.0.354.1002.zip .
-cp /vagrant/software/sqlcl-18.4.0.007.1818.zip .
+cp /vagrant/software/ords-19.1.0.092.1545.zip .
+cp /vagrant/software/sqlcl-19.1.0.094.1619.zip .
 cp /vagrant/software/openjdk-12_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
 docker build --squash -t ol7_ords:latest .
