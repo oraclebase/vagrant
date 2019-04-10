@@ -38,9 +38,9 @@ $ tree
 |   +--- apex_19.1_en.zip
 |   +--- linuxx64_12201_database.zip
 |   +--- openjdk-12_linux-x64_bin.tar.gz
-|   +--- ords-18.4.0.354.1002.zip
+|   +--- ords-19.1.0.092.1545.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-18.4.0.007.1818.zip
+|   +--- sqlcl-19.1.0.094.1619.zip
 +--- Vagrantfile
 $
 ```

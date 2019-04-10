@@ -38,9 +38,9 @@ $ tree
 |   +--- p13390677_112040_Linux-x86-64_1of7.zip
 |   +--- p13390677_112040_Linux-x86-64_2of7.zip
 |   +--- openjdk-12_linux-x64_bin.tar.gz
-|   +--- ords-18.4.0.354.1002.zip
+|   +--- ords-19.1.0.092.1545.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-18.4.0.007.1818.zip
+|   +--- sqlcl-19.1.0.094.1619.zip
 +--- Vagrantfile
 $
 ```
