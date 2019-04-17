@@ -34,10 +34,10 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.17.tar.gz
+|   +--- apache-tomcat-9.0.19.tar.gz
 |   +--- apex_19.1_en.zip
 |   +--- linuxx64_12201_database.zip
-|   +--- openjdk-12_linux-x64_bin.tar.gz
+|   +--- openjdk-12.0.1_linux-x64_bin.tar.gz
 |   +--- ords-19.1.0.092.1545.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-19.1.0.094.1619.zip
