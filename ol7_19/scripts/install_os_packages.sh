@@ -8,7 +8,7 @@ rm -f public-yum-ol7.repo
 wget https://yum.oracle.com/public-yum-ol7.repo
 
 yum install -y yum-utils zip unzip
-yum install -y oracle-database-preinstall-18c
+yum install -y oracle-database-preinstall-19c
 
 # Configure rlwrap for SQL*PLus command history.
 yum-config-manager --enable ol7_developer_EPEL
