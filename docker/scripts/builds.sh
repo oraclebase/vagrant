@@ -25,7 +25,7 @@ docker build --squash -t ol7_ords:latest .
 
 # Copy database software and do build.
 cd /u01/dockerfiles/database/ol7_19/software
-cp /vagrant/software/V981623-01.zip .
+cp /vagrant/software/LINUX.X64_193000_db_home.zip .
 cp /vagrant/software/apex_19.1_en.zip .
 cd /u01/dockerfiles/database/ol7_19
 docker build --squash -t ol7_19:latest .
