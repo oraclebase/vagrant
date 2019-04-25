@@ -6,7 +6,7 @@ A simple Vagrant build for Oracle Database 19c on Oracle Linux 7.
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [Oracle Database](https://edelivery.oracle.com/)
+* [Oracle Database](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle19c-linux-5462157.html)
 * [Oracle REST Data Services (ORDS)](https://www.oracle.com/technetwork/developer-tools/rest-data-services/downloads/index.html)
 * [Oracle SQLcl](https://www.oracle.com/technetwork/developer-tools/sqlcl/downloads/index.html)
 * [Oracle Application Express (APEX)](https://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html)
@@ -36,11 +36,11 @@ $ tree
 +--- software
 |   +--- apache-tomcat-9.0.19.tar.gz
 |   +--- apex_19.1_en.zip
+|   +--- LINUX.X64_193000_db_home.zip
 |   +--- openjdk-12.0.1_linux-x64_bin.tar.gz
 |   +--- ords-19.1.0.092.1545.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-19.1.0.094.1619.zip
-|   +--- V981623-01.zip
 +--- Vagrantfile
 $
 ```

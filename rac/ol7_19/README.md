@@ -22,8 +22,8 @@ Download and install the following software. If you can't figure out this step, 
 
 You will also need to download the 19c grid and database software.
 
-* [Grid : V981627-01.zip](https://edelivery.oracle.com/)
-* [Database : V981623-01.zip](https://edelivery.oracle.com/)
+* [Grid : LINUX.X64_193000_grid_home.zip](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle19c-linux-5462157.html)
+* [Database : LINUX.X64_193000_db_home.zip](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle19c-linux-5462157.html)
 
 ## Warning
 
@@ -86,8 +86,8 @@ $ tree
 |   |   |-- root_setup.sh
 |   |   `-- setup.sh
 |   |-- software
-|   |   |-- V981623-01.zip
-|   |   |-- V981627-01.zip
+|   |   |-- LINUX.X64_193000_db_home.zip
+|   |   |-- LINUX.X64_193000_grid_home.zip
 |   |   `-- put_software_here.txt
 |   `-- Vagrantfile
 |-- node2
