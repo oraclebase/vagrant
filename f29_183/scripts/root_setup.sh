@@ -84,7 +84,7 @@ fs.aio-max-nr = 1048576
 net.ipv4.ip_local_port_range = 9000 65500
 EOF
 
-/sbin/sysctl -p
+/sbin/sysctl -p /etc/sysctl.d/98-oracle.conf
 
 
 echo "******************************************************************************"

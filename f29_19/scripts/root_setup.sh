@@ -78,13 +78,13 @@ fs.aio-max-nr = 1048576
 net.ipv4.ip_local_port_range = 9000 65500
 EOF
 
-/sbin/sysctl -p
+/sbin/sysctl -p /etc/sysctl.d/98-oracle.conf
 
 
 echo "******************************************************************************"
 echo "Limits." `date`
 echo "******************************************************************************"
-cat > /etc/security/limits.d/oracle-database-server-18c-preinstall.conf <<EOF
+cat > /etc/security/limits.d/oracle-database-server-19c-preinstall.conf <<EOF
 oracle   soft   nofile    1024
 oracle   hard   nofile    65536
 oracle   soft   nproc    16384
