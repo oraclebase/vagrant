@@ -115,7 +115,7 @@
                maxThreads="250" scheme="https" secure="true"
                keystoreFile="###KEYSTORE_DIR###/keystore.jks"
                keystorePass="###KEYSTORE_PASSWORD###"
-               clientAuth="false" sslProtocol="TLSv1.2"
+               clientAuth="false" sslProtocol="TLS" sslEnabledProtocols="TLSv1.2"
                URIEncoding="UTF-8"
                />
                <!--
