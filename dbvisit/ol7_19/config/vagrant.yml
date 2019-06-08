@@ -1,0 +1,23 @@
+shared:
+  box: bento/oracle-7.6
+  non_rotational: 'on'
+
+node1:
+  vm_name: ol7_19_dbv1
+  mem_size: 4096
+  cpus: 2
+  public_ip: 192.168.56.101
+  u01_disk: ./ol7_19_dbv1_u01.vdi
+
+node2:
+  vm_name: ol7_19_dbv2
+  mem_size: 4096
+  cpus: 2
+  public_ip: 192.168.56.102
+  u01_disk: ./ol7_19_dbv2_u01.vdi
+
+console:
+  vm_name: ol7_19_console
+  mem_size: 1024
+  cpus: 1
+  public_ip: 192.168.56.103
