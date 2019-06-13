@@ -13,10 +13,13 @@ ln -s ./j* ./latest
 cd ~
 unzip -oq /vagrant/software/autorest_demo.zip
 
+# Get latest oraclelinux:7-slim
+docker pull oraclelinux:7-slim
+
 # Copy ORDS software and do build.
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_19.1_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.19.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.21.tar.gz .
 cp /vagrant/software/ords-19.1.0.092.1545.zip .
 cp /vagrant/software/sqlcl-19.1.0.094.1619.zip .
 cp /vagrant/software/openjdk-12.0.1_linux-x64_bin.tar.gz .
