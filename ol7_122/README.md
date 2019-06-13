@@ -34,7 +34,7 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.19.tar.gz
+|   +--- apache-tomcat-9.0.21.tar.gz
 |   +--- apex_19.1_en.zip
 |   +--- linuxx64_12201_database.zip
 |   +--- openjdk-12.0.1_linux-x64_bin.tar.gz
