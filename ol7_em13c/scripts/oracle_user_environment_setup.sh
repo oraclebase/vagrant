@@ -1,22 +1,24 @@
 echo "******************************************************************************"
 echo "Create environment script." `date`
 echo "******************************************************************************"
+mkdir -p /home/oracle/scripts
+
 cat > /home/oracle/scripts/setEnv.sh <<EOF
 # Regular settings.
 export TMP=/u01/tmp
-export TMPDIR=\$TMP
+export TMPDIR=\${TMP}
 
-export ORACLE_HOSTNAME=ol7-emcc.localdomain
+export ORACLE_HOSTNAME=${HOSTNAME}
 export ORACLE_UNQNAME=emcdb
 export ORACLE_BASE=/u01/app/oracle
-export ORACLE_HOME=\$ORACLE_BASE/product/18.0.0/dbhome_1
+export ORACLE_HOME=\${ORACLE_BASE}/product/18.0.0/dbhome_1
 export ORACLE_SID=emcdb
 
-export PATH=/usr/sbin:/usr/local/bin:\$PATH
-export PATH=\$ORACLE_HOME/bin:\$PATH
+export PATH=/usr/sbin:/usr/local/bin:\${PATH}
+export PATH=\${ORACLE_HOME}/bin:\${PATH}
 
-export LD_LIBRARY_PATH=\$ORACLE_HOME/lib:/lib:/usr/lib
-export CLASSPATH=\$ORACLE_HOME/jlib:\$ORACLE_HOME/rdbms/jlib
+export LD_LIBRARY_PATH=\${ORACLE_HOME}/lib:/lib:/usr/lib
+export CLASSPATH=\${ORACLE_HOME}/jlib:\${ORACLE_HOME}/rdbms/jlib
 
 export ORA_INVENTORY=/u01/app/oraInventory
 
@@ -32,6 +34,21 @@ export SYS_PASSWORD="SysPassword1"
 export PDB_NAME="emrep"
 export PDB_PASSWORD="PdbPassword1"
 export DATA_DIR=/u01/oradata
+
+# EM settings.
+export UNIX_GROUP_NAME=oinstall
+export MW_HOME=\${ORACLE_BASE}/middleware
+export OMS_HOME=\${ORACLE_BASE}/oms
+export GC_INST=\${ORACLE_BASE}/gc_inst
+export AGENT_HOME=\${ORACLE_BASE}/agent
+export WLS_USERNAME=weblogic
+export WLS_PASSWORD=Welcome1
+export SYSMAN_PASSWORD=\${WLS_PASSWORD}
+export AGENT_PASSWORD=\${WLS_PASSWORD}
+export SOFTWARE_LIBRARY=\${ORACLE_BASE}/swlib
+export DATABASE_HOSTNAME=localhost
+export LISTENER_PORT=1521
+
 EOF
 
 

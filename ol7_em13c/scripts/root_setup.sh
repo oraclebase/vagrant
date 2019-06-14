@@ -13,6 +13,8 @@ export ORA_INVENTORY=/u01/app/oraInventory
 export SCRIPTS_DIR=/home/oracle/scripts
 export DATA_DIR=/u01/oradata
 export ORACLE_PASSWORD="oracle"
+export MW_HOME=${ORACLE_BASE}/middleware
+export PUBLIC_IP_ADDRESS=`ip addr show eth1 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1`
 
 mkdir -p ${SCRIPTS_DIR}
 mkdir -p ${SOFTWARE_DIR}
@@ -24,7 +26,7 @@ echo "**************************************************************************
 echo "Set the hostname." `date`
 echo "******************************************************************************"
 cat >> /etc/hosts <<EOF
-127.0.0.1  ${ORACLE_HOSTNAME}
+${PUBLIC_IP_ADDRESS}  ${ORACLE_HOSTNAME}
 EOF
 
 cat > /etc/hostname <<EOF
@@ -62,3 +64,12 @@ echo "**************************************************************************
 echo "Create the database." `date`
 echo "******************************************************************************"
 su - oracle -c '/u01/software/oracle_create_database.sh'
+
+su - oracle -c '/u01/software/em_install.sh'
+
+echo "******************************************************************************"
+echo "Run allroot.sh." `date`
+echo "******************************************************************************"
+sh ${MW_HOME}/allroot.sh
+
+su - oracle -c '/u01/software/em_config.sh'

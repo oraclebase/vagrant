@@ -65,12 +65,12 @@ if [ ! -d ${DATA_DIR}/${ORACLE_SID} ]; then
     -totalMemory 2048                                                          \
     -storageType FS                                                            \
     -datafileDestination "${DATA_DIR}"                                         \
-    -redoLogFileSize 50                                                        \
+    -redoLogFileSize 600                                                       \
     -emConfiguration NONE                                                      \
     -ignorePreReqs
 
   echo "******************************************************************************"
-  echo "Set the PDB to auto-start." `date`
+  echo "Set the PDB to auto-start and fix parameters." `date`
   echo "******************************************************************************"
   sqlplus / as sysdba <<EOF
 alter system set db_create_file_dest='${DATA_DIR}';
@@ -80,8 +80,22 @@ alter system set local_listener='LISTENER';
 -- Recommended settings.
 alter system set "_allow_insert_with_update_check"=true scope=both;
 alter system set session_cached_cursors=200 scope=spfile;
-alter system set sga_target=800M scope=both;
-alter system set pga_aggregate_target=450M scope=both;
+
+-- Recommended: processes=600
+alter system set processes=600 scope=spfile;
+
+-- Recommended: pga_aggregate_target=1G
+alter system set pga_aggregate_target=450M scope=spfile;
+
+-- Recommended: sga_target=3G
+alter system set sga_target=800M scope=spfile;
+
+-- Recommended: shared_pool_size=600M
+--alter system set shared_pool_size=600M scope=spfile;
+
+SHUTDOWN IMMEDIATE;
+STARTUP;
+
 exit;
 EOF
 
@@ -93,9 +107,4 @@ EOF
   sed -i -e "s|${ORACLE_SID}:${ORACLE_HOME}:N|${ORACLE_SID}:${ORACLE_HOME}:Y|g" /tmp/oratab
   cp -f /tmp/oratab /etc/oratab
 
-
-  mkdir -p /u01/app/oracle/middleware
-  mkdir -p /u01/app/oracle/agent
-  
-  # You are now ready to run /vagrant/software/em13300_linux64.bin
 fi
