@@ -1,6 +1,6 @@
 # Oracle Enterprise Manager Cloud Control 13.3.
 
-A simple Vagrant build for Oracle Database 18c on Oracle Linux 7 in preparation for a manual Enterprise Manager Cloud Control 13.3 installation.
+A simple Vagrant build of Enterprise Manager Cloud Control 13.3 on Oracle Database 18c.
 
 ## Required Software
 
