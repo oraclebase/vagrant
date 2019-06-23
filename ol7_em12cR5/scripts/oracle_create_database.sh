@@ -87,7 +87,7 @@ alter system set processes=600 scope=spfile;
 -- Recommended: pga_aggregate_target=1G
 alter system set pga_aggregate_target=450M scope=spfile;
 
--- Recommended: sga_target=3G
+-- Recommended: sga_target=2G
 alter system set sga_target=800M scope=spfile;
 
 -- Recommended: shared_pool_size=600M
