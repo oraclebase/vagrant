@@ -70,6 +70,7 @@ su - oracle -c '/u01/software/em_install.sh'
 echo "******************************************************************************"
 echo "Run allroot.sh." `date`
 echo "******************************************************************************"
-sh ${MW_HOME}/allroot.sh
+su - oracle -c '/u01/software/em_install.sh'
+sh ${MW_HOME}/oms/allroot.sh
 
 su - oracle -c '/u01/software/em_config.sh'
