@@ -17,10 +17,10 @@ rm -Rf ${AGENT_HOME}/*
 rm -Rf ${GC_INST}/*
 
 cd ${SOFTWARE_DIR}
-mkdir em12cr5
-unzip -d em12cr5 em12105_linux64_disk1.zip
-unzip -d em12cr5 em12105_linux64_disk2.zip
-unzip -d em12cr5 em12105_linux64_disk3.zip
+mkdir -p em12cr5
+unzip -oqd em12cr5 em12105_linux64_disk1.zip
+unzip -oqd em12cr5 em12105_linux64_disk2.zip
+unzip -oqd em12cr5 em12105_linux64_disk3.zip
 cd em12cr5
 
 echo "******************************************************************************"
