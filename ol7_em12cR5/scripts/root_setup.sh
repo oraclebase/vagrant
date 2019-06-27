@@ -73,3 +73,4 @@ echo "**************************************************************************
 sh ${MW_HOME}/oms/allroot.sh
 
 su - oracle -c '/u01/software/em_config.sh'
+echo "" > /etc/oragchomelist
