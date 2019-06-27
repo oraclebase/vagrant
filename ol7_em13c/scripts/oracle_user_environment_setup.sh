@@ -38,9 +38,10 @@ export DATA_DIR=/u01/oradata
 # EM settings.
 export UNIX_GROUP_NAME=oinstall
 export MW_HOME=\${ORACLE_BASE}/middleware
-export OMS_HOME=\${ORACLE_BASE}/oms
+export OMS_HOME=\${MW_HOME}/oms
 export GC_INST=\${ORACLE_BASE}/gc_inst
-export AGENT_HOME=\${ORACLE_BASE}/agent
+export AGENT_BASE=\${ORACLE_BASE}/agent
+export AGENT_HOME=\${AGENT_BASE}/agent_inst
 export WLS_USERNAME=weblogic
 export WLS_PASSWORD=Welcome1
 export SYSMAN_PASSWORD=\${WLS_PASSWORD}
@@ -63,28 +64,51 @@ echo "Create start/stop scripts." `date`
 echo "******************************************************************************"
 . /home/oracle/scripts/setEnv.sh
 
-cat > /home/oracle/scripts/start_all.sh <<EOF
+cat > $SCRIPTS_DIR/start_all.sh <<EOF
 #!/bin/bash
-. /home/oracle/scripts/setEnv.sh
+. $SCRIPTS_DIR/setEnv.sh
 
 export ORAENV_ASK=NO
 . oraenv
 export ORAENV_ASK=YES
 
 dbstart \$ORACLE_HOME
+\$SCRIPTS_DIR/start_cloud_control.sh
 EOF
 
 
-cat > /home/oracle/scripts/stop_all.sh <<EOF
+cat > $SCRIPTS_DIR/stop_all.sh <<EOF
 #!/bin/bash
-. /home/oracle/scripts/setEnv.sh
+. $SCRIPTS_DIR/setEnv.sh
 
 export ORAENV_ASK=NO
 . oraenv
 export ORAENV_ASK=YES
 
+\$SCRIPTS_DIR/stop_cloud_control.sh
 dbshut \$ORACLE_HOME
 EOF
+
+
+cat > $SCRIPTS_DIR/start_cloud_control.sh <<EOF
+#!/bin/bash
+. $SCRIPTS_DIR/setEnv.sh
+
+\$OMS_HOME/bin/emctl start oms
+
+\$AGENT_HOME/bin/emctl start agent
+EOF
+
+
+cat > $SCRIPTS_DIR/stop_cloud_control.sh <<EOF
+#!/bin/bash
+. $SCRIPTS_DIR/setEnv.sh
+
+\$AGENT_HOME/bin/emctl stop agent
+
+\$OMS_HOME/bin/emctl stop oms
+EOF
+
 
 chown -R oracle.oinstall ${SCRIPTS_DIR}
 chmod u+x ${SCRIPTS_DIR}/*.sh

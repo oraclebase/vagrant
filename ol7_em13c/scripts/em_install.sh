@@ -9,11 +9,11 @@ echo "**************************************************************************
 echo "Create required directories." `date`
 echo "******************************************************************************"
 mkdir -p ${MW_HOME}
-mkdir -p ${AGENT_HOME}
+mkdir -p ${AGENT_BASE}
 mkdir -p ${GC_INST}
 # Make sure they are empty for a re-run.
 rm -Rf ${MW_HOME}/*
-rm -Rf ${AGENT_HOME}/*
+rm -Rf ${AGENT_BASE}/*
 rm -Rf ${GC_INST}/*
 
 echo "******************************************************************************"
@@ -28,7 +28,7 @@ DECLINE_SECURITY_UPDATES=true
 INSTALL_UPDATES_SELECTION=skip
 ORACLE_MIDDLEWARE_HOME_LOCATION=${MW_HOME}
 ORACLE_HOSTNAME=${ORACLE_HOSTNAME}
-AGENT_BASE_DIR=${AGENT_HOME}
+AGENT_BASE_DIR=${AGENT_BASE}
 WLS_ADMIN_SERVER_USERNAME=${WLS_USERNAME}
 WLS_ADMIN_SERVER_PASSWORD=${WLS_PASSWORD}
 WLS_ADMIN_SERVER_CONFIRM_PASSWORD=${WLS_PASSWORD}
