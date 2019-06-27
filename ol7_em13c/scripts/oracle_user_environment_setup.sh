@@ -38,7 +38,7 @@ export DATA_DIR=/u01/oradata
 # EM settings.
 export UNIX_GROUP_NAME=oinstall
 export MW_HOME=\${ORACLE_BASE}/middleware
-export OMS_HOME=\${MW_HOME}/oms
+export OMS_HOME=\${MW_HOME}
 export GC_INST=\${ORACLE_BASE}/gc_inst
 export AGENT_BASE=\${ORACLE_BASE}/agent
 export AGENT_HOME=\${AGENT_BASE}/agent_inst
