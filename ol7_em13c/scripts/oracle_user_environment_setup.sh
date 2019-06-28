@@ -71,8 +71,8 @@ cat > $SCRIPTS_DIR/start_all.sh <<EOF
 export ORAENV_ASK=NO
 . oraenv
 export ORAENV_ASK=YES
-
 dbstart \$ORACLE_HOME
+
 \$SCRIPTS_DIR/start_cloud_control.sh
 EOF
 
@@ -81,11 +81,11 @@ cat > $SCRIPTS_DIR/stop_all.sh <<EOF
 #!/bin/bash
 . $SCRIPTS_DIR/setEnv.sh
 
+\$SCRIPTS_DIR/stop_cloud_control.sh
+
 export ORAENV_ASK=NO
 . oraenv
 export ORAENV_ASK=YES
-
-\$SCRIPTS_DIR/stop_cloud_control.sh
 dbshut \$ORACLE_HOME
 EOF
 
@@ -106,7 +106,7 @@ cat > $SCRIPTS_DIR/stop_cloud_control.sh <<EOF
 
 \$AGENT_HOME/bin/emctl stop agent
 
-\$OMS_HOME/bin/emctl stop oms
+\$OMS_HOME/bin/emctl stop oms -all
 EOF
 
 
