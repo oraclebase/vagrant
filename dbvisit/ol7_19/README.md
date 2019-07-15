@@ -66,7 +66,7 @@ tree
 |   +--- oracle_db_software_installation.sh
 |   +--- prepare_u01_disk.sh
 +--- software
-|   +--- dbvisit-standby9.0.00-el7.zip
+|   +--- dbvisit-standby9.0.02-el7.zip
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- put_software_here.txt
 ```
