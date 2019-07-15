@@ -14,12 +14,13 @@ cd dbvisit/installer
 ./install-dbvisit --batch-install \
   --force \
   --dbvisit-base /usr/dbvisit \
-  --components dbvserver \
+  --components dbvserver,observer \
   --dbvserver-local-host ${CONSOLE_HOSTNAME} \
   --dbvserver-local-port 4433
 
 echo "******************************************************************************"
-echo "Start Dbvisit Console." `date`
+echo "Start Dbvisit Console and Observer." `date`
 echo "******************************************************************************"
 /usr/dbvisit/dbvserver/dbvserver -d stop
 /usr/dbvisit/dbvserver/dbvserver -d start
+nohup /usr/dbvisit/observer/observersvc -f /usr/dbvisit/observer/conf/observer.conf &
