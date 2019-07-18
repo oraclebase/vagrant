@@ -2,8 +2,7 @@
 # vi: set ft=ruby :
 
 # Variables
-#var_box            = 'bento/fedora-29'
-var_box            = 'oraclebase/fedora-30'
+var_box            = 'bento/fedora-30'
 var_vm_name        = 'f30_183'
 var_mem_size       = 4096  # More would be better.
 var_cpus           = 2
@@ -67,17 +66,17 @@ Vagrant.configure("2") do |config|
     vb.cpus   = var_cpus
     vb.name   = var_vm_name
 
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA', '--port', '0', '--nonrotational', var_non_rotational]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', '0', '--nonrotational', var_non_rotational]
 
     unless File.exist?(var_disk1_name)
       vb.customize ['createhd', '--filename', var_disk1_name, '--size', var_disk_size * 1024]
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA', '--port', 1, '--device', 0, '--type', 'hdd', '--nonrotational', var_non_rotational, '--medium', var_disk1_name]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--nonrotational', var_non_rotational, '--medium', var_disk1_name]
 
     unless File.exist?(var_disk2_name)
       vb.customize ['createhd', '--filename', var_disk2_name, '--size', var_disk_size * 1024]
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA', '--port', 2, '--device', 0, '--type', 'hdd', '--nonrotational', var_non_rotational, '--medium', var_disk2_name]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--nonrotational', var_non_rotational, '--medium', var_disk2_name]
   end
 
   # Enable provisioning with a shell script. Additional provisioners such as
