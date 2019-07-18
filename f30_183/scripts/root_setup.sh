@@ -3,6 +3,8 @@ sh /vagrant/scripts/prepare_u01_u02_disks.sh
 echo "******************************************************************************"
 echo "Prepare dnf with the latest repos." `date`
 echo "******************************************************************************"
+dnf install -y dnf-utils zip unzip
+
 #dnf groupinstall "GNOME Desktop" -y
 #dnf groupinstall "Development Tools" -y
 #dnf groupinstall "Administration Tools" -y
@@ -59,7 +61,7 @@ dnf install -y unixODBC
 dnf install -y libnsl2
 dnf install -y libnsl2.i686
 dnf install -y libxcrypt-compat
-dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.29.9000-17.fc31.x86_64.rpm
+dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.29.9000-31.fc31.x86_64.rpm
 
 #dnf update -y
 
