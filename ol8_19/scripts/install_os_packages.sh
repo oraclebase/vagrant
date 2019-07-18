@@ -7,7 +7,7 @@ echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 #rm -f public-yum-ol7.repo
 #wget https://yum.oracle.com/public-yum-ol7.repo
 
-dnf install -y yum-utils zip unzip
+dnf install -y dnf-utils zip unzip
 
 #dnf groupinstall "GNOME Desktop" -y
 #dnf groupinstall "Development Tools" -y
