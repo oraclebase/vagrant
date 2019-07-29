@@ -56,6 +56,8 @@ dnf install -y sysstat
 dnf install -y unixODBC
 
 # New for OL8
+dnf install -y libnsl
+dnf install -y libnsl.i686
 dnf install -y libnsl2
 dnf install -y libnsl2.i686
 
