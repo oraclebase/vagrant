@@ -48,6 +48,10 @@ mkdir -p /u01/volumes/ol7_19_ords_tomcat
 mkdir -p /u01/volumes/ol7_19_ords_db
 mkdir -p /u01/volumes/ol7_183_ords_tomcat
 mkdir -p /u01/volumes/ol7_183_ords_db
+mkdir -p /u01/volumes/ol8_19_ords_tomcat
+mkdir -p /u01/volumes/ol8_19_ords_db
+mkdir -p /u01/volumes/ol8_183_ords_tomcat
+mkdir -p /u01/volumes/ol8_183_ords_db
 chown -R docker_user:docker_fg /u01
 chmod -R 775 /u01/volumes
 chmod -R g+s /u01/volumes
