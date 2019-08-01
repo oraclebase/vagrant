@@ -5,7 +5,7 @@ echo "export JAVA_HOME=/home/docker_user/java/latest" >> ~/.bash_profile
 echo "alias sql=\"/home/docker_user/sqlcl/bin/sql\"" >> ~/.bash_profile
 
 cd ~
-unzip -oq /vagrant/software/sqlcl-19.1.0.094.1619.zip
+unzip -oq /vagrant/software/sqlcl-19.2.1.206.1649.zip
 mkdir ~/java
 cd ~/java
 tar -xf /vagrant/software/openjdk-12.0.1_linux-x64_bin.tar.gz
@@ -20,8 +20,8 @@ docker pull oraclelinux:7-slim
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_19.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.22.tar.gz .
-cp /vagrant/software/ords-19.1.0.092.1545.zip .
-cp /vagrant/software/sqlcl-19.1.0.094.1619.zip .
+cp /vagrant/software/ords-19.2.0.199.1647.zip .
+cp /vagrant/software/sqlcl-19.2.1.206.1649.zip .
 cp /vagrant/software/openjdk-12.0.2_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
 docker build --squash -t ol7_ords:latest .
@@ -30,8 +30,8 @@ docker build --squash -t ol7_ords:latest .
 cd /u01/dockerfiles/ords/ol8_ords/software
 cp /vagrant/software/apex_19.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.22.tar.gz .
-cp /vagrant/software/ords-19.1.0.092.1545.zip .
-cp /vagrant/software/sqlcl-19.1.0.094.1619.zip .
+cp /vagrant/software/ords-19.2.0.199.1647.zip .
+cp /vagrant/software/sqlcl-19.2.1.206.1649.zip .
 cp /vagrant/software/openjdk-12.0.2_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
 docker build --squash -t ol8_ords:latest .
