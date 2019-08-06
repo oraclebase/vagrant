@@ -12,7 +12,7 @@ function prepare_disk {
   mkfs.xfs -f ${DISK_DEVICE}1
 
   # Mount it.
-  UUID=`blkid -o export /dev/sda1 | grep UUID | grep -v PARTUUID`
+  UUID=`blkid -o export ${DISK_DEVICE}1 | grep UUID | grep -v PARTUUID`
   mkdir ${MOUNT_POINT}
   echo "${UUID}  ${MOUNT_POINT}    xfs    defaults 1 2" >> /etc/fstab
   mount ${MOUNT_POINT}
