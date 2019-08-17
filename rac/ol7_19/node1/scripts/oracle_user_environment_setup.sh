@@ -81,15 +81,3 @@ sshpass -f /tmp/temp2.txt ssh-copy-id ${NODE1_HOSTNAME}
 EOF
 
 ssh ${NODE2_HOSTNAME} 'bash -s' < /tmp/ssh-setup.sh
-
-echo "******************************************************************************"
-echo "Unzip grid software." `date`
-echo "******************************************************************************"
-cd ${GRID_HOME}
-unzip -oq /vagrant/software/${GRID_SOFTWARE}
-
-scp ${GRID_HOME}/cv/rpm/cvuqdisk-1.0.10-1.rpm oracle@${NODE2_HOSTNAME}:/tmp
-
-# Optional cluster verification.
-#${GRID_HOME}/runcluvfy.sh stage -pre crsinst -n "${NODE1_HOSTNAME},${NODE2_HOSTNAME}"
-
