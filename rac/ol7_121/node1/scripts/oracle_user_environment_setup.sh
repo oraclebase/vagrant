@@ -81,7 +81,3 @@ sshpass -f /tmp/temp2.txt ssh-copy-id ${NODE1_HOSTNAME}
 EOF
 
 ssh ${NODE2_HOSTNAME} 'bash -s' < /tmp/ssh-setup.sh
-
-# Optional cluster verification.
-#${GRID_HOME}/runcluvfy.sh stage -pre crsinst -n "${NODE1_HOSTNAME},${NODE2_HOSTNAME}"
-
