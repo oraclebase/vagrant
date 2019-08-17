@@ -81,3 +81,14 @@ sshpass -f /tmp/temp2.txt ssh-copy-id ${NODE1_HOSTNAME}
 EOF
 
 ssh ${NODE2_HOSTNAME} 'bash -s' < /tmp/ssh-setup.sh
+
+echo "******************************************************************************"
+echo "Unzip grid software." `date`
+echo "******************************************************************************"
+mkdir -p ${SOFTWARE_DIR}
+cd ${SOFTWARE_DIR}
+unzip -oq "/vagrant_software/${GRID_SOFTWARE}"
+cd grid
+
+# Optional cluster verification.
+#${GRID_HOME}/runcluvfy.sh stage -pre crsinst -n "${NODE1_HOSTNAME},${NODE2_HOSTNAME}"

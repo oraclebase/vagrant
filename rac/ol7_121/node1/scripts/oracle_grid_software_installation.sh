@@ -1,17 +1,6 @@
 . /vagrant_config/install.env
 
 echo "******************************************************************************"
-echo "Unzip grid software." `date`
-echo "******************************************************************************"
-mkdir -p ${SOFTWARE_DIR}
-cd ${SOFTWARE_DIR}
-unzip -oq "/vagrant_software/${GRID_SOFTWARE}"
-cd grid
-
-# Optional cluster verification.
-#${GRID_HOME}/runcluvfy.sh stage -pre crsinst -n "${NODE1_HOSTNAME},${NODE2_HOSTNAME}"
-
-echo "******************************************************************************"
 echo "Do grid software-only installation." `date`
 echo "******************************************************************************"
 ./runInstaller -ignorePrereq -waitforcompletion -silent \
