@@ -1,5 +1,7 @@
 . /vagrant_config/install.env
 
+cd ${SOFTWARE_DIR}/grid
+
 echo "******************************************************************************"
 echo "Do grid software-only installation." `date`
 echo "******************************************************************************"
