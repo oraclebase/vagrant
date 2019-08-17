@@ -27,18 +27,7 @@ You will also need to download the 19c grid and database software.
 
 ## Warning
 
-This installation requires a lot of memory. The default settings require a total of 21G RAM just for the VMs, not including the memory for the host system.
-
-```
-dns:
-  mem_size: 1024
-
-node1:
-  mem_size: 10240
-
-node2:
-  mem_size: 10240
-```
+This installation requires a lot of memory.
 
 The smallest system I've completed this on had 16G RAM, with the VM memory settings as follows and nothing else running.
 
@@ -53,7 +42,18 @@ node2:
   mem_size: 6144
 ```
 
-If you try less memory, don't be surprised if it fails.
+The more memory you can throw at this the better. I regularly use 21G RAM just for the VMs, not including the memory for the host system.
+
+```
+dns:
+  mem_size: 1024
+
+node1:
+  mem_size: 10240
+
+node2:
+  mem_size: 10240
+```
 
 ## Clone Repository
 
@@ -68,45 +68,43 @@ Copy the Oracle software under the "..../node1/software/" directory. From the "r
 ```
 $ tree
 .
-|-- config
-|   |-- install.env
-|   `-- vagrant.yml
-|-- dns
-|   |-- scripts
-|   |   |-- root_setup.sh
-|   |   `-- setup.sh
-|   `-- Vagrantfile
-|-- node1
-|   |-- scripts
-|   |   |-- oracle_create_database.sh
-|   |   |-- oracle_db_software_installation.sh
-|   |   |-- oracle_grid_software_config.sh
-|   |   |-- oracle_grid_software_installation.sh
-|   |   |-- oracle_user_environment_setup.sh
-|   |   |-- root_setup.sh
-|   |   `-- setup.sh
-|   |-- software
-|   |   |-- LINUX.X64_193000_db_home.zip
-|   |   |-- LINUX.X64_193000_grid_home.zip
-|   |   `-- put_software_here.txt
-|   `-- Vagrantfile
-|-- node2
-|   |-- scripts
-|   |   |-- oracle_user_environment_setup.sh
-|   |   |-- root_setup.sh
-|   |   `-- setup.sh
-|   `-- Vagrantfile
-|-- README.md
-`-- shared_scripts
-    |-- configure_chrony.sh
-    |-- configure_hostname.sh
-    |-- configure_hosts_base.sh
-    |-- configure_hosts_scan.sh
-    |-- configure_shared_disks.sh
-    |-- db_env
-    |-- grid_env
-    |-- install_os_packages.sh
-    `-- prepare_u01_disk.sh
++--- config
+|   +--- install.env
+|   +--- vagrant.yml
++--- dns
+|   +--- scripts
+|   |   +--- root_setup.sh
+|   |   +--- setup.sh
+|   +--- Vagrantfile
++--- node1
+|   +--- scripts
+|   |   +--- oracle_create_database.sh
+|   |   +--- oracle_db_software_installation.sh
+|   |   +--- oracle_grid_software_config.sh
+|   |   +--- oracle_grid_software_installation.sh
+|   |   +--- oracle_user_environment_setup.sh
+|   |   +--- root_setup.sh
+|   |   +--- setup.sh
+|   +--- Vagrantfile
++--- node2
+|   +--- scripts
+|   |   +--- oracle_user_environment_setup.sh
+|   |   +--- root_setup.sh
+|   |   +--- setup.sh
+|   +--- Vagrantfile
++--- README.md
++--- shared_scripts
+|   +--- configure_chrony.sh
+|   +--- configure_hostname.sh
+|   +--- configure_hosts_base.sh
+|   +--- configure_hosts_scan.sh
+|   +--- configure_shared_disks.sh
+|   +--- install_os_packages.sh
+|   +--- prepare_u01_disk.sh
++--- software
+|   +--- LINUX.X64_193000_db_home.zip
+|   +--- LINUX.X64_193000_grid_home.zip
+|   +--- put_software_here.txt
 
 $ 
 ```
