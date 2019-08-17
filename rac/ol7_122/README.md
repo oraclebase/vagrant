@@ -64,7 +64,7 @@ Pick an area on your file system to act as the base for this git repository and 
 git clone https://github.com/oraclebase/vagrant.git
 ```
 
-Copy the Oracle software under the "..../node1/software/" directory. From the "rac" subdirectory, the structure should look like this.
+Copy the Oracle software under the "..../software/" directory. From the "rac" subdirectory, the structure should look like this.
 
 ```
 $ tree
