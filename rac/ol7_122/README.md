@@ -28,18 +28,7 @@ You will also need to download the 12c Release 2 grid and database software.
 
 ## Warning
 
-This installation requires a lot of memory. The default settings require a total of 21G RAM just for the VMs, not including the memory for the host system.
-
-```
-dns:
-  mem_size: 1024
-
-node1:
-  mem_size: 10240
-
-node2:
-  mem_size: 10240
-```
+This installation requires a lot of memory.
 
 The smallest system I've completed this on had 16G RAM, with the VM memory settings as follows and nothing else running.
 
@@ -54,7 +43,18 @@ node2:
   mem_size: 6144
 ```
 
-If you try less memory, don't be surprised if it fails.
+The more memory you can throw at this the better. I regularly use 21G RAM just for the VMs, not including the memory for the host system.
+
+```
+dns:
+  mem_size: 1024
+
+node1:
+  mem_size: 10240
+
+node2:
+  mem_size: 10240
+```
 
 ## Clone Repository
 
@@ -64,7 +64,7 @@ Pick an area on your file system to act as the base for this git repository and 
 git clone https://github.com/oraclebase/vagrant.git
 ```
 
-Copy the Oracle software under the "..../node1/software/" directory. From the "rac" subdirectory, the structure should look like this.
+Copy the Oracle software under the "..../software/" directory. From the "rac" subdirectory, the structure should look like this.
 
 ```
 $ tree
@@ -86,10 +86,6 @@ $ tree
 |   |   |-- oracle_user_environment_setup.sh
 |   |   |-- root_setup.sh
 |   |   `-- setup.sh
-|   |-- software
-|   |   |-- linuxx64_12201_database.zip
-|   |   |-- linuxx64_12201_grid_home.zip
-|   |   `-- put_software_here.txt
 |   `-- Vagrantfile
 |-- node2
 |   |-- scripts
@@ -98,16 +94,20 @@ $ tree
 |   |   `-- setup.sh
 |   `-- Vagrantfile
 |-- README.md
-`-- shared_scripts
-    |-- configure_chrony.sh
-    |-- configure_hostname.sh
-    |-- configure_hosts_base.sh
-    |-- configure_hosts_scan.sh
-    |-- configure_shared_disks.sh
-    |-- db_env
-    |-- grid_env
-    |-- install_os_packages.sh
-    `-- prepare_u01_disk.sh
+|-- shared_scripts
+|   |-- configure_chrony.sh
+|   |-- configure_hostname.sh
+|   |-- configure_hosts_base.sh
+|   |-- configure_hosts_scan.sh
+|   |-- configure_shared_disks.sh
+|   |-- db_env
+|   |-- grid_env
+|   |-- install_os_packages.sh
+|   `-- prepare_u01_disk.sh
+|-- software
+|   |-- linuxx64_12201_database.zip
+|   |-- linuxx64_12201_grid_home.zip
+|   `-- put_software_here.txt
 
 $ 
 ```

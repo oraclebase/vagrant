@@ -5,7 +5,7 @@ echo "Unzip database software." `date`
 echo "******************************************************************************"
 mkdir -p ${ORACLE_BASE}/software
 cd ${ORACLE_BASE}/software
-unzip -oq /vagrant/software/${DB_SOFTWARE}
+unzip -oq /vagrant_software/${DB_SOFTWARE}
 cd database
 
 echo "******************************************************************************"
