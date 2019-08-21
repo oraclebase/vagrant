@@ -69,10 +69,10 @@ echo "**************************************************************************
 echo "Create directories, passwordfile and temporary init.ora file." `date`
 echo "******************************************************************************"
 
-mkdir -p /u01/oradata/${ORACLE_SID}/pdbseed
-mkdir -p /u01/oradata/${ORACLE_SID}/pdb1
-mkdir -p ${ORACLE_BASE}/fast_recovery_area/${ORACLE_SID}
+mkdir -p /u01/oradata/${ORACLE_SID}
+
 mkdir -p ${ORACLE_BASE}/admin/${ORACLE_SID}/adump
+mkdir -p ${ORACLE_BASE}/flash_recovery_area/${ORACLE_SID}
 
 orapwd file=$ORACLE_HOME/dbs/orapw${ORACLE_SID} password=${SYS_PASSWORD} entries=10
 
