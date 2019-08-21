@@ -74,20 +74,19 @@ mkdir -p /u01/oradata/${ORACLE_SID}/pdb1
 mkdir -p ${ORACLE_BASE}/fast_recovery_area/${ORACLE_SID}
 mkdir -p ${ORACLE_BASE}/admin/${ORACLE_SID}/adump
 
-orapwd file=$ORACLE_HOME/dbs/orapwcdb1 password=${SYS_PASSWORD} entries=10
+orapwd file=$ORACLE_HOME/dbs/orapw${ORACLE_SID} password=${SYS_PASSWORD} entries=10
 
-cat > /tmp/initcdb1_stby.ora <<EOF
-*.db_name='cdb1'
+cat > /tmp/init${ORACLE_SID}_stby.ora <<EOF
+*.db_name='${ORACLE_SID}'
 *.local_listener='LISTENER'
 EOF
 
 echo "******************************************************************************"
 echo "Create auxillary instance." `date`
 echo "******************************************************************************"
-export ORACLE_SID=cdb1
 sqlplus / as sysdba <<EOF
 --SHUTDOWN IMMEDIATE;
-STARTUP NOMOUNT PFILE='/tmp/initcdb1_stby.ora';
+STARTUP NOMOUNT PFILE='/tmp/init${ORACLE_SID}_stby.ora';
 exit;
 EOF
 
