@@ -8,13 +8,14 @@ cd ~
 unzip -oq /vagrant/software/sqlcl-19.2.1.206.1649.zip
 mkdir ~/java
 cd ~/java
-tar -xf /vagrant/software/openjdk-12.0.1_linux-x64_bin.tar.gz
+tar -xf /vagrant/software/openjdk-12.0.2_linux-x64_bin.tar.gz
 ln -s ./j* ./latest
 cd ~
 unzip -oq /vagrant/software/autorest_demo.zip
 
 # Get latest oraclelinux:7-slim
 docker pull oraclelinux:7-slim
+docker pull oraclelinux:8-slim
 
 # Copy ORDS software and do build (OL7).
 cd /u01/dockerfiles/ords/ol7_ords/software
@@ -24,7 +25,7 @@ cp /vagrant/software/ords-19.2.0.199.1647.zip .
 cp /vagrant/software/sqlcl-19.2.1.206.1649.zip .
 cp /vagrant/software/openjdk-12.0.2_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
-docker build --squash -t ol7_ords:latest .
+docker build --no-cache --squash -t ol7_ords:latest .
 
 # Copy ORDS software and do build (OL8).
 cd /u01/dockerfiles/ords/ol8_ords/software
@@ -34,7 +35,7 @@ cp /vagrant/software/ords-19.2.0.199.1647.zip .
 cp /vagrant/software/sqlcl-19.2.1.206.1649.zip .
 cp /vagrant/software/openjdk-12.0.2_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
-docker build --squash -t ol8_ords:latest .
+docker build --no-cache --squash -t ol8_ords:latest .
 
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_19/software
