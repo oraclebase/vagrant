@@ -21,6 +21,7 @@ export ORACLE_SID=${NODE1_ORACLE_SID}
 export ORACLE_TERM=xterm
 export BASE_PATH=/usr/sbin:\$PATH
 export PATH=\$ORACLE_HOME/bin:\$BASE_PATH
+export SQLPATH=/home/oracle/scripts
 
 export LD_LIBRARY_PATH=\$ORACLE_HOME/lib:/lib:/usr/lib
 export CLASSPATH=\$ORACLE_HOME/JRE:\$ORACLE_HOME/jlib:\$ORACLE_HOME/rdbms/jlib

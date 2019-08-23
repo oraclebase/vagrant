@@ -15,14 +15,10 @@ chmod -R 775 /u01
 sh /vagrant_scripts/configure_hosts_base.sh
 
 cat > /etc/resolv.conf <<EOF
-search localdomain
+search evilcorp.com
 nameserver ${DNS_PUBLIC_IP}
 EOF
 
-# Stop NetworkManager altering the /etc/resolve.conf contents.
-sed -i -e "s|\[main\]|\[main\]\ndns=none|g" /etc/NetworkManager/NetworkManager.conf
-systemctl restart NetworkManager.service
- 
 sh /vagrant_scripts/configure_chrony.sh
 
 sh /vagrant_scripts/configure_shared_disks.sh
