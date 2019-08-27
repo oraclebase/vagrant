@@ -1,6 +1,6 @@
-# Vagrant 19c Data Guard Build
+# Vagrant 19c Data Guard Build Red Hat Linux 8
 
-The Vagrant scripts here will allow you to build a 19c Data Guard system by just starting the VMs in the correct order.
+The Vagrant scripts here will allow you to build a 19c Data Guard system on Red Hat linux 8. by just starting the VMs in the correct order.
 
 If you need a more detailed description of this build, check out the article here.
 
