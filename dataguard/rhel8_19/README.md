@@ -23,7 +23,7 @@ You will also need to download the 19c database software.
 Pick an area on your file system to act as the base for this git repository and issue the following command. If you are working on Windows, remember to check your Git settings for line terminators. If the bash scripts are converted to Windows terminators you will have problems.
 
 ```
-git clone https://github.com/oraclebase/vagrant.git
+git clone https://github.com/KoussHD/vagrant.git
 ```
 
 Copy the Oracle software under the "dataguard/software" directory. From the "dataguard" subdirectory, the structure should look like this.
