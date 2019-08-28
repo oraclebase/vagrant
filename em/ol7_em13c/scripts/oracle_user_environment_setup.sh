@@ -11,7 +11,8 @@ export TMPDIR=\${TMP}
 export ORACLE_HOSTNAME=${HOSTNAME}
 export ORACLE_UNQNAME=emcdb
 export ORACLE_BASE=/u01/app/oracle
-export ORACLE_HOME=\${ORACLE_BASE}/product/18.0.0/dbhome_1
+#export ORACLE_HOME=\${ORACLE_BASE}/product/18.0.0/dbhome_1
+export ORACLE_HOME=\${ORACLE_BASE}/product/19.0.0/dbhome_1
 export ORACLE_SID=emcdb
 
 export PATH=/usr/sbin:/usr/local/bin:\${PATH}
@@ -25,7 +26,8 @@ export ORA_INVENTORY=/u01/app/oraInventory
 
 # Database installation settings.
 export SOFTWARE_DIR=/u01/software
-export DB_SOFTWARE="LINUX.X64_180000_db_home.zip"
+#export DB_SOFTWARE="LINUX.X64_180000_db_home.zip"
+export DB_SOFTWARE="LINUX.X64_193000_db_home.zip"
 export ORACLE_PASSWORD="oracle"
 export SCRIPTS_DIR=/home/oracle/scripts
 

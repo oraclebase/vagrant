@@ -7,7 +7,8 @@ echo "Set up environment for one-off actions." `date`
 echo "******************************************************************************"
 export ORACLE_HOSTNAME=ol7-emcc.localdomain
 export ORACLE_BASE=/u01/app/oracle
-export ORACLE_HOME=${ORACLE_BASE}/product/18.0.0/dbhome_1
+#export ORACLE_HOME=${ORACLE_BASE}/product/18.0.0/dbhome_1
+export ORACLE_HOME=${ORACLE_BASE}/product/19.0.0/dbhome_1
 export SOFTWARE_DIR=/u01/software
 export ORA_INVENTORY=/u01/app/oraInventory
 export SCRIPTS_DIR=/home/oracle/scripts
