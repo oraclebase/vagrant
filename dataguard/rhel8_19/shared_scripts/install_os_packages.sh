@@ -73,7 +73,7 @@ useradd -u 54321 -g oinstall -G dba,oper oracle
 
 
 echo "******************************************************************************"
-echo "Fix for Oracle on OL8." `date`
+echo "Fix for Oracle on RHEL8." `date`
 echo "******************************************************************************"
 rm -f /usr/lib64/libnsl.so.1
 rm -f /usr/lib/libnsl.so.1
