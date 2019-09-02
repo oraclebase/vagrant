@@ -15,8 +15,8 @@ LimitNOFILE=65535
 RemainAfterExit=yes
 User=oracle
 Group=oinstall
-ExecStart=/home/oracle/scripts/start_all.sh
-ExecStop=/home/oracle/scripts/stop_all.sh
+ExecStart=/bin/bash -c '/home/oracle/scripts/start_all.sh'
+ExecStop=/bin/bash -c '/home/oracle/scripts/stop_all.sh'
 
 [Install]
 WantedBy=multi-user.target
