@@ -20,22 +20,22 @@ docker pull oraclelinux:8-slim
 # Copy ORDS software and do build (OL7).
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_19.1_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.22.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.24.tar.gz .
 cp /vagrant/software/ords-19.2.0.199.1647.zip .
 cp /vagrant/software/sqlcl-19.2.1.206.1649.zip .
 cp /vagrant/software/openjdk-12.0.2_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
-docker build --no-cache --squash -t ol7_ords:latest .
+docker build --no-cache -t ol7_ords:latest .
 
 # Copy ORDS software and do build (OL8).
 cd /u01/dockerfiles/ords/ol8_ords/software
 cp /vagrant/software/apex_19.1_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.22.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.24.tar.gz .
 cp /vagrant/software/ords-19.2.0.199.1647.zip .
 cp /vagrant/software/sqlcl-19.2.1.206.1649.zip .
 cp /vagrant/software/openjdk-12.0.2_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
-docker build --no-cache --squash -t ol8_ords:latest .
+docker build --no-cache -t ol8_ords:latest .
 
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_19/software
@@ -49,7 +49,7 @@ cd /u01/dockerfiles/database/ol8_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
 cp /vagrant/software/apex_19.1_en.zip .
 cd /u01/dockerfiles/database/ol8_19
-docker build --squash -t ol8_19:latest .
+docker build --no-cache -t ol8_19:latest .
 
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_183/software
