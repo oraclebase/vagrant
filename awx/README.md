@@ -35,4 +35,4 @@ Once the build is complete you should be able to access AWX using one of the fol
 Log in using the following credentials, assuming you've not changed them.
 
 * Username: admin
-* Password: MyPassword
+* Password: password
