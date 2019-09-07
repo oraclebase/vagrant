@@ -18,7 +18,7 @@ sed -i -e "s|postgres_data_dir=/tmp/pgdocker|postgres_data_dir=${POSTGRES_DATA_D
 sed -i -e "s|host_port=80|host_port=${HOST_PORT}|g" ./inventory
 sed -i -e "s|host_port_ssl=443|host_port_ssl=${HOST_PORT_SSL}|g" ./inventory
 
-sed -i -e "s|docker_compose_dir=/tmp/awxcompose|${DOCKER_COMPOSE_DIR}|g" ./inventory
+sed -i -e "s|docker_compose_dir=/tmp/awxcompose|docker_compose_dir=${DOCKER_COMPOSE_DIR}|g" ./inventory
 
 sed -i -e "s|pg_username=awx|pg_username=${PG_USERNAME}|g" ./inventory
 sed -i -e "s|pg_password=awxpass|pg_password=${PG_PASSWORD}|g" ./inventory
