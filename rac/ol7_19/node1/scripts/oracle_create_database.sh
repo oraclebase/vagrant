@@ -22,7 +22,8 @@ dbca -silent -createDatabase \
   -nodelist ${NODE1_HOSTNAME},${NODE2_HOSTNAME} \
   -storageType ASM \
   -diskGroupName +DATA \
-  -recoveryGroupName +DATA \
+  -recoveryGroupName +RECO \
+  -useOMF true \
   -asmsnmpPassword ${SYS_PASSWORD}
 
 echo "******************************************************************************"
