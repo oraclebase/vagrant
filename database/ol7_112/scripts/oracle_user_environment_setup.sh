@@ -42,7 +42,7 @@ export INSTALL_APEX="false"
 
 # ORDS installation settings.
 export JAVA_SOFTWARE="openjdk-12.0.2_linux-x64_bin.tar.gz"
-export TOMCAT_SOFTWARE="apache-tomcat-9.0.22.tar.gz"
+export TOMCAT_SOFTWARE="apache-tomcat-9.0.26.tar.gz"
 export ORDS_SOFTWARE="ords-19.2.0.199.1647.zip"
 export SQLCL_SOFTWARE="sqlcl-19.2.1.206.1649.zip"
 export SOFTWARE_DIR="/u01/software"
