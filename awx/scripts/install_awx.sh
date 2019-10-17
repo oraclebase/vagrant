@@ -12,7 +12,7 @@ cd awx/installer
 sed -i -e "s|awx_task_hostname=awx|awx_task_hostname=${AWX_TASK_HOSTNAME}|g" ./inventory
 sed -i -e "s|awx_web_hostname=awxweb|awx_web_hostname=${AWX_WEB_HOSTNAME}|g" ./inventory
 
-sed -i -e "s|postgres_data_dir=/tmp/pgdocker|postgres_data_dir=${POSTGRES_DATA_DIR}|g" ./inventory
+sed -i -e "s|postgres_data_dir=\"~/.awx/pgdocker\"|postgres_data_dir=${POSTGRES_DATA_DIR}|g" ./inventory
 
 # Don't change, unless you are changing the Vagrant port forwarding.
 sed -i -e "s|host_port=80|host_port=${HOST_PORT}|g" ./inventory
