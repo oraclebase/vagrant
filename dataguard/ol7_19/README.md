@@ -8,7 +8,7 @@ If you need a more detailed description of this build, check out the article her
 
 ## Required Software
 
-Download and install the following software. If you can't figure out this step, you probably shouldn't be considering a RAC installation.
+Download and install the following software. If you can't figure out this step, you probably shouldn't be considering a Data Guard installation.
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -16,7 +16,7 @@ Download and install the following software. If you can't figure out this step, 
 
 You will also need to download the 19c database software.
 
-* [Database V981623-01.zip](https://edelivery.oracle.com/)
+* [Database LINUX.X64_193000_db_home.zip](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle19c-linux-5462157.html)
 
 ## Clone Repository
 
@@ -58,7 +58,7 @@ tree
 |   +--- oracle_db_software_installation.sh
 |   +--- prepare_u01_disk.sh
 +--- software
-|   +--- V981623-01.zip
+|   +--- LINUX.X64_193000_db_home.zip
 |   +--- put_software_here.tx
 ```
 

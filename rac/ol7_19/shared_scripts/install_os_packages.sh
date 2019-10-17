@@ -8,7 +8,7 @@ wget https://yum.oracle.com/public-yum-ol7.repo
 yum install -y yum-utils
 yum-config-manager --enable ol7_developer_EPEL
 yum install -y sshpass zip unzip
-yum install -y oracle-database-preinstall-18c
+yum install -y oracle-database-preinstall-19c
 
 echo "******************************************************************************"
 echo "Add extra OS packages. Most should be present." `date`

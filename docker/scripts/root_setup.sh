@@ -48,6 +48,10 @@ mkdir -p /u01/volumes/ol7_19_ords_tomcat
 mkdir -p /u01/volumes/ol7_19_ords_db
 mkdir -p /u01/volumes/ol7_183_ords_tomcat
 mkdir -p /u01/volumes/ol7_183_ords_db
+mkdir -p /u01/volumes/ol8_19_ords_tomcat
+mkdir -p /u01/volumes/ol8_19_ords_db
+mkdir -p /u01/volumes/ol8_183_ords_tomcat
+mkdir -p /u01/volumes/ol8_183_ords_db
 chown -R docker_user:docker_fg /u01
 chmod -R 775 /u01/volumes
 chmod -R g+s /u01/volumes
@@ -62,7 +66,7 @@ echo "alias docker=\"sudo /usr/bin/docker\"" >> /home/docker_user/.bash_profile
 echo "******************************************************************************"
 echo "Configure docker-compose." `date`
 echo "******************************************************************************"
-curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 echo "docker_user  ALL=(ALL)  NOPASSWD: /usr/local/bin/docker-compose" >> /etc/sudoers
 echo "alias docker-compose=\"sudo /usr/local/bin/docker-compose\"" >> /home/docker_user/.bash_profile

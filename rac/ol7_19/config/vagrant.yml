@@ -1,11 +1,14 @@
 shared:
   box: bento/oracle-7.6
   non_rotational: 'on'
-  asm_disk_1: /u05/VirtualBox/shared/ol7_19_rac/asm_disk_1.vdi
-  asm_disk_2: /u05/VirtualBox/shared/ol7_19_rac/asm_disk_2.vdi
-  asm_disk_3: /u05/VirtualBox/shared/ol7_19_rac/asm_disk_3.vdi
-  asm_disk_4: /u05/VirtualBox/shared/ol7_19_rac/asm_disk_4.vdi
-  asm_disk_size: 20
+  asm_crs_disk_1: /u05/VirtualBox/shared/ol7_19_rac/asm_crs_disk_1.vdi
+  asm_crs_disk_2: /u05/VirtualBox/shared/ol7_19_rac/asm_crs_disk_2.vdi
+  asm_crs_disk_3: /u05/VirtualBox/shared/ol7_19_rac/asm_crs_disk_3.vdi
+  asm_crs_disk_size: 2
+  asm_data_disk_1: /u05/VirtualBox/shared/ol7_19_rac/asm_data_disk_1.vdi
+  asm_data_disk_size: 40
+  asm_reco_disk_1: /u05/VirtualBox/shared/ol7_19_rac/asm_reco_disk_1.vdi
+  asm_reco_disk_size: 20
 
 dns:
   vm_name: ol7_19_dns
@@ -15,7 +18,7 @@ dns:
 
 node1:
   vm_name: ol7_19_rac1
-  mem_size: 10240
+  mem_size: 7168
   cpus: 2
   public_ip: 192.168.56.101
   private_ip: 192.168.1.101
@@ -23,7 +26,7 @@ node1:
 
 node2:
   vm_name: ol7_19_rac2
-  mem_size: 10240
+  mem_size: 6144
   cpus: 2
   public_ip: 192.168.56.102
   private_ip: 192.168.1.102

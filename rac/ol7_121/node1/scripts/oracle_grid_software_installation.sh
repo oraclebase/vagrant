@@ -1,12 +1,6 @@
 . /vagrant_config/install.env
 
-echo "******************************************************************************"
-echo "Unzip grid software." `date`
-echo "******************************************************************************"
-mkdir -p ${SOFTWARE_DIR}
-cd ${SOFTWARE_DIR}
-unzip -oq "/vagrant/software/${GRID_SOFTWARE}"
-cd grid
+cd ${SOFTWARE_DIR}/grid
 
 echo "******************************************************************************"
 echo "Do grid software-only installation." `date`

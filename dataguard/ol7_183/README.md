@@ -8,7 +8,7 @@ If you need a more detailed description of this build, check out the article her
 
 ## Required Software
 
-Download and install the following software. If you can't figure out this step, you probably shouldn't be considering a RAC installation.
+Download and install the following software. If you can't figure out this step, you probably shouldn't be considering a Data Guard installation.
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](https://www.vagrantup.com/downloads.html)
