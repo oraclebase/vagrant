@@ -67,7 +67,7 @@ if [ ! -d ${DATA_DIR}/${ORACLE_SID} ]; then
     -emConfiguration NONE
 
   echo "******************************************************************************"
-  echo "Set the PDB to auto-start." `date`
+  echo "Set DB parameters." `date`
   echo "******************************************************************************"
   sqlplus / as sysdba <<EOF
 alter system set db_create_file_dest='${DATA_DIR}';
