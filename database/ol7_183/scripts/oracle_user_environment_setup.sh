@@ -24,7 +24,7 @@ export ORA_INVENTORY=/u01/app/oraInventory
 # Database installation settings.
 export SOFTWARE_DIR=/u01/software
 export DB_SOFTWARE="LINUX.X64_180000_db_home.zip"
-export APEX_SOFTWARE="apex_19.1_en.zip"
+export APEX_SOFTWARE="apex_19.2_en.zip"
 export ORACLE_PASSWORD="oracle"
 export SCRIPTS_DIR=/home/oracle/scripts
 
@@ -40,8 +40,8 @@ export INSTALL_APEX="true"
 
 
 # ORDS installation settings.
-export JAVA_SOFTWARE="openjdk-12.0.2_linux-x64_bin.tar.gz"
-export TOMCAT_SOFTWARE="apache-tomcat-9.0.26.tar.gz"
+export JAVA_SOFTWARE="OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz"
+export TOMCAT_SOFTWARE="apache-tomcat-9.0.27.tar.gz"
 export ORDS_SOFTWARE="ords-19.2.0.199.1647.zip"
 export SQLCL_SOFTWARE="sqlcl-19.2.1.206.1649.zip"
 export SOFTWARE_DIR="/u01/software"
