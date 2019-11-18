@@ -8,7 +8,7 @@ Only the database will be installed and all other application creation scripts h
 oracle-database-preinstall-19c package required two external packages to be installed(see install_os_packages.sh for details)     
       
 
-Enjoy
+Enjoys
 
 ## Required Software
 
