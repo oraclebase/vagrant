@@ -1,4 +1,4 @@
-# Vagrant 19c Data Guard Build on Red Hat Linux 8
+# Vagrant 19c Data Guard Build on Centos 8
 
 Note: the vagrant base box of centos 8 is generic and will be provisioned with the prerequisite rpm packages for Oracle 19c from a centos repository during vagrant start.
 
@@ -104,13 +104,11 @@ vagrant halt
    node 1:
    cd node1
    vagrant up
-   /home/oracle/scripts/start_all.sh
-   
-   ```
-    ```
+   oracle@# /home/oracle/scripts/start_all.sh
+
    cd node2
    vagrant up
-   /home/oracle/scripts/start_all.sh
+   oracle@# /home/oracle/scripts/start_all.sh
     ```
 ## Remove Whole System
 

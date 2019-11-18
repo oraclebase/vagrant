@@ -1,4 +1,4 @@
-# Vagrant 19c Data Guard Build on Red Hat Linux 8
+# Vagrant 19c Data Guard Build on a prepackaged Red Hat Linux 8
 
 Note: the vagrant base box of RHEL8 is shipped with all the prerequisite rpm packages for Oracle 19c. tested with few Tim Hall builds so far
 
@@ -84,15 +84,32 @@ vagrant up
 
 ## Turn Off System
 
-Perform the following to turn off the system cleanly.
+Perform the following to turn off the system cleanly. (stop_all script will set state to apply-off or transport-off according to the role of the node's DB)
 
 ```
+oracle@# /home/oracle/scripts/stop_all.sh 
+exist
 cd ../node2
 vagrant halt
 
 cd ../node1
+oracle@# /home/oracle/scripts/stop_all.sh 
 vagrant halt
 ```
+
+## Restart the System after first install and shutdown 
+  Perform the following to turn on the system cleanly. (start_all will run a startup if local DB role is a Primary or startup mount if the local DB role is Standby)
+  
+   ```
+   node 1:
+   cd node1
+   vagrant up
+   oracle@# /home/oracle/scripts/start_all.sh
+
+   cd node2
+   vagrant up
+   oracle@# /home/oracle/scripts/start_all.sh
+    ```
 
 ## Remove Whole System
 

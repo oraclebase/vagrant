@@ -2,7 +2,8 @@
 
 A simple Vagrant build for Oracle Database 19c on centos 8.
 
-Note: the vagrant base box of centos 8 is shipped with all the prerequisite rpm packages for Oracle 19c. tested with few Tim Hall builds so far
+Note: the vagrant base box of CENTOS 8 is generic will be provisioned with the prerequisite rpm packages for Oracle 19c from a CENTOS repository during vagrant start.
+      Only the database will be installed and all other application creation scripts have been commented out(ords,sqlc etc).
 
 Enjoy
 
