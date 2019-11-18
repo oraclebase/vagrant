@@ -2,7 +2,7 @@
 
 Note: the vagrant base box of centos 8 is generic and will be provisioned with the prerequisite rpm packages for Oracle 19c from a centos repository during vagrant start.
 
-The Vagrant scripts here will allow you to build a 19c Data Guard system on Red Hat linux 8. by just starting the VMs in the correct order.
+The Vagrant scripts here will allow you to build a 19c Data Guard system on Centos 8. by just starting the VMs in the correct order.
 
 If you need a more detailed description of this build, check out the article here.
 
