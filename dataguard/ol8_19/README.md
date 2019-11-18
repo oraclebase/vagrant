@@ -3,7 +3,8 @@
 
 The Vagrant scripts here will allow you to build a 19c Data Guard system on Oracle linux 8. by just starting the VMs in the correct order.
 
-If you need a more detailed description of this build, check out the article here.
+
+If you need a more detailed description of the original build, check out the article here.
 
 * [Data Guard Physical Standby Setup Using the Data Guard Broker in Oracle Database 19c](https://oracle-base.com/articles/19c/data-guard-setup-using-broker-19c)
 
