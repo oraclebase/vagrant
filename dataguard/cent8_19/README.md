@@ -4,7 +4,26 @@ Note: the vagrant base box of centos 8 is generic and will be provisioned with t
 
 The Vagrant scripts here will allow you to build a 19c Data Guard system on Centos 8. by just starting the VMs in the correct order.
 
-If you need a more detailed description of this build, check out the article here.
+This configuration is slightly modified comparing to Tim hall's original build but the modification merely resides in the below environment variables values (that are easy to adapt to your liking) and two **start/stop** scripts.
+
+```
+export DOMAIN_NAME=evilcorp.com
+
+export NODE1_HOSTNAME=montreal
+export NODE2_HOSTNAME=toronto
+export NODE1_PUBLIC_IP=192.168.78.54
+export NODE2_PUBLIC_IP=192.168.78.55
+export ORACLE_SID=montreal
+export NODE1_DB_UNIQUE_NAME=montreal
+export NODE2_DB_UNIQUE_NAME=toronto
+export ROOT_PASSWORD=racattack
+export ORACLE_PASSWORD=oracle
+export SYS_PASSWORD="racattack"
+export PDB_PASSWORD="PdbPassword1!"
+
+```
+
+If you need a more detailed description of the original build, check out the article here.
 
 * [Data Guard Physical Standby Setup Using the Data Guard Broker in Oracle Database 19c](https://oracle-base.com/articles/19c/data-guard-setup-using-broker-19c)
 
