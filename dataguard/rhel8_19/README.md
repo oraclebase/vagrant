@@ -5,7 +5,7 @@
 The Vagrant scripts here will allow you to build a 19c Data Guard system on Red Hat linux 8. by just starting the VMs in the correct order.
 
 
-This configuration is slightly modified comparing to Tim hall's original build but the modification merely resides in the below environment variables values (that are easy to adapt to your liking) and two start/stop scripts.
+This configuration is slightly modified comparing to Tim hall's original build but the modification merely resides in the below environment variables values (that are easy to adapt to your liking) and two **start/stop** scripts.
 
 ```
 export DOMAIN_NAME=evilcorp.com
