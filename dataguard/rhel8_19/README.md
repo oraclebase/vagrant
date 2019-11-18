@@ -10,13 +10,13 @@ This configuration is slightly modified comparing to Tim hall's original build b
 ```
 export DOMAIN_NAME=evilcorp.com
 
-export NODE1_HOSTNAME=montreal
-export NODE2_HOSTNAME=toronto
-export NODE1_PUBLIC_IP=192.168.78.54
-export NODE2_PUBLIC_IP=192.168.78.55
-export ORACLE_SID=montreal
-export NODE1_DB_UNIQUE_NAME=montreal
-export NODE2_DB_UNIQUE_NAME=toronto
+export **NODE1_HOSTNAME=montreal**
+export **NODE2_HOSTNAME=toronto**
+export **NODE1_PUBLIC_IP=192.168.78.54**
+export vNODE2_PUBLIC_IP=192.168.78.55**
+export **ORACLE_SID=montreal**
+export **NODE1_DB_UNIQUE_NAME=montreal**
+export **NODE2_DB_UNIQUE_NAME=toronto**
 export ROOT_PASSWORD=racattack
 export ORACLE_PASSWORD=oracle
 export SYS_PASSWORD="racattack"
