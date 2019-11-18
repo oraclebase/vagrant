@@ -7,3 +7,4 @@
 *.bin
 *.vdi
 *.rpm
+database/rhel8_19_gen/scripts/oracle_user_environment_setup.sh.bak

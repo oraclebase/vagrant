@@ -86,7 +86,6 @@ export ORAENV_ASK=YES
 
 dbstart \$ORACLE_HOME
 
-\$CATALINA_HOME/bin/startup.sh
 EOF
 
 
