@@ -91,8 +91,8 @@ oracle@# /home/oracle/scripts/stop_all.sh
 cd ../node2
 vagrant halt
 
-cd ../node1
 oracle@# /home/oracle/scripts/stop_all.sh 
+cd ../node1
 vagrant halt
 ```
 
