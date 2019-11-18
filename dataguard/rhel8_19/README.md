@@ -3,6 +3,8 @@
 Note: the vagrant base box of RHEL8 is shipped with all the prerequisite rpm packages for Oracle 19c. tested with few Tim Hall builds so far
 
 The Vagrant scripts here will allow you to build a 19c Data Guard system on Red Hat linux 8. by just starting the VMs in the correct order.
+
+
 This configuration is slightly modified comparing to Tim hall's original build but it merely resides in the below environment variables values.
 
 ```
@@ -10,30 +12,13 @@ export DOMAIN_NAME=evilcorp.com
 
 export NODE1_HOSTNAME=montreal
 export NODE2_HOSTNAME=toronto
-export NODE1_FQ_HOSTNAME=${NODE1_HOSTNAME}.${DOMAIN_NAME}
-export NODE2_FQ_HOSTNAME=${NODE2_HOSTNAME}.${DOMAIN_NAME}
-
 export NODE1_PUBLIC_IP=192.168.78.54
 export NODE2_PUBLIC_IP=192.168.78.55
-
-export ORACLE_BASE=/u01/app/oracle
-export ORA_INVENTORY=/u01/app/oraInventory
-export ORACLE_HOME_EXT=product/19.0.0/dbhome_1
-
 export ORACLE_SID=montreal
-export PDB_NAME=pdb1
 export NODE1_DB_UNIQUE_NAME=montreal
 export NODE2_DB_UNIQUE_NAME=toronto
-export GLOBAL_DBNAME=
-export ORACLE_TERM=xterm
-
-export ORA_LANGUAGES=en,en_GB
-
-export DATA_DIR=/u01/oradata
-
 export ROOT_PASSWORD=racattack
 export ORACLE_PASSWORD=oracle
-# Passwords >8 chars, number, special, not containing username.
 export SYS_PASSWORD="racattack"
 export PDB_PASSWORD="PdbPassword1!"
 
