@@ -2,7 +2,6 @@ echo "**************************************************************************
 echo "Prepare yum repos and install base packages." `date`
 echo "******************************************************************************"
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-
 yum install -y libnsl bind sysstat unixODBC unixODBC-devel binutils zip dnsmasq 
 curl -o sshpass-1.06-2.el7.x86_64.rpm     http://mirror.centos.org/centos/7/extras/x86_64/Packages/sshpass-1.06-2.el7.x86_64.rpm
 yum -y localinstall sshpass-1.06-2.el7.x86_64.rpm
