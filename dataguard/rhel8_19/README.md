@@ -4,6 +4,7 @@ Note: the vagrant base box of RHEL8 is shipped with all the prerequisite rpm pac
 
 The Vagrant scripts here will allow you to build a 19c Data Guard system on Red Hat linux 8. by just starting the VMs in the correct order.
 This configuration is slightly modified comparing to Tim hall's original build but it merely resides in the below environment variables values.
+
 ```
 export DOMAIN_NAME=evilcorp.com
 
@@ -35,6 +36,7 @@ export ORACLE_PASSWORD=oracle
 # Passwords >8 chars, number, special, not containing username.
 export SYS_PASSWORD="racattack"
 export PDB_PASSWORD="PdbPassword1!"
+
 ```
 
 If you need a more detailed description of the original build, check out the article here.
