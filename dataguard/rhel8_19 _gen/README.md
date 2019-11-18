@@ -8,7 +8,6 @@ This configuration is slightly modified comparing to Tim hall's original build b
 
 ```
 export DOMAIN_NAME=evilcorp.com
-
 export NODE1_HOSTNAME=montreal
 export NODE2_HOSTNAME=toronto
 export NODE1_PUBLIC_IP=192.168.78.54
