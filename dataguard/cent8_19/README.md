@@ -85,13 +85,13 @@ vagrant up
 ## Turn Off System
 
 Perform the following to turn off the system cleanly. (stop_all script will set state to apply-off or transport-off according to the role of the node's DB)
-
+ On node 1
 ```
 oracle@# /home/oracle/scripts/stop_all.sh 
 cd ../node2
 vagrant halt
 ```
-
+On Node 2
 ```
 oracle@# /home/oracle/scripts/stop_all.sh 
 cd ../node1
