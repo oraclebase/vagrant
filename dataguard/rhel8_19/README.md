@@ -1,6 +1,6 @@
 # Vagrant 19c Data Guard Build on a prepackaged Red Hat Linux 8
 
-Note: the vagrant base box of RHEL8 is shipped with all the prerequisite rpm packages for Oracle 19c. tested with few Tim Hall builds so far
+Note: the vagrant base box of RHEL8 is shipped with all the prerequisite rpm packages for Oracle 19c. 
 
 The Vagrant scripts here will allow you to build a 19c Data Guard system on Red Hat linux 8. by just starting the VMs in the correct order.
 
