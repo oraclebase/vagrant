@@ -2,8 +2,8 @@
 
 A simple Vagrant build for Oracle Database 19c on Red hat linux 8.
 
-Note: the vagrant base box of RHEL8 is shipped with all the prerequisite rpm packages for Oracle 19c. tested with few Tim Hall builds so far
-
+Note: the vagrant base box of RHEL8 is shipped with all the prerequisite rpm packages for Oracle 19c. tested with few Tim Hall builds so far.
+       Only the database will be installed and all other application creation scripts have been commented out(ords,sqlc etc).
 Enjoy
 
 ## Required Software
