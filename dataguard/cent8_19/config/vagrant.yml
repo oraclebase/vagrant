@@ -1,0 +1,17 @@
+shared:
+  box: bento/centos-8.0
+  non_rotational: 'off'
+
+node1:
+  vm_name: montreal_19_dg1
+  mem_size: 4096
+  cpus: 2
+  public_ip: 192.168.78.54
+  u01_disk: ./cent8_19_dg1_u01.vdi
+
+node2:
+  vm_name: toronto_19_dg2
+  mem_size: 4096
+  cpus: 2
+  public_ip: 192.168.78.55
+  u01_disk: ./cent8_19_dg2_u01.vdi
