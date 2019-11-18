@@ -139,3 +139,64 @@ ALTER SYSTEM SET dg_broker_start=TRUE;
 
 EXIT;
 EOF
+
+echo "******************************************************************************"
+echo "Create start/stop scripts." `date`
+echo "******************************************************************************"
+
+
+touch /home/oracle/scripts/db_type.txt
+
+
+cat > /home/oracle/scripts/start_all.sh <<EOF
+#!/bin/bash
+. /home/oracle/scripts/setEnv.sh
+DB_UNIQUE_NAME=`ls $ORACLE_HOME/dbs/dr2*dat| xargs -n 1 basename|awk '{gsub(/dr2/,x)}1' |awk '{gsub(/\.dat/,x)}1'`
+db_type=`cat /home/oracle/scripts/db_type.txt`
+if [ "\$db_type" == "Primary" ] ; then
+# open primary DB
+echo -e "\n startup;\nexit" | ${ORACLE_HOME}/bin/sqlplus "/ as sysdba"
+echo "edit database \$DB_UNIQUE_NAME set state='TRANSPORT-ON';" |$ORACLE_HOME/bin/dgmgrl /
+# mount standby DB
+else echo -e "\nstartup mount;\nexit" | ${ORACLE_HOME}/bin/sqlplus "/ as sysdba"
+sleep 20
+echo "edit database \$DB_UNIQUE_NAME set state='APPLY-ON';" |$ORACLE_HOME/bin/dgmgrl /
+fi
+echo "show database $DB_UNIQUE_NAME;" |$ORACLE_HOME/bin/dgmgrl / |grep "Intended State:"
+EOF
+
+
+cat > /home/oracle/scripts/stop_all.sh <<EOF
+#!/bin/bash
+. /home/oracle/scripts/setEnv.sh
+/home/oracle/scripts/check_dgmgrl.sh
+DB_UNIQUE_NAME=`ls $ORACLE_HOME/dbs/dr2*dat| xargs -n 1 basename|awk '{gsub(/dr2/,x)}1' |awk '{gsub(/\.dat/,x)}1'`
+echo "show configuration;" |$ORACLE_HOME/bin/dgmgrl / |grep -A 1 \$DB_UNIQUE_NAME |awk 'NR==4 {print \$3}' > /home/oracle/scripts/db_type.txt
+db_type=`cat /home/oracle/scripts/db_type.txt`
+echo  "\$DB_UNIQUE_NAME is a \$db_type" DB
+if [ "$db_type" == "Primary" ] ; then
+echo "edit database \$DB_UNIQUE_NAME set state='LOG-TRANSPORT-OFF';" |$ORACLE_HOME/bin/dgmgrl /
+
+ else echo "edit database \$DB_UNIQUE_NAME set state='APPLY-OFF';" |$ORACLE_HOME/bin/dgmgrl /
+  fi
+  echo "show database $DB_UNIQUE_NAME;" |$ORACLE_HOME/bin/dgmgrl / |grep "Intended State:"
+echo -e "\nshutdown immediate;\nexit" | ${ORACLE_HOME}/bin/sqlplus "/ as sysdba"
+EOF
+
+touch /home/oracle/scripts/check_dgmgrl.sh 
+cat > /home/oracle/scripts/check_dgmgrl.sh <<EOF
+#!/bin/bash
+. /home/oracle/.bash_profile
+result=`echo "show configuration;" |$ORACLE_HOME/bin/dgmgrl / |grep -A 1 "Configuration Status" | grep -v "Configuration Status"|awk '{print $1}'`
+if [ "$result" == "SUCCESS" ] ; then
+ echo 'Data Guard status : up '
+else echo  "$result"
+fi
+DB_UNIQUE_NAME=`ls $ORACLE_HOME/dbs/dr2*dat| xargs -n 1 basename|awk '{gsub(/dr2/,x)}1' |awk '{gsub(/\.dat/,x)}1'`
+echo "show configuration;" |$ORACLE_HOME/bin/dgmgrl / |grep -A 1 \$DB_UNIQUE_NAME |awk 'NR==4 {print \$3}' > /home/oracle/scripts/db_type.txt
+db_type=`cat /home/oracle/scripts/db_type.txt`
+echo  "\$DB_UNIQUE_NAME is a \$db_type" DB
+EOF
+
+chown -R oracle.oinstall ${SCRIPTS_DIR}
+chmod u+x ${SCRIPTS_DIR}/*.sh

@@ -1,5 +1,5 @@
 shared:
-  box: Scofieldd/rhel8_ora
+  box: generic/rhel8
   non_rotational: 'off'
 
 node1:
