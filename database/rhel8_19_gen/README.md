@@ -42,13 +42,13 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.22.tar.gz
-|   +--- apex_19.1_en.zip
+|   +--- apache-tomcat-9.0.22.tar.gz      optional
+|   +--- apex_19.1_en.zip                 optional
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- openjdk-12.0.2_linux-x64_bin.tar.gz
-|   +--- ords-19.2.0.199.1647.zip
-|   +--- put_software_here.txt
-|   +--- sqlcl-19.2.1.206.1649.zip
+|   +--- openjdk-12.0.2_linux-x64_bin.tar.gz    optional
+|   +--- ords-19.2.0.199.1647.zip          optional
+|   +--- put_software_here.txt        
+|   +--- sqlcl-19.2.1.206.1649.zip         optional
 +--- Vagrantfile
 $
 ```
