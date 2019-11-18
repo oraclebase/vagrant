@@ -107,6 +107,7 @@ vagrant halt
    oracle@# /home/oracle/scripts/start_all.sh
    ```
    
+   ```
    cd node2
    vagrant up
    oracle@# /home/oracle/scripts/start_all.sh
