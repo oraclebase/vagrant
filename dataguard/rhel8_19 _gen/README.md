@@ -22,6 +22,7 @@ export PDB_PASSWORD="PdbPassword1!"
 
 ```
 
+oracle-database-preinstall-19c package required two external packages to be installed (see install_os_packages.sh for details).
 If you need a more detailed description of the original build, check out the article here.
 
 * [Data Guard Physical Standby Setup Using the Data Guard Broker in Oracle Database 19c](https://oracle-base.com/articles/19c/data-guard-setup-using-broker-19c)
