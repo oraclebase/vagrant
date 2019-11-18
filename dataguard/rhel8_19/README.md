@@ -105,11 +105,13 @@ vagrant halt
    cd node1
    vagrant up
    oracle@# /home/oracle/scripts/start_all.sh
-
+   ```
+   
+   ```
    cd node2
    vagrant up
    oracle@# /home/oracle/scripts/start_all.sh
-    ```
+   ```
 
 ## Remove Whole System
 
