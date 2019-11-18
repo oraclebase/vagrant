@@ -88,7 +88,6 @@ Perform the following to turn off the system cleanly. (stop_all script will set 
 
 ```
 oracle@# /home/oracle/scripts/stop_all.sh 
-exist
 cd ../node2
 vagrant halt
 
