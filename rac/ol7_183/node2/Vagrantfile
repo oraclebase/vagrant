@@ -7,21 +7,26 @@ require 'yaml'
 
 # Variables
 params = YAML.load_file '../config/vagrant.yml'
-var_box            = params['shared']['box']
-var_non_rotational = params['shared']['non_rotational']
+var_box                     = params['shared']['box']
+var_non_rotational          = params['shared']['non_rotational']
 
-var_asm_disk_1     = params['shared']['asm_disk_1']
-var_asm_disk_2     = params['shared']['asm_disk_2']
-var_asm_disk_3     = params['shared']['asm_disk_3']
-var_asm_disk_4     = params['shared']['asm_disk_4']
-var_asm_disk_size  = params['shared']['asm_disk_size']
+var_asm_crs_disk_1          = params['shared']['asm_crs_disk_1']
+var_asm_crs_disk_2          = params['shared']['asm_crs_disk_2']
+var_asm_crs_disk_3          = params['shared']['asm_crs_disk_3']
+var_asm_crs_disk_size       = params['shared']['asm_crs_disk_size']
+var_asm_gimr_disk_1         = params['shared']['asm_gimr_disk_1']
+var_asm_gimr_disk_size      = params['shared']['asm_gimr_disk_size']
+var_asm_data_disk_1         = params['shared']['asm_data_disk_1']
+var_asm_data_disk_size      = params['shared']['asm_data_disk_size']
+var_asm_reco_disk_1         = params['shared']['asm_reco_disk_1']
+var_asm_reco_disk_size      = params['shared']['asm_reco_disk_size']
 
-var_vm_name        = params['node2']['vm_name']
-var_mem_size       = params['node2']['mem_size']
-var_cpus           = params['node2']['cpus']
-var_public_ip      = params['node2']['public_ip']
-var_private_ip     = params['node2']['private_ip']
-var_u01_disk       = params['node2']['u01_disk']
+var_vm_name                 = params['node2']['vm_name']
+var_mem_size                = params['node2']['mem_size']
+var_cpus                    = params['node2']['cpus']
+var_public_ip               = params['node2']['public_ip']
+var_private_ip              = params['node2']['private_ip']
+var_u01_disk                = params['node2']['u01_disk']
 
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
@@ -88,25 +93,35 @@ Vagrant.configure("2") do |config|
     end
     vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', var_u01_disk, '--nonrotational', var_non_rotational]
     
-    unless File.exist?(var_asm_disk_1)
-      vb.customize ['createhd', '--filename', var_asm_disk_1, '--size', var_asm_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    unless File.exist?(var_asm_crs_disk_1)
+      vb.customize ['createhd', '--filename', var_asm_crs_disk_1, '--size', var_asm_crs_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', var_asm_disk_1, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', var_asm_crs_disk_1, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
 
-    unless File.exist?(var_asm_disk_2)
-      vb.customize ['createhd', '--filename', var_asm_disk_2, '--size', var_asm_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    unless File.exist?(var_asm_crs_disk_2)
+      vb.customize ['createhd', '--filename', var_asm_crs_disk_2, '--size', var_asm_crs_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 3, '--device', 0, '--type', 'hdd', '--medium', var_asm_disk_2, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 3, '--device', 0, '--type', 'hdd', '--medium', var_asm_crs_disk_2, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
 
-    unless File.exist?(var_asm_disk_3)
-      vb.customize ['createhd', '--filename', var_asm_disk_3, '--size', var_asm_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    unless File.exist?(var_asm_crs_disk_3)
+      vb.customize ['createhd', '--filename', var_asm_crs_disk_3, '--size', var_asm_crs_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 4, '--device', 0, '--type', 'hdd', '--medium', var_asm_disk_3, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 4, '--device', 0, '--type', 'hdd', '--medium', var_asm_crs_disk_3, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
 
-    unless File.exist?(var_asm_disk_4)
-      vb.customize ['createhd', '--filename', var_asm_disk_4, '--size', var_asm_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    unless File.exist?(var_asm_gimr_disk_1)
+      vb.customize ['createhd', '--filename', var_asm_gimr_disk_1, '--size', var_asm_gimr_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 5, '--device', 0, '--type', 'hdd', '--medium', var_asm_disk_4, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 5, '--device', 0, '--type', 'hdd', '--medium', var_asm_gimr_disk_1, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+
+    unless File.exist?(var_asm_data_disk_1)
+      vb.customize ['createhd', '--filename', var_asm_data_disk_1, '--size', var_asm_data_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 6, '--device', 0, '--type', 'hdd', '--medium', var_asm_data_disk_1, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+
+    unless File.exist?(var_asm_reco_disk_1)
+      vb.customize ['createhd', '--filename', var_asm_reco_disk_1, '--size', var_asm_reco_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 7, '--device', 0, '--type', 'hdd', '--medium', var_asm_reco_disk_1, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
   end
 
   #
