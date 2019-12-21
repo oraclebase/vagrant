@@ -5,7 +5,7 @@ echo "export JAVA_HOME=/home/docker_user/java/latest" >> ~/.bash_profile
 echo "alias sql=\"/home/docker_user/sqlcl/bin/sql\"" >> ~/.bash_profile
 
 cd ~
-unzip -oq /vagrant/software/sqlcl-19.2.1.206.1649.zip
+unzip -oq /vagrant/software/sqlcl-19.4.0.354.0937.zip
 mkdir ~/java
 cd ~/java
 tar -xf /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz
@@ -20,9 +20,9 @@ docker pull oraclelinux:8-slim
 # Copy ORDS software and do build (OL7).
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_19.2_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.27.tar.gz .
-cp /vagrant/software/ords-19.2.0.199.1647.zip .
-cp /vagrant/software/sqlcl-19.2.1.206.1649.zip .
+cp /vagrant/software/apache-tomcat-9.0.30.tar.gz .
+cp /vagrant/software/ords-19.4.0.352.1226.zip .
+cp /vagrant/software/sqlcl-19.4.0.354.0937.zip .
 cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
 docker build --no-cache -t ol7_ords:latest .
@@ -30,9 +30,9 @@ docker build --no-cache -t ol7_ords:latest .
 # Copy ORDS software and do build (OL8).
 cd /u01/dockerfiles/ords/ol8_ords/software
 cp /vagrant/software/apex_19.2_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.27.tar.gz .
-cp /vagrant/software/ords-19.2.0.199.1647.zip .
-cp /vagrant/software/sqlcl-19.2.1.206.1649.zip .
+cp /vagrant/software/apache-tomcat-9.0.30.tar.gz .
+cp /vagrant/software/ords-19.4.0.352.1226.zip .
+cp /vagrant/software/sqlcl-19.4.0.354.0937.zip .
 cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
 docker build --no-cache -t ol8_ords:latest .
@@ -42,7 +42,7 @@ cd /u01/dockerfiles/database/ol7_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
 cp /vagrant/software/apex_19.2_en.zip .
 cd /u01/dockerfiles/database/ol7_19
-docker build --squash -t ol7_19:latest .
+docker build --no-cache -t ol7_19:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_19/software
@@ -56,28 +56,28 @@ cd /u01/dockerfiles/database/ol7_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
 cp /vagrant/software/apex_19.2_en.zip .
 cd /u01/dockerfiles/database/ol7_183
-#docker build --squash -t ol7_183:latest .
+#docker build --no-cache -t ol7_183:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
 cp /vagrant/software/apex_19.2_en.zip .
 cd /u01/dockerfiles/database/ol8_183
-#docker build --squash -t ol8_183:latest .
+#docker build --no-cache -t ol8_183:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_122/software
 cp /vagrant/software/linuxx64_12201_database.zip .
 cp /vagrant/software/apex_19.2_en.zip .
 cd /u01/dockerfiles/database/ol7_122
-#docker build --squash -t ol7_122:latest .
+#docker build --no-cache -t ol7_122:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_121/software
 cp /vagrant/software/linuxamd64_12102_database_*of2.zip .
 cp /vagrant/software/apex_19.2_en.zip .
 cd /u01/dockerfiles/database/ol7_121
-#docker build --squash -t ol7_121:latest .
+#docker build --no-cache -t ol7_121:latest .
 
 # Setup file system to allow docker_user to interact
 # with docker host volumes.
