@@ -51,6 +51,8 @@ user.tablespace.default=${APEX_TABLESPACE}
 user.tablespace.temp=${TEMP_TABLESPACE}
 sys.user=SYS
 sys.password=${SYS_PASSWORD}
+restEnabledSql.active=true
+feature.sdw=true
 EOF
 
 
