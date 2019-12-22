@@ -1,5 +1,5 @@
 echo "******************************************************************************"
-echo " Create a listener.ora file if it doesn't already exist." `date`
+echo "Create a listener.ora file if it doesn't already exist." `date`
 echo "******************************************************************************"
 if [ ! -f ${ORACLE_HOME}/network/admin/listener.ora ]; then
   
