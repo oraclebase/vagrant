@@ -69,7 +69,7 @@ cat > ${ORACLE_HOME}/network/admin/sqlnet.ora <<EOF
 SQLNET.INBOUND_CONNECT_TIMEOUT=400
 EOF
 
-# Adding the Native Network Encryption was suggested by Peter Wahl and Richard Evans.
+# Adding the Native Network Encryption was suggested by Claudia Hüffer, Peter Wahl and Richard Evans.
 # I've made it optional.
 if [ "${NATIVE_NETWORK_ENCRYPTION}" = "true" ]; then
   cat >> ${ORACLE_HOME}/network/admin/sqlnet.ora <<EOF
