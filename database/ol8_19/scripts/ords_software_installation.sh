@@ -21,9 +21,10 @@ cp -r ${CATALINA_HOME}/temp $CATALINA_BASE
 cp -r ${CATALINA_HOME}/webapps $CATALINA_BASE
 cp -r ${CATALINA_HOME}/work $CATALINA_BASE
 # ORDS
-mkdir -p ${ORDS_CONF}
+mkdir -p ${ORDS_HOME}
 cd ${ORDS_HOME}
 unzip -oq ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
+mkdir -p ${ORDS_CONF}
 # SQLcl
 cd /u01
 unzip -oq ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}

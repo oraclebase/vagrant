@@ -13,9 +13,10 @@ tar -xzf ${SOFTWARE_DIR}/${TOMCAT_SOFTWARE}
 TEMP_FILE=`ls`
 mv ${TEMP_FILE}/* .
 rmdir ${TEMP_FILE}
-mkdir -p ${ORDS_CONF}
+mkdir -p ${ORDS_HOME}
 cd ${ORDS_HOME}
 unzip -oq ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
+mkdir -p ${ORDS_CONF}
 cd /u01
 unzip -oq ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}
 cd ${SOFTWARE_DIR}
