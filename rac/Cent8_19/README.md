@@ -6,7 +6,6 @@ If you need a more detailed description of this build, check out Tim Hall's arti
 
 * [Oracle Database 19c RAC On Oracle Linux 7 Using VirtualBox and Vagrant](https://oracle-base.com/articles/19c/oracle-db-19c-rac-installation-on-oracle-linux-7-using-virtualbox)
 
-Note: the vagrant base box of RHEL8 is shipped with all the prerequisite rpm packages for Oracle 19c. Tested with few Tim Hall builds so far
 
 ## Required Software
 
