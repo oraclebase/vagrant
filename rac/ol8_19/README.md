@@ -150,10 +150,12 @@ vagrant up
 
 ## Turn Off RAC
 
-Perform the following to turn off the RAC cleanly.
+The below is supposed to turn off the RAC cleanly but I usually stop the crs first.
 
 ```
 cd ../node2
+vagrant ssh 
+crsctl stop crs (as root)
 vagrant halt
 
 cd ../node1
