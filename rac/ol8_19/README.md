@@ -1,4 +1,4 @@
-# Vagrant 19c Real Application Clusters (RAC) Build on Red Hat Linux 8
+# Vagrant 19c Real Application Clusters (RAC) Build on Centos 8
 
 The Vagrant scripts here will allow you to build a 19c Real Application Clusters (RAC) system on Red hat linux 8. by just starting the VMs in the correct order.
 
@@ -42,18 +42,7 @@ node2:
   mem_size: 6144
 ```
 
-The more memory you can throw at this the better. I regularly use 21G RAM just for the VMs, not including the memory for the host system.
-
-```
-dns:
-  mem_size: 1024
-
-node1:
-  mem_size: 10240
-
-node2:
-  mem_size: 10240
-```
+The more memory you can throw at this the better.
 
 ## Clone Repository
 
@@ -116,19 +105,19 @@ The "config" directory contains a "install.env" and a "vagrant.yml" file. The co
 At minimum you will have to amend the following path variables in the "vagrant.yml" file, providing suitable paths for the shared disks.
 
 ```
-  asm_disk_1: /u05/VirtualBox/shared/ol7_19_rac/asm_disk_1.vdi
-  asm_disk_2: /u05/VirtualBox/shared/ol7_19_rac/asm_disk_2.vdi
-  asm_disk_3: /u05/VirtualBox/shared/ol7_19_rac/asm_disk_3.vdi
-  asm_disk_4: /u05/VirtualBox/shared/ol7_19_rac/asm_disk_4.vdi
+  asm_disk_1: /u05/VirtualBox/shared/ol8_19_rac/asm_disk_1.vdi
+  asm_disk_2: /u05/VirtualBox/shared/ol8_19_rac/asm_disk_2.vdi
+  asm_disk_3: /u05/VirtualBox/shared/ol8_19_rac/asm_disk_3.vdi
+  asm_disk_4: /u05/VirtualBox/shared/ol8_19_rac/asm_disk_4.vdi
 ```
 
 For example, if you were working on a Windows PC, you might create a path called "D:\VM\RAC\rhel8_19_rac" and use the following settings.
 
 ```
-  asm_disk_1: D:\VM\RAC\rhel8_19_rac\asm_disk_1.vdi
-  asm_disk_2: D:\VM\RAC\rhel8_19_rac\asm_disk_2.vdi
-  asm_disk_3: D:\VM\RAC\rhel8_19_rac\asm_disk_3.vdi
-  asm_disk_4: D:\VM\RAC\rhel8_19_rac\asm_disk_4.vdi
+  asm_disk_1: D:\VM\RAC\ol8_19_rac\asm_disk_1.vdi
+  asm_disk_2: D:\VM\RAC\ol8_19_rac\asm_disk_2.vdi
+  asm_disk_3: D:\VM\RAC\ol8_19_rac\asm_disk_3.vdi
+  asm_disk_4: D:\VM\RAC\ol8_19_rac\asm_disk_4.vdi
 ```
 
 If you don't alter them,in this build they will get written to "D:\VM\RAC\rhel8_19_rac".
