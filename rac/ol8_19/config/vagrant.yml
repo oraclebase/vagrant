@@ -1,0 +1,30 @@
+shared:
+  box: FritsHoogland/oracle-8.0
+  non_rotational: 'off'
+  asm_disk_1: D:\VM\RAC\shared\ol8_19_rac\asm_disk_1.vdi
+  asm_disk_2: D:\VM\RAC\shared\ol8_19_rac\asm_disk_2.vdi
+  asm_disk_3: D:\VM\RAC\shared\ol8_19_rac\asm_disk_3.vdi
+  asm_disk_4: D:\VM\RAC\shared\ol8_19_rac\asm_disk_4.vdi
+  asm_disk_size: 20
+
+dns:
+  vm_name: ol8_19_dns
+  mem_size: 1024
+  cpus: 1
+  public_ip: 192.168.78.100
+
+node1:
+  vm_name: london_rac1
+  mem_size: 7168
+  cpus: 2
+  public_ip: 192.168.78.51
+  private_ip: 172.16.100.51
+  u01_disk: ./ol8_19_rac1_u01.vdi
+
+node2:
+  vm_name: london_rac2
+  mem_size: 6144
+  cpus: 2
+  public_ip: 192.168.78.52
+  private_ip: 172.16.100.52
+  u01_disk: ./ol8_19_rac2_u01.vdi

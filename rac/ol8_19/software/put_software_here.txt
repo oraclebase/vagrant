@@ -1,0 +1,8 @@
+The software you put in this location will be visible inside the VM below this path.
++--- software
+|   +--- LINUX.X64_193000_db_home.zip
+|   +--- LINUX.X64_193000_grid_home.zip
+|   +--- put_software_here.txt
+
+
+/vagrant/software/
