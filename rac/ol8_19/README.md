@@ -1,6 +1,6 @@
-# Vagrant 19c Real Application Clusters (RAC) Build on Centos 8
+# Vagrant 19c Real Application Clusters (RAC) Build on Oracle Linux 8
 
-The Vagrant scripts here will allow you to build a 19c Real Application Clusters (RAC) system on Red hat linux 8. by just starting the VMs in the correct order.
+The Vagrant scripts here will allow you to build a 19c Real Application Clusters (RAC) system on Oracle Linux 8. by just starting the VMs in the correct order.
 
 If you need a more detailed description of this build, check out Tim Hall's article here (based on Oracel Linux 7).
 
