@@ -40,7 +40,7 @@ export INSTALL_APEX="true"
 
 
 # ORDS installation settings.
-export JAVA_SOFTWARE="OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz"
+export JAVA_SOFTWARE="OpenJDK11U-jdk_x64_linux_hotspot_11.0.6_10.tar.gz"
 export TOMCAT_SOFTWARE="apache-tomcat-9.0.30.tar.gz"
 export ORDS_SOFTWARE="ords-19.4.0.352.1226.zip"
 export SQLCL_SOFTWARE="sqlcl-19.4.0.354.0937.zip"
