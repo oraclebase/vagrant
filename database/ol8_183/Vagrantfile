@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 # Variables
-#var_box            = 'bento/oracle-8.0'
-var_box            = 'oraclebase/ol8'
+var_box            = 'bento/oracle-8'
+#var_box            = 'oraclebase/ol8'
 var_vm_name        = 'ol7_183_vagrant'
 var_mem_size       = 4096
 var_cpus           = 2
