@@ -8,7 +8,7 @@ cd ~
 unzip -oq /vagrant/software/sqlcl-19.4.0.354.0937.zip
 mkdir ~/java
 cd ~/java
-tar -xf /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz
+tar -xf /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.6_10.tar.gz
 ln -s ./j* ./latest
 cd ~
 unzip -oq /vagrant/software/autorest_demo.zip
@@ -23,7 +23,7 @@ cp /vagrant/software/apex_19.2_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.30.tar.gz .
 cp /vagrant/software/ords-19.4.0.352.1226.zip .
 cp /vagrant/software/sqlcl-19.4.0.354.0937.zip .
-cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz .
+cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.6_10.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
 docker build --no-cache -t ol7_ords:latest .
 
@@ -33,7 +33,7 @@ cp /vagrant/software/apex_19.2_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.30.tar.gz .
 cp /vagrant/software/ords-19.4.0.352.1226.zip .
 cp /vagrant/software/sqlcl-19.4.0.354.0937.zip .
-cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz .
+cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.6_10.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
 docker build --no-cache -t ol8_ords:latest .
 
