@@ -51,6 +51,9 @@ b_upgrade=false
 EM_INSTALL_TYPE=NOSEED
 CONFIGURATION_TYPE=LATER
 CONFIGURE_SHARED_LOCATION_BIP=false
+MANAGEMENT_TABLESPACE_LOCATION=${DATA_DIR}/${ORACLE_SID^^}/${PDB_NAME}/mgmt.dbf
+CONFIGURATION_DATA_TABLESPACE_LOCATION=${DATA_DIR}/${ORACLE_SID^^}/${PDB_NAME}/mgmt_ecm_depot1.dbf
+JVM_DIAGNOSTICS_TABLESPACE_LOCATION=${DATA_DIR}/${ORACLE_SID^^}/${PDB_NAME}/mgmt_deepdive.dbf
 EOF
 
 echo "******************************************************************************"
