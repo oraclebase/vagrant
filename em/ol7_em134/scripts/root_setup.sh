@@ -5,7 +5,8 @@ sh /vagrant/scripts/install_os_packages.sh
 echo "******************************************************************************"
 echo "Set up environment for one-off actions." `date`
 echo "******************************************************************************"
-export ORACLE_HOSTNAME=ol7-em134.localdomain
+export ORACLE_HOSTNAME_SHORT=ol7-em134
+export ORACLE_HOSTNAME=${ORACLE_HOSTNAME_SHORT}.localdomain
 export ORACLE_BASE=/u01/app/oracle
 export ORACLE_HOME=${ORACLE_BASE}/product/19.0.0/dbhome_1
 export SOFTWARE_DIR=/u01/software
@@ -26,7 +27,7 @@ echo "**************************************************************************
 echo "Set the hostname." `date`
 echo "******************************************************************************"
 cat >> /etc/hosts <<EOF
-${PUBLIC_IP_ADDRESS}  ${ORACLE_HOSTNAME}
+${PUBLIC_IP_ADDRESS}  ${ORACLE_HOSTNAME}  ${ORACLE_HOSTNAME_SHORT}
 EOF
 
 cat > /etc/hostname <<EOF
