@@ -4,7 +4,7 @@
 # Variables
 var_box            = 'bento/oracle-7'
 var_vm_name        = 'ol7_em134'
-var_mem_size       = 6144  # More would be better.
+var_mem_size       = 10240  # More would be better.
 var_cpus           = 2
 var_non_rotational = 'on' # SSD
 var_disk_name      = './ol7_em134_u01.vdi'
