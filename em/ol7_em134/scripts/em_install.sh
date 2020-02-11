@@ -59,5 +59,7 @@ EOF
 echo "******************************************************************************"
 echo "Perform silent installation." `date`
 echo "******************************************************************************"
+unset CLASSPATH
+
 chmod u+x ${SOFTWARE_DIR}/em13400_linux64.bin
 ${SOFTWARE_DIR}/em13400_linux64.bin -silent -responseFile /tmp/install.rsp
