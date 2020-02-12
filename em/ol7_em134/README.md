@@ -1,7 +1,5 @@
 # Oracle Enterprise Manager Cloud Control 13.4.
 
-!!!!THIS IS NOT WORKING YET!!!!
-
 A simple Vagrant build of Enterprise Manager Cloud Control 13.4 on Oracle Database 19c.
 
 ## Required Software
@@ -38,8 +36,6 @@ $ tree
 |   +--- em13400_linux64-7.zip
 |   +--- em13400_linux64.bin
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- p30463595_190000_Linux-x86-64.zip
-|   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
 +--- Vagrantfile
 $
