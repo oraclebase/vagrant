@@ -66,11 +66,6 @@ echo "Create the database." `date`
 echo "******************************************************************************"
 su - oracle -c '/u01/software/oracle_create_database.sh'
 
-#echo "******************************************************************************"
-#echo "Patch the database. {remove if you don't have the patches}" `date`
-#echo "******************************************************************************"
-#su - oracle -c '/u01/software/patch_database.sh'
-
 su - oracle -c '/u01/software/em_install.sh'
 
 echo "******************************************************************************"
