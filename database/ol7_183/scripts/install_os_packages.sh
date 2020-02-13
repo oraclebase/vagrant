@@ -3,14 +3,11 @@ echo "Prepare yum with the latest repos." `date`
 echo "******************************************************************************"
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
-cd /etc/yum.repos.d
-rm -f public-yum-ol7.repo
-wget https://yum.oracle.com/public-yum-ol7.repo
-
 yum install -y yum-utils zip unzip
 yum install -y oracle-database-preinstall-18c
 
-# Configure rlwrap for SQL*PLus command history.
+# Configure rlwrap for SQL*Plus command history.
+yum install -y oracle-epel-release-el7
 yum-config-manager --enable ol7_developer_EPEL
 yum install -y rlwrap
 

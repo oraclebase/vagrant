@@ -1,6 +1,7 @@
 echo "******************************************************************************"
 echo "Install AWX" `date`
 echo "******************************************************************************"
+pip install --upgrade pip
 pip install docker
 pip install docker-compose
 
