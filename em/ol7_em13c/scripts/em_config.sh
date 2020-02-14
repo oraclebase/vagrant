@@ -42,4 +42,6 @@ EOF
 echo "******************************************************************************"
 echo "Perform silent installation." `date`
 echo "******************************************************************************"
+unset CLASSPATH
+
 ${MW_HOME}/sysman/install/ConfigureGC.sh -silent -responseFile /tmp/config.rsp
