@@ -1,5 +1,5 @@
 shared:
-  box: bento/oracle-7.6
+  box: bento/oracle-7
   non_rotational: 'on'
   asm_disk_1: /u05/VirtualBox/shared/ol7_122_rac/asm_disk_1.vdi
   asm_disk_2: /u05/VirtualBox/shared/ol7_122_rac/asm_disk_2.vdi
