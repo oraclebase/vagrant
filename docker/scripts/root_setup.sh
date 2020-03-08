@@ -4,26 +4,25 @@ echo "**************************************************************************
 echo "Prepare Yum with the latest repos." `date`
 echo "******************************************************************************"
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-cd /etc/yum.repos.d
-rm -f public-yum-ol7.repo
-wget https://yum.oracle.com/public-yum-ol7.repo
-yum install yum-utils zip unzip -y
+yum install -y yum-utils zip unzip
 yum-config-manager --enable ol7_optional_latest
 yum-config-manager --enable ol7_addons
-yum-config-manager --enable ol7_preview
+
+yum install -y oraclelinux-developer-release-el7
 yum-config-manager --enable ol7_developer
 
 echo "******************************************************************************"
 echo "Install Docker." `date`
 echo "******************************************************************************"
-yum install docker-engine btrfs-progs btrfs-progs-devel git -y
+yum install -y docker-engine btrfs-progs btrfs-progs-devel git
 #yum update -y
 
 echo "******************************************************************************"
 echo "Prepare the drive for the docker images." `date`
 echo "******************************************************************************"
 ls /dev/sd*
-echo -e "n\np\n\n\n\nw" | fdisk /dev/sdc
+echo -e "n\np\n1\n\n\nw" | fdisk /dev/sdc
+
 ls /dev/sd*
 docker-storage-config -s btrfs -d /dev/sdc1
 
