@@ -5,7 +5,7 @@ echo "Configure network scripts." `date`
 echo "******************************************************************************"
 
 cat > ${ORACLE_HOME}/network/admin/tnsnames.ora <<EOF
-LISTENER = (ADDRESS = (PROTOCOL = TCP)(HOST = ${NODE1_FQ_HOSTNAME})(PORT = 1521))
+LISTENER${DB_DOMAIN_STR} = (ADDRESS = (PROTOCOL = TCP)(HOST = ${NODE1_FQ_HOSTNAME})(PORT = 1521))
 
 ${NODE1_DB_UNIQUE_NAME}${DB_DOMAIN_STR} =
   (DESCRIPTION =
