@@ -107,7 +107,7 @@ dbca -silent -createDatabase                                                 \
   -templateName General_Purpose.dbc                                          \
   -sid ${ORACLE_SID}                                                         \
   -responseFile NO_VALUE                                                     \
-  -gdbname ${NODE1_DB_UNIQUE_NAME}${DB_DOMAIN_STR}                           \
+  -gdbname ${DB_NAME}${DB_DOMAIN_STR}                                        \
   -characterSet AL32UTF8                                                     \
   -sysPassword ${SYS_PASSWORD}                                               \
   -systemPassword ${SYS_PASSWORD}                                            \
@@ -122,7 +122,7 @@ dbca -silent -createDatabase                                                 \
   -datafileDestination "${DATA_DIR}"                                         \
   -redoLogFileSize 50                                                        \
   -emConfiguration NONE                                                      \
-  -initparams db_unique_name=${NODE1_DB_UNIQUE_NAME}                         \
+  -initparams db_name=${DB_NAME},db_unique_name=${NODE1_DB_UNIQUE_NAME}      \
   -ignorePreReqs
 
 echo "******************************************************************************"
