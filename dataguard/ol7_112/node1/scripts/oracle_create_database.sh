@@ -117,6 +117,7 @@ dbca -silent -createDatabase                                                 \
   -storageType FS                                                            \
   -datafileDestination "${DATA_DIR}"                                         \
   -redoLogFileSize 50                                                        \
+  -initparams db_unique_name=${NODE1_DB_UNIQUE_NAME}                         \
   -emConfiguration NONE
 
 echo "******************************************************************************"
