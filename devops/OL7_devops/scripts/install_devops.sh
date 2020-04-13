@@ -15,8 +15,23 @@ echo "**************************************************************************
 echo "Install terraform." `date`
 echo "******************************************************************************"
 curl -O https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
-unzip terraform_0.12.24_linux_amd64.zip -d /usr/local/bin/
+unzip terraform_0.12.24_linux_amd64.zip -d /usr/bin/
 terraform -version 
+cd /root/
+terraform init
+cd /root/.terraform.d
+mkdir plugins
+echo
+echo " import terraform provider for CentOS 7 / Fedora "
+echo
+wget https://github.com/dmacvicar/terraform-provider-libvirt/releases/download/v0.6.2/terraform-provider-libvirt-0.6.2+git.1585292411.8cbe9ad0.Fedora_28.x86_64.tar.gz
+tar xvf terraform-provider-libvirt-0.6.2+git.1585292411.8cbe9ad0.Fedora_28.x86_64.tar.gz
+mv terraform-provider-libvirt /root/.terraform.d/plugins/
+echo
+echo " Using Terraform KVM Provider"
+echo
+mkdir -p /root/projects/terraform
+
 echo "******************************************************************************"
 echo "Install Packer." `date`
 echo "******************************************************************************"

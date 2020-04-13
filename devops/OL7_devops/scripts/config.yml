@@ -1,0 +1,27 @@
+default:
+ client: localhost
+ pool: guest-images
+ numcpus: 2
+ memory: 1024
+ disks:
+  - size: 10
+ protocol: ssh
+ nets:
+  - default
+###############################################################################
+#  Clients Section
+###############################################################################
+
+localhost:
+ # when no type is specified, we default to kvm
+ # indicates the type of the client. valid types are kvm(default, used when no type is indicated), ovirt, gcp, aws, openstack, kubevirt and fake
+ type: kvm
+ # storage pool
+ pool: guest_images
+# how to connect to libvirt, can be ssh or tcp
+ protocol: ssh
+ # whether this client can be used or not. useful when wanting to list all vms of all
+ # kcli switch $host will also refuse to change to a disabled client
+ enabled: true
+ # fadn/ip of the hypervisor for libvirt
+ host: 127.0.0.1

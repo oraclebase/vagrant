@@ -9,3 +9,6 @@ sh /vagrant/scripts/configure_docker.sh
 sh /vagrant/scripts/install_awx.sh
 
 sh /vagrant/scripts/install_devops.sh
+
+cp /vagrant/scripts/*yml  /root/.kcli
+cp /vagrant/scripts/*tf  /root/projects/terraform
