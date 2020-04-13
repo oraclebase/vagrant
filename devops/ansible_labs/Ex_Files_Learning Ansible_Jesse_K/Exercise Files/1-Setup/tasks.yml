@@ -1,0 +1,4 @@
+---
+- hosts: web1
+  tasks:
+    - include_tasks: tasks/setup.yml

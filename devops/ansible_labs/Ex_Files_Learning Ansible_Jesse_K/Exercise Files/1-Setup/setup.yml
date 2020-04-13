@@ -1,0 +1,7 @@
+---
+- hosts: web1
+  tasks:
+  - setup:
+    register: setup_out
+  - debug:
+      var: setup_out

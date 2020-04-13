@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    netgw: 10.10.0.1
+    netnm: 255.255.255.224
+  tasks:
+  - set_fact: net2="{{netgw}}/{{netnm}}"
+  - set_fact: net2gw="{{net2|ipaddr('host/prefix')}}"
+  - debug:
+      msg: "net2 is {{net2}}, gateway is {{net2gw}}"
+  - set_fact: net2int="{{netgw|ipaddr('int') + 1}}"
+  - set_fact: net2="{{net2int|ipv4('address')}}/{{net2gw|ipaddr('prefix')}}"
+  - debug:
+      msg: "net2 is now {{net2}}"

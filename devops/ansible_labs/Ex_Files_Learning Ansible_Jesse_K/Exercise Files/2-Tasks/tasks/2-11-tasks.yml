@@ -1,0 +1,32 @@
+---
+- hosts: all
+  vars:
+    animals:
+      cats:
+        tabby:
+          color: grey
+          persnickityness: high
+        calico:
+          color: orange
+          persnickityness: medium
+      dogs:
+        doberman:
+          color: black
+          persnickityness: extreme
+        retriever:
+          color: golden
+          persnickityness: low
+  tasks:
+  - name: iterate over animal array
+    file:
+      name: '/tmp/{{item.key}}-{{item.value.color}}'
+      state: '{{file_state}}'
+    with_dict: '{{animals.cats}}'
+
+  - name: iterate over animals array
+    file:
+      name: '/tmp/{{item.key}}-{{item.value.color}}'
+      state: '{{file_state}}'
+    with_dict: '{{animals.dogs}}'
+    when: 'item.value.persnickityness == "low"'
+

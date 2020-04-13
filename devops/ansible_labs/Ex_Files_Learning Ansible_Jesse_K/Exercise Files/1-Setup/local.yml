@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: install required pyton modules
+    pip:
+      name: {{item}}
+      state: installed
+    with_items:
+      - packet-python
+      - netaddr

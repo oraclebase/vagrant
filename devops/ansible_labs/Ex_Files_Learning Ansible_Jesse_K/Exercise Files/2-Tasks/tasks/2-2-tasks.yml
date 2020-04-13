@@ -1,0 +1,28 @@
+---
+- hosts: all
+  tasks:
+  - name: create a file
+    file:
+      dest: /tmp/file
+      state: touch
+    tags:
+      - create-file
+
+- hosts: all:!db2
+  tags:
+    - delete-file
+  tasks:
+  - name: delete a file
+    file:
+      dest: /tmp/file
+      state: absent
+
+- hosts: db2
+
+  tasks:
+  - name: delete a file
+    file:
+      dest: /tmp/file
+      state: absent
+    tags:
+      - delete-file

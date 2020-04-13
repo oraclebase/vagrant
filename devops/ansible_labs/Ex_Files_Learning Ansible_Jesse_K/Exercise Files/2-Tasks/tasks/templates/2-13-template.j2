@@ -1,0 +1,5 @@
+We are in groups: {% for group in hostvars[inventory_hostname]['group_names'] %}{{group}}{% if not loop.last %}, {% endif %}{% endfor %}
+
+We like both {% for key,value in animals.iteritems() %}{{key}}{% if not loop.last %} and {% endif %}{% endfor %}
+
+W{% for key,value in animals.iteritems() %}e like{% for animal,name in animals[key].iteritems() %} {{name.color}} {{animal}}s{% if not loop.last %} and{% endif %}{% endfor %}{% if not loop.last %} and w{% endif %}{% endfor %}

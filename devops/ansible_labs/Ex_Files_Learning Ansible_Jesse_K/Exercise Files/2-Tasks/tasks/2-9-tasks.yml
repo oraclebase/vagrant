@@ -1,0 +1,14 @@
+---
+- hosts: web
+  tasks:
+  - name: create
+    file:
+      dest: /tmp/web2-on-web1
+      state: '{{file_state}}'
+    when: hostvars[inventory_hostname]['inventory_hostname'] == 'web1'
+
+  - name: create
+    file:
+      dest: /tmp/web1-on-web2
+      state: '{{file_state}}'
+    when: inventory_hostname == 'web2'

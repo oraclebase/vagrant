@@ -1,0 +1,32 @@
+---
+- hosts: web1
+  vars:
+    network: 10.13.36.96/27
+    host: 6
+  tasks:
+  - set_fact: hostint="{{network|ipaddr('network')|ipaddr('int')}}"
+  - set_fact: addrint="{{host+hostint|int()}}"
+  - set_fact: address="{{addrint|ipv4('address')}}"
+  - set_fact: netmask="{{network|ipaddr('netmask')}}"
+  - set_fact: gatewayint={{hostint|int()+1}}
+  - set_fact: gateway="{{gatewayint|ipv4('address')}}"
+  - name: ensure network file is set to use interfaces.d
+    lineinfile:
+      dest: /etc/network/interfaces
+      regexp: "^source /etc/network/interfaces.*$"
+      line: "source /etc/network/interfaces.d/*.cfg"
+      insertafter: EOF
+    tags:
+      - create
+  - name: upload network template for internal bridge
+    template:
+      src: templates/br10.j2
+      dest: /etc/network/interfaces.d/br10.cfg
+    tags:
+      - create
+  - name: install bridge utils
+    apt:
+      name: bridge-utils
+      state: installed
+    tags:
+      - create

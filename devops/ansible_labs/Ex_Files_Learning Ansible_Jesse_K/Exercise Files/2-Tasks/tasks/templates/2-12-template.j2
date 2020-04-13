@@ -1,0 +1,2 @@
+We are on host {{inventory_hostname}}
+We installed: {% for package in packages %}{{package}}{% if not loop.last %}, {% endif %}{% endfor %}

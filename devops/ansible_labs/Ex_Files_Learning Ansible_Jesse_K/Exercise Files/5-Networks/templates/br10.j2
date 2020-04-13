@@ -1,0 +1,9 @@
+auto br10
+iface br10 inet static
+   address {{address}}
+   netmask {{netmask}}
+   gateway {{gateway}}
+   bridge_ports none
+   bridge_stp off
+   bridge_fd 0
+   bridge_maxwait 0

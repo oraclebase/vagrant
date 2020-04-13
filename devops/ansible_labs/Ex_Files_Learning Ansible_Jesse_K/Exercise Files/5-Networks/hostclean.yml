@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+  - name: remove bridge tools
+    apt:
+      name: bridge-utils
+      state: absent
+  - name: remove config file
+    file:
+      path: /etc/network/interfaces.d/br10.cfg
+      state: absent
+  - name: remove line in interfaces config
+    lineinfile:
+      path: /etc/network/interfaces
+      regexp: '^source .*$'
+      state: absent
+

@@ -1,0 +1,30 @@
+---
+- hosts: web
+  tasks:
+  - name: create a web file
+    file:
+      dest: '{{web_file}}'
+      state: '{{file_state}}'
+
+- hosts: backup
+  tasks:
+  - name: create a backup file
+    file:
+      dest: '{{backup_file}}'
+      state: '{{file_state}}'
+
+- hosts: db
+  tasks:
+  - name: create a db file
+    file:
+      dest: '{{db_file}}'
+      state: '{{file_state}}'
+    when: db_file is defined
+
+- hosts: all
+  tasks:
+  - name: all systems should have a file
+    file:
+      dest: '{{all_file}}'
+      state: '{{file_state}}'
+      

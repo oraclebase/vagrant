@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+  - name: deploy a simple template file
+    template:
+      src: templates/2-8-template.j2
+      dest: /tmp/2-8-template.txt
+    tags:
+      - create
+  - name: remove templated file
+    file:
+      dest: /tmp/2-8-template.txt
+      state: absent
+    tags:
+      - destroy

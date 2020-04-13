@@ -1,0 +1,28 @@
+---
+- hosts: web1
+  tasks:
+  - name: an idempotent create command
+    copy:
+      src: files/idempotent.txt
+      dest: /tmp/idempotent.txt
+    tags:
+      - create
+  - name: an idempotent command
+    lineinfile:
+      dest: /tmp/idempotent.txt
+      regexp: '^(.*)is an(.*)$'
+      backrefs: true
+      line: '\1is really an\2'
+    tags:
+      - create
+  - name: a non idempotent command
+    shell: "echo this is a non-idempotent file >> /tmp/non-idempotent.txt"
+    tags:
+      - create
+
+  - name: remove the file we created
+    file:
+      path: /tmp/*idempotent.txt
+      state: absent
+    tags:
+      - destroy

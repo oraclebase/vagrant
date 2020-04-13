@@ -1,0 +1,31 @@
+---
+- hosts: all
+  vars:
+    animals:
+      cats:
+        tabby:
+          color: grey
+          persnickityness: high
+        calico:
+          color: orange
+          persnickityness: medium
+      dogs:
+        doberman:
+          color: black
+          persnickityness: extreme
+        retriever:
+          color: golden
+          persnickityness: low
+  tasks:
+  - name: deploy a dictionary looping template file
+    template:
+      src: templates/2-13-template.j2
+      dest: /tmp/2-13-template.txt
+    tags:
+      - create
+  - name: remove the templated file
+    file:
+      dest: /tmp/2-13-template.txt
+      state: absent
+    tags:
+      - destroy

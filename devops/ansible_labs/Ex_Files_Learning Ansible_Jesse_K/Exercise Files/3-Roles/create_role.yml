@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+     - include_role:
+         name: create_user
+       vars:
+         user_name: robert
+         ssh_key: ~/.ssh/cloud_key.pub

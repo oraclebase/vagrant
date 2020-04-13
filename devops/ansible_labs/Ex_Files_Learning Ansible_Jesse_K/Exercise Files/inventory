@@ -1,0 +1,13 @@
+[all]
+web1 ansible_ssh_host=web1.kumulus.co
+web2 ansible_ssh_host=web2.kumulus.co
+db1 ansible_ssh_host=db1.kumulus.co
+db2 ansible_ssh_host=db2.kumulus.co
+[web]
+web1
+web2
+[db]
+db1
+db2
+[backup]
+db2

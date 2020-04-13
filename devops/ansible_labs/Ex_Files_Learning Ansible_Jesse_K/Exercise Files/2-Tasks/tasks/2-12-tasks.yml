@@ -1,0 +1,17 @@
+---
+- hosts: all
+  vars:
+    packages: [git,vim,ruby]
+  tasks:
+  - name: deploy a template file with a loop
+    template:
+      src: templates/2-12-template.j2
+      dest: /tmp/2-12-template.txt
+    tags:
+      - create
+  - name: remove the templated file
+    file:
+      dest: /tmp/2-12-template.txt
+      state: absent
+    tags:
+      - destroy

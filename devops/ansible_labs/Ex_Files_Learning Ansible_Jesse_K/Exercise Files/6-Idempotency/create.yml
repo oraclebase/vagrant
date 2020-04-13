@@ -1,0 +1,39 @@
+---
+- hosts: web1
+  vars:
+    target: /tmp/idempotent.txt
+  tasks:
+  - name: discover state
+    command: grep 'is really an' {{target}}
+    register: grep_state
+    tags:
+      - create
+      - destroy
+    ignore_errors: true
+
+  - name: show the state of the file
+    debug:
+      var: grep_state.rc 
+
+  - name: an idempotent create command
+    copy:
+      src: files/idempotent.txt
+      dest: '{{target}}'
+    when: grep_state.rc != 0
+    tags:
+      - create
+      - destroy    
+
+  - name: modify the file
+    command: sed -ie 's/is/is really an/' {{target}}
+    when: grep_state.rc != 0
+    tags:
+      - create
+      - destroy
+
+  - name: remove the file
+    file:
+      path: '{{target}}'
+      state: absent
+    tags:
+      - destroy

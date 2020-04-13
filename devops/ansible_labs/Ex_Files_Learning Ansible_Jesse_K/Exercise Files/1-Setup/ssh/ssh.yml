@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+  - name: copy ssh keys to system
+    copy: src={{item}} dest=/root/.ssh/{{item}} mode=600
+    with_items:
+     - id_rsa
+     - id_rsa.pub
+  - name: add public key to root user
+    authorized_key: user=root key="{{ lookup('file', 'id_rsa.pub') }}"
+  - name: add ssh config
+    copy: src=ssh_config dest=/root/.ssh/config

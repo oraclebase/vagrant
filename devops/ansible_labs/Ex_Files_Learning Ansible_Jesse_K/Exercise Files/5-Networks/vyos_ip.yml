@@ -1,0 +1,20 @@
+---
+- hosts: all
+  connection: local
+  become: true
+  vars:
+    tenone: 10.10.1.0/24
+  tasks:
+  - set_fact: vonenetint="{{tenone|ipaddr('network')}}"
+  - set_fact: vonenm="{{tenone|ipaddr('prefix')}}"
+  - set_fact: tenoneaddrint="{{vonenetint|ipaddr('int')+id}}"
+  - set_fact: tenoneaddr="{{tenoneaddrint|ipv4('address')}}/{{vonenm}}"
+  - debug: var=tenoneaddr
+  - vyos_config:
+     provider:
+       username: vyos
+       password: vyos
+       host: '{{hostvars[inventory_hostname].host}}'
+     lines:
+       - set interface ethernet eth1 address {{tenoneaddr}}
+
