@@ -69,7 +69,7 @@ cat > ${ORACLE_HOME}/network/admin/sqlnet.ora <<EOF
 SQLNET.INBOUND_CONNECT_TIMEOUT=400
 EOF
 
-# Adding the Native Network Encryption was suggested by Claudia Hüffer, Peter Wahl and Richard Evans.
+# Adding the Native Network Encryption was suggested by Claudia HÃ¼ffer, Peter Wahl and Richard Evans.
 # I've made it optional.
 if [ "${NATIVE_NETWORK_ENCRYPTION}" = "true" ]; then
   cat >> ${ORACLE_HOME}/network/admin/sqlnet.ora <<EOF
@@ -107,7 +107,7 @@ echo "**************************************************************************
 
 mkdir -p /u01/oradata/${ORACLE_SID}/pdbseed
 mkdir -p /u01/oradata/${ORACLE_SID}/pdb1
-mkdir -p ${ORACLE_BASE}/fast_recovery_area/${ORACLE_SID}
+mkdir -p ${ORACLE_BASE}/flash_recovery_area/${ORACLE_SID}
 mkdir -p ${ORACLE_BASE}/admin/${ORACLE_SID}/adump
 
 orapwd file=$ORACLE_HOME/dbs/orapw${ORACLE_SID} password=${SYS_PASSWORD} entries=10
