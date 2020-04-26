@@ -107,7 +107,7 @@ echo "**************************************************************************
 
 mkdir -p /u01/oradata/${ORACLE_SID}/pdbseed
 mkdir -p /u01/oradata/${ORACLE_SID}/pdb1
-mkdir -p ${ORACLE_BASE}/fast_recovery_area/${ORACLE_SID}
+mkdir -p ${ORACLE_BASE}/${FRS_DIR}/${ORACLE_SID}
 mkdir -p ${ORACLE_BASE}/admin/${ORACLE_SID}/adump
 
 orapwd file=$ORACLE_HOME/dbs/orapw${ORACLE_SID} password=${SYS_PASSWORD} entries=10
