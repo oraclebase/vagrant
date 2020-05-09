@@ -1,6 +1,6 @@
-# VirtualBox VM for Container Vagrant Build
+# VirtualBox VM for Containers using Podman on Oracle Linux 8 (OL8)
 
-I use a VirtualBox VM for playing around with container builds. This represents the base of that VM.
+I use a VirtualBox VM for playing around with container builds using Podman on Oracle Linux 8 (OL8). This represents the base of that VM.
 
 ## Required Software
 
