@@ -4,7 +4,7 @@ echo "**************************************************************************
 echo "Prepare Yum with the latest repos." `date`
 echo "******************************************************************************"
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-yum install -y yum-utils zip unzip
+yum install -y yum-utils zip unzip git
 yum-config-manager --enable ol7_optional_latest
 yum-config-manager --enable ol7_addons
 
@@ -14,7 +14,7 @@ yum-config-manager --enable ol7_developer
 echo "******************************************************************************"
 echo "Install Docker." `date`
 echo "******************************************************************************"
-yum install -y docker-engine btrfs-progs btrfs-progs-devel git
+yum install -y docker-engine btrfs-progs btrfs-progs-devel
 #yum update -y
 
 echo "******************************************************************************"
