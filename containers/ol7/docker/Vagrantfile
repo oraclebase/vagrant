@@ -3,7 +3,7 @@
 
 # Variables
 var_box            = 'bento/oracle-7'
-var_vm_name        = 'docker_vagrant'
+var_vm_name        = 'docker_ol7_vagrant'
 var_mem_size       = 6144  # More would be better.
 var_cpus           = 2
 var_non_rotational = 'on' # SSD
