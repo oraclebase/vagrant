@@ -29,7 +29,7 @@ $ tree
 |   +--- oracle_software_installation.sh
 |   +--- oracle_user_environment_setup.sh
 |   +--- ords_software_installation.sh
-|   +--- prepare_u01_u02_disks.sh
+|   +--- prepare_disks.sh
 |   +--- root_setup.sh
 |   +--- server.xml
 |   +--- setup.sh
