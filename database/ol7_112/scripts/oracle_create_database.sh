@@ -87,7 +87,7 @@ EOF
   if [ "$INSTALL_APEX" = "true" ]; then
 
     echo "******************************************************************************"
-    echo " Unzip APEX software." `date`
+    echo "Unzip APEX software." `date`
     echo "******************************************************************************"
     cd ${SOFTWARE_DIR}
     unzip ${APEX_SOFTWARE}
