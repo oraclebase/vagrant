@@ -34,7 +34,7 @@ cat >> /home/oracle/.bash_profile <<EOF
 EOF
 
 cat > /home/oracle/scripts/grid_env <<EOF
-export ORACLE_SID=+ASM1
+export ORACLE_SID=+ASM2
 export ORACLE_HOME=\$GRID_HOME
 export PATH=\$ORACLE_HOME/bin:\$BASE_PATH
 
