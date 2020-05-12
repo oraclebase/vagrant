@@ -5,7 +5,7 @@
 var_box            = 'bento/oracle-8'
 var_vm_name        = 'docker_ol8_vagrant'
 var_mem_size       = 6144  # More would be better.
-var_cpus           = 2
+var_cpus           = 4 # 2 cores
 var_non_rotational = 'on' # SSD
 var_disk1_name      = './docker-u01.vdi'
 var_disk1_size      = 100
