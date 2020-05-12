@@ -49,6 +49,8 @@ podman build --no-cache -t ol7_19:latest .
 cd /u01/dockerfiles/database/ol8_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
 cp /vagrant/software/apex_20.1_en.zip .
+cp /vagrant/software/p6880880_190000_Linux-x86-64.zip .
+cp /vagrant/software/p30783543_190000_Linux-x86-64.zip .
 cd /u01/dockerfiles/database/ol8_19
 podman build --no-cache -t ol8_19:latest .
 
