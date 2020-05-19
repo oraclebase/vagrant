@@ -1,16 +1,21 @@
-echo "******************************************************************************"
-echo "Prepare /u01 disk." `date`
-echo "******************************************************************************"
-# New partition for the whole disk.
-echo -e "n\np\n1\n\n\nw" | fdisk /dev/sdb
+function prepare_disk {
+  MOUNT_POINT=$1
+  DISK_DEVICE=$2
 
-# Add file system.
-mkfs.xfs -f /dev/sdb1
+  echo "******************************************************************************"
+  echo "Prepare ${MOUNT_POINT} disk." `date`
+  echo "******************************************************************************"
+  # New partition for the whole disk.
+  echo -e "n\np\n1\n\n\nw" | fdisk ${DISK_DEVICE}
 
-# Mount it.
-UUID=`blkid -o value /dev/sdb1 | grep -v xfs`
-mkdir /u01
-cat >> /etc/fstab <<EOF
-UUID=${UUID}  /u01    xfs    defaults 1 2
-EOF
-mount /u01
+  # Add file system.
+  mkfs.xfs -f ${DISK_DEVICE}1
+
+  # Mount it.
+  UUID=`blkid -o export ${DISK_DEVICE}1 | grep UUID | grep -v PARTUUID`
+  mkdir ${MOUNT_POINT}
+  echo "${UUID}  ${MOUNT_POINT}    xfs    defaults 1 2" >> /etc/fstab
+  mount ${MOUNT_POINT}
+}
+
+prepare_disk /u01 /dev/sdb
