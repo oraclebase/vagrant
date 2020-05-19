@@ -9,10 +9,6 @@ echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 sed -i -e "s|\[main\]|\[main\]\ndns=none|g" /etc/NetworkManager/NetworkManager.conf
 systemctl restart NetworkManager.service
 
-cd /etc/yum.repos.d
-rm -f public-yum-ol7.repo
-wget https://yum.oracle.com/public-yum-ol7.repo
-
 sh /vagrant_scripts/configure_hosts_base.sh
 sh /vagrant_scripts/configure_hosts_scan.sh
 
