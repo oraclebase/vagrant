@@ -19,7 +19,7 @@ dns:
 node1:
   vm_name: ol7_19_rac1
   mem_size: 7168
-  cpus: 2
+  cpus: 4
   public_ip: 192.168.56.101
   private_ip: 192.168.1.101
   u01_disk: ./ol7_19_rac1_u01.vdi
@@ -27,7 +27,7 @@ node1:
 node2:
   vm_name: ol7_19_rac2
   mem_size: 6144
-  cpus: 2
+  cpus: 4
   public_ip: 192.168.56.102
   private_ip: 192.168.1.102
   u01_disk: ./ol7_19_rac2_u01.vdi
