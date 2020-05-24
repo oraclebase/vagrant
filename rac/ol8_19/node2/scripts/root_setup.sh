@@ -13,7 +13,7 @@ echo "Set root and oracle password and change ownership of /u01." `date`
 echo "******************************************************************************"
 echo -e "${ROOT_PASSWORD}\n${ROOT_PASSWORD}" | passwd
 echo -e "${ORACLE_PASSWORD}\n${ORACLE_PASSWORD}" | passwd oracle
-mkdir -p /u01/software
+mkdir -p ${SOFTWARE_DIR}
 chown -R oracle:oinstall /u01
 chmod -R 775 /u01
 usermod -aG vagrant oracle
