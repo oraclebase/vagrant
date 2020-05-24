@@ -13,7 +13,7 @@ echo "Set root and oracle password and change ownership of /u01." `date`
 echo "******************************************************************************"
 echo -e "${ROOT_PASSWORD}\n${ROOT_PASSWORD}" | passwd
 echo -e "${ORACLE_PASSWORD}\n${ORACLE_PASSWORD}" | passwd oracle
-mkdir -p /u01/software
+mkdir -p ${SOFTWARE_DIR}
 chown -R oracle:oinstall /u01
 chmod -R 775 /u01
 usermod -aG vagrant oracle
@@ -104,30 +104,12 @@ sh ${ORACLE_HOME}/root.sh
 ssh root@${NODE2_HOSTNAME} sh ${ORACLE_HOME}/root.sh
 
 echo "******************************************************************************"
-echo "Patch Oracle Software." `date`
+echo "OJVM Patch for DB Software." `date`
 echo "******************************************************************************"
-# Stop CRS on Node2.
-ssh root@${NODE2_HOSTNAME} sh ${GRID_HOME}/bin/crsctl stop crs
-
-# Patch GI on Node1 and stop it.
-sh /vagrant_scripts/oracle_software_patch.sh ${GRID_HOME} gi
-sh ${GRID_HOME}/bin/crsctl stop crs
-
-# Patch GI on Node2 and start CRS on Node1.
-ssh root@${NODE2_HOSTNAME} sh /vagrant_scripts/oracle_software_patch.sh ${GRID_HOME} gi
-sh ${GRID_HOME}/bin/crsctl start crs
-
-# Patch DB software on both nodes.
-sh /vagrant_scripts/oracle_software_patch.sh ${ORACLE_HOME} db
-ssh root@${NODE2_HOSTNAME} sh /vagrant_scripts/oracle_software_patch.sh ${ORACLE_HOME} db
+sh /vagrant_scripts/oracle_software_patch.sh ${ORACLE_HOME}
+ssh root@${NODE2_HOSTNAME} sh /vagrant_scripts/oracle_software_patch.sh ${ORACLE_HOME}
 
 su - oracle -c 'sh /vagrant/scripts/oracle_create_database.sh'
-
-echo "******************************************************************************"
-echo "Restore SCP (MOS Doc ID 2555697.1 : Unpublished)." `date`
-echo "******************************************************************************"
-mv -f /usr/bin/scp.orig /usr/bin/scp
-ssh root@${NODE2_HOSTNAME} mv -f /usr/bin/scp.orig /usr/bin/scp
 
 echo "******************************************************************************"
 echo "Setup End." `date`
