@@ -5,13 +5,13 @@ echo "Unzip database software." `date`
 echo "******************************************************************************"
 cd ${ORACLE_HOME}
 unzip -oq /vagrant_software/${DB_SOFTWARE}
+unzip -oq /vagrant_software/${OPATCH_FILE}
 
 echo "******************************************************************************"
 echo "Do database software-only installation." `date`
 echo "******************************************************************************"
-export CV_ASSUME_DISTID=OEL7.6
-
 ${ORACLE_HOME}/runInstaller -ignorePrereq -waitforcompletion -silent \
+        -applyRU ${PATCH_PATH1} \
         -responseFile ${ORACLE_HOME}/install/response/db_install.rsp \
         oracle.install.option=INSTALL_DB_SWONLY \
         ORACLE_HOSTNAME=${ORACLE_HOSTNAME} \
