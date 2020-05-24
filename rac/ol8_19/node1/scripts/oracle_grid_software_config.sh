@@ -3,8 +3,6 @@
 echo "******************************************************************************"
 echo "Do grid configuration." `date`
 echo "******************************************************************************"
-export CV_ASSUME_DISTID=OEL7.6
-
 ${GRID_HOME}/gridSetup.sh -silent -executeConfigTools \
         -responseFile ${GRID_HOME}/install/response/gridsetup.rsp \
         INVENTORY_LOCATION=${ORA_INVENTORY} \
