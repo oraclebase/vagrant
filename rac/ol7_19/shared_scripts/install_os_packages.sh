@@ -53,3 +53,15 @@ yum install -y sysstat
 yum install -y unixODBC
 yum install -y chrony
 #yum -y update
+
+echo "******************************************************************************"
+echo "Firewall." `date`
+echo "******************************************************************************"
+systemctl stop firewalld
+systemctl disable firewalld
+
+echo "******************************************************************************"
+echo "SELinux." `date`
+echo "******************************************************************************"
+sed -i -e "s|SELINUX=enforcing|SELINUX=permissive|g" /etc/selinux/config
+setenforce permissive
