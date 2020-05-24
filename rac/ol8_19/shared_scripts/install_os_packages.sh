@@ -75,13 +75,3 @@ echo "SELinux." `date`
 echo "******************************************************************************"
 sed -i -e "s|SELINUX=enforcing|SELINUX=permissive|g" /etc/selinux/config
 setenforce permissive
-
-
-echo "******************************************************************************"
-echo "Amend SCP (MOS Doc ID 2555697.1 : Unpublished)." `date`
-echo "******************************************************************************"
-mv /usr/bin/scp /usr/bin/scp.orig
-echo "/usr/bin/scp.orig -T \$*" > /usr/bin/scp
-chmod 555 /usr/bin/scp
-# Revert on completion.
-#mv /usr/bin/scp.orig /usr/bin/scp
