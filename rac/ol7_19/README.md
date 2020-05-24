@@ -126,7 +126,7 @@ At minimum you will have to amend the following paths in the "vagrant.yml" file,
   asm_reco_disk_size: 20
 ```
 
-For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol7_183_rac" and use the following settings.
+For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol7_19_rac" and use the following settings.
 
 ```
   asm_crs_disk_1: C:\VirtualBox\shared\ol7_19_rac\asm_crs_disk_1.vdi
