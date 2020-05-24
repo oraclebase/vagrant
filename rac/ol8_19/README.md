@@ -120,30 +120,30 @@ The "config" directory contains a "install.env" and a "vagrant.yml" file. The co
 At minimum you will have to amend the following paths in the "vagrant.yml" file, providing suitable paths for the shared disks.
 
 ```
-  asm_crs_disk_1: /u05/VirtualBox/shared/ol7_19_rac/asm_crs_disk_1.vdi
-  asm_crs_disk_2: /u05/VirtualBox/shared/ol7_19_rac/asm_crs_disk_2.vdi
-  asm_crs_disk_3: /u05/VirtualBox/shared/ol7_19_rac/asm_crs_disk_3.vdi
+  asm_crs_disk_1: /u05/VirtualBox/shared/ol8_19_rac/asm_crs_disk_1.vdi
+  asm_crs_disk_2: /u05/VirtualBox/shared/ol8_19_rac/asm_crs_disk_2.vdi
+  asm_crs_disk_3: /u05/VirtualBox/shared/ol8_19_rac/asm_crs_disk_3.vdi
   asm_crs_disk_size: 2
-  asm_data_disk_1: /u05/VirtualBox/shared/ol7_19_rac/asm_data_disk_1.vdi
+  asm_data_disk_1: /u05/VirtualBox/shared/ol8_19_rac/asm_data_disk_1.vdi
   asm_data_disk_size: 40
-  asm_reco_disk_1: /u05/VirtualBox/shared/ol7_19_rac/asm_reco_disk_1.vdi
+  asm_reco_disk_1: /u05/VirtualBox/shared/ol8_19_rac/asm_reco_disk_1.vdi
   asm_reco_disk_size: 20
 ```
 
-For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol7_183_rac" and use the following settings.
+For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol8_19_rac" and use the following settings.
 
 ```
-  asm_crs_disk_1: C:\VirtualBox\shared\ol7_19_rac\asm_crs_disk_1.vdi
-  asm_crs_disk_2: C:\VirtualBox\shared\ol7_19_rac\asm_crs_disk_2.vdi
-  asm_crs_disk_3: C:\VirtualBox\shared\ol7_19_rac\asm_crs_disk_3.vdi
+  asm_crs_disk_1: C:\VirtualBox\shared\ol8_19_rac\asm_crs_disk_1.vdi
+  asm_crs_disk_2: C:\VirtualBox\shared\ol8_19_rac\asm_crs_disk_2.vdi
+  asm_crs_disk_3: C:\VirtualBox\shared\ol8_19_rac\asm_crs_disk_3.vdi
   asm_crs_disk_size: 2
-  asm_data_disk_1: C:\VirtualBox\shared\ol7_19_rac\asm_data_disk_1.vdi
+  asm_data_disk_1: C:\VirtualBox\shared\ol8_19_rac\asm_data_disk_1.vdi
   asm_data_disk_size: 40
-  asm_reco_disk_1: C:\VirtualBox\shared\ol7_19_rac\asm_reco_disk_1.vdi
+  asm_reco_disk_1: C:\VirtualBox\shared\ol8_19_rac\asm_reco_disk_1.vdi
   asm_reco_disk_size: 20
 ```
 
-If you don't alter them, they will get written to "C:\u05\VirtualBox\shared\ol7_19_rac".
+If you don't alter them, they will get written to "C:\u05\VirtualBox\shared\ol8_19_rac".
 
 ## Build the RAC
 
