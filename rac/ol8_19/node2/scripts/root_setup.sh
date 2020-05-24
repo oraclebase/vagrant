@@ -1,3 +1,7 @@
+echo "******************************************************************************"
+echo "Setup Start." `date`
+echo "******************************************************************************"
+
 . /vagrant_config/install.env
 
 sh /vagrant_scripts/prepare_u01_disk.sh
@@ -54,3 +58,7 @@ chmod -R 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 ssh ${NODE2_HOSTNAME} date
 echo "${ROOT_PASSWORD}" > /tmp/temp1.txt
+
+echo "******************************************************************************"
+echo "Setup End." `date`
+echo "******************************************************************************"

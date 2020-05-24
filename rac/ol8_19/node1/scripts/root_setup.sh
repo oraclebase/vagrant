@@ -1,3 +1,7 @@
+echo "******************************************************************************"
+echo "Setup Start." `date`
+echo "******************************************************************************"
+
 . /vagrant_config/install.env
 
 sh /vagrant_scripts/prepare_u01_disk.sh
@@ -126,5 +130,5 @@ mv -f /usr/bin/scp.orig /usr/bin/scp
 ssh root@${NODE2_HOSTNAME} mv -f /usr/bin/scp.orig /usr/bin/scp
 
 echo "******************************************************************************"
-echo "Complete." `date`
+echo "Setup End." `date`
 echo "******************************************************************************"
