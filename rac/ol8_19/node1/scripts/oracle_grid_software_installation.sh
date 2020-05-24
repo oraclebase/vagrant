@@ -3,9 +3,8 @@
 echo "******************************************************************************"
 echo "Do grid software-only installation." `date`
 echo "******************************************************************************"
-export CV_ASSUME_DISTID=OEL7.6
-
 ${GRID_HOME}/gridSetup.sh -ignorePrereq -waitforcompletion -silent \
+        -applyRU ${PATCH_PATH1} \
         -responseFile ${GRID_HOME}/install/response/gridsetup.rsp \
         INVENTORY_LOCATION=${ORA_INVENTORY} \
         SELECTED_LANGUAGES=${ORA_LANGUAGES} \
