@@ -27,6 +27,14 @@ dbca -silent -createDatabase \
   -asmsnmpPassword ${SYS_PASSWORD}
 
 echo "******************************************************************************"
+echo "Save state of PDB to enable auto-start." `date`
+echo "******************************************************************************"
+sqlplus / as sysdba <<EOF
+ALTER PLUGGABLE DATABASE ${PDB_NAME} SAVE STATE;
+EXIT;
+EOF
+
+echo "******************************************************************************"
 echo "Check cluster configuration." `date`
 echo "******************************************************************************"
 
