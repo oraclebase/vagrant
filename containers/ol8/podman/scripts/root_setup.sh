@@ -8,6 +8,18 @@ dnf install -y dnf-utils zip unzip git
 dnf install -y podman buildah skopeo
 
 echo "******************************************************************************"
+echo "Firewall." `date`
+echo "******************************************************************************"
+systemctl stop firewalld
+systemctl disable firewalld
+
+echo "******************************************************************************"
+echo "SELinux." `date`
+echo "******************************************************************************"
+sed -i -e "s|SELINUX=enforcing|SELINUX=permissive|g" /etc/selinux/config
+setenforce permissive
+
+echo "******************************************************************************"
 echo "Make the docker.io registry available." `date`
 echo "******************************************************************************"
 sed -i -e "s|'container-registry.oracle.com', 'docker.io'|'docker.io', 'container-registry.oracle.com'|g" /etc/containers/registries.conf
