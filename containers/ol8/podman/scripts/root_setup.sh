@@ -10,7 +10,7 @@ dnf install -y podman buildah skopeo
 echo "******************************************************************************"
 echo "Make the docker.io registry available." `date`
 echo "******************************************************************************"
-sed -i -e "s|'container-registry.oracle.com', 'registry.access.redhat.com', 'registry.redhat.io'|'container-registry.oracle.com', 'docker.io', 'registry.access.redhat.com', 'registry.redhat.io'|g" /etc/containers/registries.conf
+sed -i -e "s|'container-registry.oracle.com', 'registry.access.redhat.com', 'registry.redhat.io'|'docker.io', 'container-registry.oracle.com', 'registry.access.redhat.com', 'registry.redhat.io'|g" /etc/containers/registries.conf
 
 echo "******************************************************************************"
 echo "Create non-root docker user." `date`
