@@ -37,7 +37,7 @@ export APEX_PASSWORD="ApexPassword1"
 export DATA_DIR=/u02/oradata
 
 export INSTALL_APEX="true"
-#export INSTALL_APEX="false"
+export INSTALL_ORDS="true"
 
 
 # ORDS installation settings.
@@ -86,8 +86,6 @@ export ORAENV_ASK=NO
 export ORAENV_ASK=YES
 
 dbstart \$ORACLE_HOME
-
-\$CATALINA_BASE/bin/startup.sh
 EOF
 
 
@@ -95,14 +93,27 @@ cat > /home/oracle/scripts/stop_all.sh <<EOF
 #!/bin/bash
 . /home/oracle/scripts/setEnv.sh
 
-\$CATALINA_BASE/bin/shutdown.sh
-
 export ORAENV_ASK=NO
 . oraenv
 export ORAENV_ASK=YES
 
 dbshut \$ORACLE_HOME
 EOF
+
+# Add Tomcat management if required.
+if [ "${INSTALL_ORDS}" = "true" ]; then
+  
+cat >> /home/oracle/scripts/start_all.sh <<EOF
+
+\$CATALINA_HOME/bin/startup.sh
+EOF
+
+cat >> /home/oracle/scripts/stop_all.sh <<EOF
+
+\$CATALINA_HOME/bin/shutdown.sh
+EOF
+
+fi
 
 chown -R oracle.oinstall ${SCRIPTS_DIR}
 chmod u+x ${SCRIPTS_DIR}/*.sh
