@@ -117,7 +117,12 @@
                keystorePass="###KEYSTORE_PASSWORD###"
                clientAuth="false" sslProtocol="TLS" sslEnabledProtocols="TLSv1.2"
                URIEncoding="UTF-8"
-               />
+               compression="on"
+               noCompressionUserAgents="gozilla, traviata"
+               compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json"
+               >
+      <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol"/>
+    </Connector>
                <!--
                                    If you are using a proxy server, you may need to add the following two entries also.
                proxyName="www.example.com"
