@@ -82,6 +82,7 @@ if [ ! -f ${KEYSTORE_DIR}/keystore.jks ]; then
   sed -i -e "s|###KEYSTORE_DIR###|${KEYSTORE_DIR}|g" ${SOFTWARE_DIR}/server.xml
   sed -i -e "s|###KEYSTORE_PASSWORD###|${KEYSTORE_PASSWORD}|g" ${SOFTWARE_DIR}/server.xml
   cp ${SOFTWARE_DIR}/server.xml ${CATALINA_HOME}/conf
+  cp ${SOFTWARE_DIR}/web.xml ${CATALINA_BASE}/conf/
 fi;
 
 
