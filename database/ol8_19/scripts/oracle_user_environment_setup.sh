@@ -42,9 +42,9 @@ export INSTALL_ORDS="true"
 
 # ORDS installation settings.
 export JAVA_SOFTWARE="OpenJDK11U-jdk_x64_linux_hotspot_11.0.7_10.tar.gz"
-export TOMCAT_SOFTWARE="apache-tomcat-9.0.34.tar.gz"
-export ORDS_SOFTWARE="ords-19.4.6.142.1859.zip"
-export SQLCL_SOFTWARE="sqlcl-19.4.0.354.0937.zip"
+export TOMCAT_SOFTWARE="apache-tomcat-9.0.37.tar.gz"
+export ORDS_SOFTWARE="ords-20.2.0.178.1804.zip"
+export SQLCL_SOFTWARE="sqlcl-20.2.0.174.1557.zip"
 export SOFTWARE_DIR="/u01/software"
 export KEYSTORE_DIR="/u01/keystore"
 export ORDS_HOME="/u01/ords"
