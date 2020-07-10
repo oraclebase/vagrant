@@ -81,7 +81,7 @@ if [ ! -f ${KEYSTORE_DIR}/keystore.jks ]; then
      -storepass ${KEYSTORE_PASSWORD} -validity 3600 -keysize 2048 -keypass ${KEYSTORE_PASSWORD}
   sed -i -e "s|###KEYSTORE_DIR###|${KEYSTORE_DIR}|g" ${SOFTWARE_DIR}/server.xml
   sed -i -e "s|###KEYSTORE_PASSWORD###|${KEYSTORE_PASSWORD}|g" ${SOFTWARE_DIR}/server.xml
-  cp ${SOFTWARE_DIR}/server.xml ${CATALINA_HOME}/conf
+  cp ${SOFTWARE_DIR}/server.xml ${CATALINA_BASE}/conf
   cp ${SOFTWARE_DIR}/web.xml ${CATALINA_BASE}/conf/
 fi;
 
