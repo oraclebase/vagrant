@@ -37,7 +37,7 @@ $ tree
 |   +--- apache-tomcat-9.0.37.tar.gz
 |   +--- apex_20.1_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.7_10.tar.gz
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz
 |   +--- ords-20.2.0.178.1804.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-20.2.0.174.1557.zip
