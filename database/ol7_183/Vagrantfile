@@ -10,7 +10,7 @@ var_non_rotational = 'on' # SSD
 var_disk1_name     = './ol7_183_u01.vdi'
 var_disk2_name     = './ol7_183_u02.vdi'
 var_disk_size      = 100
-
+var_public_ip      = '192.168.56.140'
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: var_public_ip
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
