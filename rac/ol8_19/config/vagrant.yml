@@ -1,5 +1,5 @@
 shared:
-  box: oraclebase/oracle-8.2
+  box: oraclebase/oracle-8
   non_rotational: 'on'
   asm_crs_disk_1: /u05/VirtualBox/shared/ol8_19_rac/asm_crs_disk_1.vdi
   asm_crs_disk_2: /u05/VirtualBox/shared/ol8_19_rac/asm_crs_disk_2.vdi

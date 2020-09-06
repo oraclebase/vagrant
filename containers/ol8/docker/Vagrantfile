@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # Variables
-var_box            = 'bento/oracle-8'
+var_box            = 'oraclebase/oracle-8'
 var_vm_name        = 'docker_ol8_vagrant'
 var_mem_size       = 6144  # More would be better.
 var_cpus           = 4 # 2 cores

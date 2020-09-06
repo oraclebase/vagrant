@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 # Variables
-var_box            = 'oraclebase/ol8'
-var_vm_name        = 'ol7_vagrant'
+var_box            = 'oraclebase/oracle-8'
+var_vm_name        = 'ol8_vagrant'
 var_mem_size       = 2048
 var_cpus           = 2
 var_non_rotational = 'on' # SSD
