@@ -54,7 +54,8 @@
       ],
       "scripts": [
         "scripts/vagrant_user_setup.sh",
-        "scripts/vbox_guest_additions.sh"
+        "scripts/vbox_guest_additions.sh",
+        "scripts/cleanup.sh"
       ],
       "type": "shell"
     }
