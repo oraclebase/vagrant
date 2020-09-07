@@ -49,15 +49,26 @@
   ],
   "provisioners": [
     {
-      "only": [
-        "virtualbox-iso"
-      ],
+      "script": "scripts/vagrant_user_setup.sh",
+      "type": "shell"
+    },
+    {
+      "inline": "dnf update -y",
+      "type": "shell"
+    },
+    {
+      "inline": "reboot",
+      "type": "shell",
+      "expect_disconnect": true
+    },
+    {
       "scripts": [
-        "scripts/vagrant_user_setup.sh",
         "scripts/vbox_guest_additions.sh",
         "scripts/cleanup.sh"
       ],
-      "type": "shell"
+      "type": "shell",
+      "pause_before": "10s",
+      "timeout": "10s"
     }
   ],
   "variables": {
