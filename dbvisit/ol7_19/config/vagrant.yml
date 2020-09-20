@@ -1,5 +1,5 @@
 shared:
-  box: bento/oracle-7.6
+  box: oraclebase/oracle-7.6
   non_rotational: 'on'
 
 node1:

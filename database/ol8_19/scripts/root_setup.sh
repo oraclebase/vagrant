@@ -39,7 +39,7 @@ sh ${ORACLE_HOME}/root.sh
 
 # Uncomment the following line if you want to apply patches.
 # You must have downloaded the patches and amended the "oracle_software_patch.sh" script.
-#su - oracle -c '/u01/software/oracle_software_patch.sh'
+su - oracle -c '/u01/software/oracle_software_patch.sh'
 
 echo "******************************************************************************"
 echo "Create the database and install the ORDS software." `date`

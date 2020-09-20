@@ -5,7 +5,7 @@
 var_box            = 'oraclebase/oracle-8'
 var_vm_name        = 'ol8_19_vagrant'
 var_mem_size       = 4096
-var_cpus           = 2
+var_cpus           = 4
 var_non_rotational = 'on' # SSD
 var_disk1_name     = './ol8_19_u01.vdi'
 var_disk2_name     = './ol8_19_u02.vdi'
