@@ -26,7 +26,7 @@ export ORA_INVENTORY=/u01/app/oraInventory
 export SOFTWARE_DIR=/u01/software
 #export DB_SOFTWARE="linux.x64_11gR2_database_*of2.zip"
 export DB_SOFTWARE="p13390677_112040_Linux-x86-64_*of7.zip"
-export APEX_SOFTWARE="apex_20.1_en.zip"
+export APEX_SOFTWARE="apex_20.2_en.zip"
 export ORACLE_PASSWORD="oracle"
 export SCRIPTS_DIR=/home/oracle/scripts
 
