@@ -34,7 +34,7 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.37.tar.gz
+|   +--- apache-tomcat-9.0.39.tar.gz
 |   +--- apex_20.2_en.zip
 |   +--- linuxx64_12201_database.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz

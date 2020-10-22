@@ -20,7 +20,7 @@ docker pull oraclelinux:8-slim
 # Copy ORDS software and do build (OL7).
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_20.2_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.37.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.39.tar.gz .
 cp /vagrant/software/ords-20.2.0.178.1804.zip .
 cp /vagrant/software/sqlcl-20.2.0.174.1557.zip .
 cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz .
@@ -30,7 +30,7 @@ docker build --no-cache -t ol7_ords:latest .
 # Copy ORDS software and do build (OL8).
 cd /u01/dockerfiles/ords/ol8_ords/software
 cp /vagrant/software/apex_20.2_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.37.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.39.tar.gz .
 cp /vagrant/software/ords-20.2.0.178.1804.zip .
 cp /vagrant/software/sqlcl-20.2.0.174.1557.zip .
 cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz .
