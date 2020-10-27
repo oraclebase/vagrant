@@ -42,7 +42,7 @@ $ tree
 |   +--- apache-tomcat-9.0.39.tar.gz
 |   +--- apex_20.2_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.8_10.tar.gz
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.9_11.tar.gz
 |   +--- ords-20.2.0.178.1804.zip
 |   +--- p31326362_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
