@@ -1,0 +1,81 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<tab> net.ifnames=0 biosdevname=0 text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+      ],
+      "boot_wait": "12s",
+      "disk_size": "{{user `harddisk_size`}}",
+      "guest_additions_path": "/tmp/VBoxGuestAdditions.iso",
+      "guest_os_type": "Fedora_64",
+      "hard_drive_interface": "sata",
+      "headless": false,
+      "http_directory": "http",
+      "iso_checksum": "MD5:fc7ac717edbf32fea551306f2a6ceb66",
+      "iso_url": "{{user `iso_location`}}/Fedora-Server-dvd-x86_64-33-1.2.iso",
+      "shutdown_command": "/sbin/halt -h -p",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_timeout": "10000s",
+      "ssh_username": "root",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "1024"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ]
+      ],
+      "virtualbox_version_file": "/tmp/.vbox_version",
+      "vm_name": "{{user `vm_name`}}"
+    }
+  ],
+  "post-processors": [
+    {
+      "compression_level": 6,
+      "only": [
+        "virtualbox-iso"
+      ],
+      "output": "build/{{user `vm_name`}}-x86_64-{{.Provider}}.box",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "scripts":  [
+        "scripts/vagrant_user_setup.sh",
+        "scripts/vbox_guest_additions.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "inline": "dnf update -y",
+      "type": "shell"
+    },
+    {
+      "inline": "reboot",
+      "type": "shell",
+      "expect_disconnect": true
+    },
+    {
+      "scripts": [
+        "scripts/cleanup.sh"
+      ],
+      "type": "shell",
+      "pause_before": "10s",
+      "timeout": "10s"
+    }
+  ],
+  "variables": {
+    "harddisk_size": "65536",
+    "iso_location": "/iso",
+    "vm_name": "f33"
+  }
+}
