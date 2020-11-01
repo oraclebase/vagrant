@@ -9,6 +9,3 @@ chmod 0600 /home/vagrant/.ssh/authorized_keys
 
 echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/vagrant
 chmod 0440 /etc/sudoers.d/vagrant
-
-# Downgrade the Crypto Policies to the Fedora32.
-update-crypto-policies --set DEFAULT:FEDORA32
