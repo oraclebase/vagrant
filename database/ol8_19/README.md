@@ -15,7 +15,7 @@ A simple Vagrant build for Oracle Database 19c on Oracle Linux 8.
 
 If you want to patch the installation, you will also need these downloads.
 
-* [Patch 31326362: COMBO OF OJVM RU COMPONENT 19.8.0.0.200714 + DB RU 19.8.0.0.200714](https://support.oracle.com)
+* [Patch 31720396: COMBO OF OJVM RU COMPONENT 19.9.0.0.201020 + DB RU 19.9.0.0.201020](https://support.oracle.com)
 * [Patch 6880880: OPatch 19.x](https://updates.oracle.com/download/6880880.html)
 
 Place the software in the "software" directory before calling the `vagrant up` command.
@@ -43,11 +43,11 @@ $ tree
 |   +--- apex_20.2_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.9_11.tar.gz
-|   +--- ords-20.2.0.178.1804.zip
-|   +--- p31326362_190000_Linux-x86-64.zip
+|   +--- ords-20.3.0.301.1819.zip
+|   +--- p31720396_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-20.2.0.174.1557.zip
+|   +--- sqlcl-20.3.0.274.1916.zip
 +--- Vagrantfile
 $
 ```
