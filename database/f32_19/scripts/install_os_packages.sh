@@ -9,53 +9,53 @@ dnf install -y dnf-utils zip unzip
 #dnf groupinstall "Development Tools" -y
 #dnf groupinstall "Administration Tools" -y
 #dnf groupinstall "System Tools" -y
-yum install -y bc    
-yum install -y binutils
-#yum install -y compat-libcap1
-yum install -y compat-libstdc++-33
-#yum install -y dtrace-modules
-#yum install -y dtrace-modules-headers
-#yum install -y dtrace-modules-provider-headers
-#yum install -y dtrace-utils
-yum install -y elfutils-libelf
-yum install -y elfutils-libelf-devel
-yum install -y fontconfig-devel
-yum install -y glibc
-yum install -y glibc-devel
-yum install -y ksh
-yum install -y libaio
-yum install -y libaio-devel
-#yum install -y libdtrace-ctf-devel
-yum install -y libXrender
-yum install -y libXrender-devel
-yum install -y libX11
-yum install -y libXau
-yum install -y libXi
-yum install -y libXtst
-yum install -y libgcc
-yum install -y librdmacm-devel
-yum install -y libstdc++
-yum install -y libstdc++-devel
-yum install -y libxcb
-yum install -y make
-yum install -y net-tools # Clusterware
-yum install -y nfs-utils # ACFS
-yum install -y python # ACFS
-yum install -y python-configshell # ACFS
-yum install -y python-rtslib # ACFS
-yum install -y python-six # ACFS
-yum install -y targetcli # ACFS
-yum install -y smartmontools
-yum install -y sysstat
+dnf install -y bc    
+dnf install -y binutils
+#dnf install -y compat-libcap1
+dnf install -y compat-libstdc++-33
+#dnf install -y dtrace-modules
+#dnf install -y dtrace-modules-headers
+#dnf install -y dtrace-modules-provider-headers
+#dnf install -y dtrace-utils
+dnf install -y elfutils-libelf
+dnf install -y elfutils-libelf-devel
+dnf install -y fontconfig-devel
+dnf install -y glibc
+dnf install -y glibc-devel
+dnf install -y ksh
+dnf install -y libaio
+dnf install -y libaio-devel
+#dnf install -y libdtrace-ctf-devel
+dnf install -y libXrender
+dnf install -y libXrender-devel
+dnf install -y libX11
+dnf install -y libXau
+dnf install -y libXi
+dnf install -y libXtst
+dnf install -y libgcc
+dnf install -y librdmacm-devel
+dnf install -y libstdc++
+dnf install -y libstdc++-devel
+dnf install -y libxcb
+dnf install -y make
+dnf install -y net-tools # Clusterware
+dnf install -y nfs-utils # ACFS
+dnf install -y python # ACFS
+dnf install -y python-configshell # ACFS
+dnf install -y python-rtslib # ACFS
+dnf install -y python-six # ACFS
+dnf install -y targetcli # ACFS
+dnf install -y smartmontools
+dnf install -y sysstat
 
 # Added by me.
-yum install -y unixODBC
+dnf install -y unixODBC
 
 # New for F32
 dnf install -y libnsl2
 dnf install -y libnsl2.i686
 dnf install -y libxcrypt-compat
-dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.31.9000-13.fc33.x86_64.rpm
+dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.32.9000-14.fc34.x86_64.rpm
 
 #dnf update -y
 
@@ -123,7 +123,7 @@ useradd -u 54321 -g oinstall -G dba,oper oracle
 
 
 echo "******************************************************************************"
-echo "Fix for Oracle on F28." `date`
+echo "Fix for Oracle on F32." `date`
 echo "******************************************************************************"
 rm -f /usr/lib64/libnsl.so.1
 rm -f /usr/lib/libnsl.so.1
