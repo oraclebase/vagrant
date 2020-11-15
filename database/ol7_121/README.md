@@ -36,7 +36,8 @@ $ tree
 +--- software
 |   +--- apache-tomcat-9.0.39.tar.gz
 |   +--- apex_20.2_en.zip
-|   +--- linuxx64_12201_database.zip
+|   +--- linuxamd64_12102_database_1of2.zip
+|   +--- linuxamd64_12102_database_2of2.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.9_11.tar.gz
 |   +--- ords-20.3.0.301.1819.zip
 |   +--- put_software_here.txt
