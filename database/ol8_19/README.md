@@ -25,6 +25,9 @@ Directory contents when software is included.
 ```
 $ tree
 .
++--- config
+|   +--- install.env
+|   +--- vagrant.yml
 +--- README.md
 +--- scripts
 |   +--- dbora.service
@@ -52,13 +55,7 @@ $ tree
 $
 ```
 
-If you want to include the patches, edit the "root_setup.sh" script to uncomment the reference to the "oracle_software_patch.sh" script.
-
-```
-# Uncomment the following line if you want to apply patches.
-# You must have downloaded the patches and amended the "oracle_software_patch.sh" script.
-su - oracle -c '/u01/software/oracle_software_patch.sh'
-```
+If you want to include the patches, edit the PATCH_DB parameter in the "install.env" file.
 
 With everything in place, you can initiate the build as follows.
 
