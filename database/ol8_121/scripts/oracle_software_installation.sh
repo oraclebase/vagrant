@@ -3,6 +3,7 @@
 echo "******************************************************************************"
 echo "Unzip software." `date`
 echo "******************************************************************************"
+mkdir -p ${ORACLE_HOME}
 cd ${SOFTWARE_DIR}
 unzip -oq "/vagrant/software/${DB_SOFTWARE}"
 
