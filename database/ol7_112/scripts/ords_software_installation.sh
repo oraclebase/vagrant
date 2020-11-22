@@ -80,7 +80,7 @@ echo "**************************************************************************
 cd ${ORDS_HOME}
 $JAVA_HOME/bin/java -jar ords.war configdir ${ORDS_CONF}
 $JAVA_HOME/bin/java -jar ords.war
-cp ords.war ${CATALINA_HOME}/webapps/
+cp ords.war ${CATALINA_BASE}/webapps/
 
 
 echo "******************************************************************************"
