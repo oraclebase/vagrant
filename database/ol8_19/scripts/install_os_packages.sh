@@ -7,6 +7,7 @@ dnf install -y dnf-utils zip unzip
 
 dnf install -y oracle-database-preinstall-19c
 
+
 echo "******************************************************************************"
 echo "Firewall." `date`
 echo "******************************************************************************"

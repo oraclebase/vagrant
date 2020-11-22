@@ -7,6 +7,7 @@ yum install -y yum-utils zip unzip
 
 yum install -y oracle-database-preinstall-19c
 
+
 echo "******************************************************************************"
 echo "Firewall." `date`
 echo "******************************************************************************"

@@ -1,21 +1,22 @@
 echo "******************************************************************************"
-echo "Prepare yum with the latest repos." `date`
+echo "Install OS Packages." `date`
 echo "******************************************************************************"
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
 yum install -y yum-utils zip unzip
+
 yum install -y oracle-database-preinstall-18c
 
-# Configure rlwrap for SQL*Plus command history.
-yum install -y oracle-epel-release-el7
-yum-config-manager --enable ol7_developer_EPEL
-yum install -y rlwrap
 
-cat >> /home/oracle/.bash_profile <<EOF
-alias sqlplus='rlwrap sqlplus'
-alias rman='rlwrap rman'
-EOF
+echo "******************************************************************************"
+echo "Firewall." `date`
+echo "******************************************************************************"
+systemctl stop firewalld
+systemctl disable firewalld
 
-#yum update -y
-#yum groupinstall -y "Server with GUI"
-#systemctl set-default graphical.target
+
+echo "******************************************************************************"
+echo "SELinux." `date`
+echo "******************************************************************************"
+sed -i -e "s|SELINUX=enabled|SELINUX=permissive|g" /etc/selinux/config
+setenforce permissive
