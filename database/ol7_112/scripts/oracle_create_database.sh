@@ -27,15 +27,6 @@ ${ORACLE_SID}=
     (SERVICE_NAME = ${ORACLE_SID})
   )
 )
-${PDB_NAME}= 
-(DESCRIPTION = 
-  (ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521))
-  (CONNECT_DATA =
-    (SERVER = DEDICATED)
-    (SERVICE_NAME = ${PDB_NAME})
-  )
-)
-EOF
 
   cat > ${ORACLE_HOME}/network/admin/sqlnet.ora <<EOF
 SQLNET.INBOUND_CONNECT_TIMEOUT=400
