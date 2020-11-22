@@ -1,3 +1,5 @@
+. /vagrant/config/install.env
+
 echo "******************************************************************************"
 echo "Create a listener.ora file if it doesn't already exist." `date`
 echo "******************************************************************************"
@@ -96,7 +98,7 @@ EOF
     echo "Unzip APEX software." `date`
     echo "******************************************************************************"
     cd ${SOFTWARE_DIR}
-    unzip -oq ${APEX_SOFTWARE}
+    unzip -oq /vagrant/software/${APEX_SOFTWARE}
     cd apex
 
 
