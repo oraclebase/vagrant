@@ -3,8 +3,9 @@
 echo "******************************************************************************"
 echo "Unzip software." `date`
 echo "******************************************************************************"
+mkdir -p ${ORACLE_HOME}
 cd ${SOFTWARE_DIR}
-unzip -o "${DB_SOFTWARE}"
+unzip -oq "/vagrant/software/${DB_SOFTWARE}"
 
 echo "******************************************************************************"
 echo "Do software-only installation." `date`
