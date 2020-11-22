@@ -1,8 +1,10 @@
+. /vagrant/config/install.env
+
 echo "******************************************************************************"
 echo "Unzip software." `date`
 echo "******************************************************************************"
 cd ${SOFTWARE_DIR}
-unzip -o ${DB_SOFTWARE}
+unzip -oq /vagrant/software/${DB_SOFTWARE}
 
 echo "******************************************************************************"
 echo "Do software-only installation." `date`

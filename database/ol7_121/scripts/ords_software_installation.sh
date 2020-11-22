@@ -1,3 +1,5 @@
+. /vagrant/config/install.env
+
 if [ "${INSTALL_ORDS}" = "false" ]; then
   exit 0
 fi
@@ -5,28 +7,38 @@ fi
 echo "******************************************************************************"
 echo "Unpack all the software." `date`
 echo "******************************************************************************"
-mkdir /u01/java
+# Java
+mkdir -p /u01/java
 cd /u01/java
-tar -xzf ${SOFTWARE_DIR}/${JAVA_SOFTWARE}
+tar -xzf /vagrant/software/${JAVA_SOFTWARE}
 TEMP_FILE=`ls`
-mv ${TEMP_FILE}/* .
-rmdir ${TEMP_FILE}
-mkdir /u01/tomcat
+ln -s ${TEMP_FILE} latest
+# Tomcat
+mkdir -p /u01/tomcat
 cd /u01/tomcat
-tar -xzf ${SOFTWARE_DIR}/${TOMCAT_SOFTWARE}
+tar -xzf /vagrant/software/${TOMCAT_SOFTWARE}
 TEMP_FILE=`ls`
-mv ${TEMP_FILE}/* .
-rmdir ${TEMP_FILE}
+ln -s ${TEMP_FILE} latest
+# CATALINA_BASE
+mkdir -p ${CATALINA_BASE}
+cp -r ${CATALINA_HOME}/conf $CATALINA_BASE
+cp -r ${CATALINA_HOME}/logs $CATALINA_BASE
+cp -r ${CATALINA_HOME}/temp $CATALINA_BASE
+cp -r ${CATALINA_HOME}/webapps $CATALINA_BASE
+cp -r ${CATALINA_HOME}/work $CATALINA_BASE
+# ORDS
 mkdir -p ${ORDS_HOME}
 cd ${ORDS_HOME}
-unzip -oq ${SOFTWARE_DIR}/${ORDS_SOFTWARE}
+unzip -oq /vagrant/software/${ORDS_SOFTWARE}
 mkdir -p ${ORDS_CONF}
+# SQLcl
 cd /u01
-unzip -oq ${SOFTWARE_DIR}/${SQLCL_SOFTWARE}
+unzip -oq /vagrant/software/${SQLCL_SOFTWARE}
 cd ${SOFTWARE_DIR}
-rm -Rf ${CATALINA_HOME}/webapps/*
-mkdir -p ${CATALINA_HOME}/webapps/i/
-cp -R ${SOFTWARE_DIR}/apex/images/* ${CATALINA_HOME}/webapps/i/
+# APEX Images
+rm -Rf ${CATALINA_BASE}/webapps/*
+mkdir -p ${CATALINA_BASE}/webapps/i/
+cp -R ${SOFTWARE_DIR}/apex/images/* ${CATALINA_BASE}/webapps/i/
 
 
 echo "******************************************************************************"
@@ -80,10 +92,10 @@ if [ ! -f ${KEYSTORE_DIR}/keystore.jks ]; then
   ${JAVA_HOME}/bin/keytool -genkey -keyalg RSA -alias selfsigned -keystore keystore.jks \
      -dname "CN=${HOSTNAME}, OU=My Department, O=My Company, L=Birmingham, ST=West Midlands, C=GB" \
      -storepass ${KEYSTORE_PASSWORD} -validity 3600 -keysize 2048 -keypass ${KEYSTORE_PASSWORD}
-  sed -i -e "s|###KEYSTORE_DIR###|${KEYSTORE_DIR}|g" ${SOFTWARE_DIR}/server.xml
-  sed -i -e "s|###KEYSTORE_PASSWORD###|${KEYSTORE_PASSWORD}|g" ${SOFTWARE_DIR}/server.xml
-  cp ${SOFTWARE_DIR}/server.xml ${CATALINA_BASE}/conf
-  cp ${SOFTWARE_DIR}/web.xml ${CATALINA_BASE}/conf/
+  cp /vagrant/scripts/server.xml ${CATALINA_BASE}/conf/
+  cp /vagrant/scripts/web.xml ${CATALINA_BASE}/conf/
+  sed -i -e "s|###KEYSTORE_DIR###|${KEYSTORE_DIR}|g" ${CATALINA_BASE}/conf/server.xml
+  sed -i -e "s|###KEYSTORE_PASSWORD###|${KEYSTORE_PASSWORD}|g" ${CATALINA_BASE}/conf/server.xml
 fi;
 
 

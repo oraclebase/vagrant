@@ -2,15 +2,16 @@
 # vi: set ft=ruby :
 
 # Variables
-var_box            = 'oraclebase/oracle-8'
-var_vm_name        = 'ol7_183_vagrant'
-var_mem_size       = 4096
-var_cpus           = 2
-var_non_rotational = 'on' # SSD
-var_disk1_name     = './ol8_183_u01.vdi'
-var_disk2_name     = './ol8_183_u02.vdi'
-var_disk_size      = 100
-var_public_ip      = '192.168.56.140'
+params = YAML.load_file 'config/vagrant.yml'
+var_box            = params['box']
+var_vm_name        = params['vm_name']
+var_mem_size       = params['mem_size']
+var_cpus           = params['cpus']
+var_public_ip      = params['public_ip']
+var_disk1_name     = params['disk1_name']
+var_disk2_name     = params['disk2_name']
+var_disk_size      = params['disk_size']
+var_non_rotational = params['non_rotational']
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for

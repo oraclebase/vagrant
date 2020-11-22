@@ -20,6 +20,9 @@ Directory contents when software is included.
 ```
 $ tree
 .
++--- config
+|   +--- install.env
+|   +--- vagrant.yml
 +--- README.md
 +--- scripts
 |   +--- dbora.service
