@@ -132,3 +132,35 @@ podman ps -a
 podman pod rm --all
 
 
+
+# Run an application.
+podman pod create --name my_pod --publish=1521 --publish=5500 --publish=8080 --publish=8443
+podman pod ls
+
+podman run -dit \
+           --name=ol7_19_con \
+           --pod=my_pod \
+           --volume=/u01/volumes/ol7_19_ords_db/:/u02 \
+           ol7_19:latest
+podman logs --follow ol7_19_con
+
+podman run -dit \
+           --name ol7_ords_con \
+           --pod=my_pod \
+           -e="DB_HOSTNAME=localhost" \
+           -v=/u01/volumes/ol7_19_ords_tomcat:/u01/config/instance1 \
+           ol7_ords:latest
+podman logs --follow ol7_ords_con
+
+~/sqlcl/bin/sql sys/SysPassword1@//localhost:1521/pdb1 as sysdba
+
+podman pod stop my_pod
+
+podman rm -vf ol7_ords_con
+podman rm -vf ol7_19_con
+podman pod rm my_pod
+
+podman ps -a
+podman pod rm --all
+
+
