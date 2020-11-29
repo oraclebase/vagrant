@@ -122,10 +122,10 @@ BEGIN
     COMMIT;
 END;
 /
-@apex_rest_config.sql ${APEX_PASSWORD} ${APEX_PASSWORD}
+@apex_rest_config.sql "${APEX_PASSWORD}" "${APEX_PASSWORD}"
 --@apex_epg_config.sql ${SOFTWARE_DIR}
-alter user APEX_PUBLIC_USER identified by ${APEX_PASSWORD} account unlock;
-alter user APEX_REST_PUBLIC_USER identified by ${APEX_PASSWORD} account unlock;
+alter user APEX_PUBLIC_USER identified by "${APEX_PASSWORD}" account unlock;
+alter user APEX_REST_PUBLIC_USER identified by "${APEX_PASSWORD}" account unlock;
 exit;
 EOF
 
