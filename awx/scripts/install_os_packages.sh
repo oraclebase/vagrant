@@ -23,4 +23,4 @@ yum install -y python3-pip python3-devel libselinux-python3
 yum install -y git gcc
 
 # Install latest ansible and docker libs from pip3 
-sudo -u awx pip3 install --user ansible docker-compose docker
+sudo -u vagrant pip3 install --user ansible docker-compose docker
