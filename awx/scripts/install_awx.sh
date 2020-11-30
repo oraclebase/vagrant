@@ -1,13 +1,19 @@
+#!/bin/bash
 echo "******************************************************************************"
 echo "Install AWX" `date`
 echo "******************************************************************************"
-pip install --upgrade pip
-pip install docker
-pip install docker-compose
+
+# Install latest ansible and docker libs from pip3 
+pip3 install --user ansible docker-compose docker
+# Reload environment variables to pick up new path
+source ~/.bash_profile
+source /vagrant/scripts/config.sh
 
 cd /u01/
+rm -rfv /u01/awx
 git clone https://github.com/ansible/awx.git
 cd awx/installer
+
 
 # For a real installation, you will probably need to change many of these.
 sed -i -e "s|awx_task_hostname=awx|awx_task_hostname=${AWX_TASK_HOSTNAME}|g" ./inventory

@@ -17,9 +17,10 @@ echo "**************************************************************************
 echo "Install Docker and Ansible." `date`
 echo "******************************************************************************"
 yum install -y docker-engine btrfs-progs btrfs-progs-devel
-yum install -y ansible python-pip python-devel python3-devel
+yum install -y python3-pip python3-devel libselinux-python3
 
 # AWX requirement.
 yum install -y git gcc
 
-#yum update -y
+# Install latest ansible and docker libs from pip3 
+sudo -u awx pip3 install --user ansible docker-compose docker
