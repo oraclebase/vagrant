@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # Variables
-var_box            = 'bento/oracle-7'
+var_box            = 'oraclebase/oracle-7'
 var_vm_name        = 'awx_vagrant'
 var_mem_size       = 4092  # More would be better.
 var_cpus           = 2
