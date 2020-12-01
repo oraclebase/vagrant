@@ -1,9 +1,9 @@
 echo "******************************************************************************"
 echo "Install AWX" `date`
 echo "******************************************************************************"
-pip install --upgrade pip
-pip install docker
-pip install docker-compose
+pip3 install --upgrade pip
+pip3 install docker
+pip3 install docker-compose
 
 cd /u01/
 git clone https://github.com/ansible/awx.git
