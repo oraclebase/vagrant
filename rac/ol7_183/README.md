@@ -205,3 +205,31 @@ vagrant destroy -f
 ```
 
 Check all the shared disks have been removed as expected. If they are left behind they will be reused, which will cause problems.
+
+## Windows Host Build Failure (Workaround)
+
+When using a Windows host, you may see something like this.
+
+* DNS up and running.
+* Node2 up and running.
+* Node1 grid configuration fails with the following error.
+
+```
+default: Do grid software-only installation. Wed Nov 18 23:32:46 UTC 2020
+default: ******************************************************************************
+default: Launching Oracle Grid Infrastructure Setup Wizard...
+default: [FATAL] [INS-40718] Single Client Access Name (SCAN):ol7-19-scan could not be resolved.
+default:    CAUSE: The name you provided as the SCAN could not be resolved using TCP/IP host name lookup.
+default:    ACTION: Provide name to use for the SCAN for which the domain can be resolved.
+```
+
+I have seen this a few times on a Windows laptop (my main workstation). I've not seen it on macOS or Linux. It is almost like Node1 can't see the DNS, even though it is there, and Node2 can see it. I figure it must be some silly eccentricity of VirtualBox on Windows.
+
+I do have a workaround for this.
+
+* Start up DNS.
+* Start Node2.
+* Start Node1.
+* While Node1 is doing the OS prerequisites, stop and start the DNS node (vagrant halt, then vagrant up). That's not a rebuild. Just a restart. Clearly the DNS must be restarted before the installation takes place.
+
+Something about the DNS restart allows Node1 to see the DNS.
