@@ -41,7 +41,7 @@ $ tree
 |   +--- apex_20.2_en.zip
 |   +--- linuxamd64_12102_database_1of2.zip
 |   +--- linuxamd64_12102_database_2of2.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.9_11.tar.gz
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.10_9.tar.gz
 |   +--- ords-20.4.1.013.1644.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-20.4.1.351.1718.zip
