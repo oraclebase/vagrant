@@ -1,12 +1,12 @@
 echo "******************************************************************************"
 echo "Setup Start." `date`
 echo "******************************************************************************"
-
 . /vagrant_config/install.env
 
 echo "******************************************************************************"
-echo "Prepare yum with the latest repos." `date`
+echo "Set root password and configure networking." `date`
 echo "******************************************************************************"
+echo -e "${ROOT_PASSWORD}\n${ROOT_PASSWORD}" | passwd
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
 # Stop NetworkManager altering the /etc/resolve.conf contents.
