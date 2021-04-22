@@ -45,12 +45,12 @@ $ tree
 |   +--- apache-tomcat-9.0.45.tar.gz
 |   +--- apex_20.2_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.10_9.tar.gz
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.11_9.tar.gz
 |   +--- ords-20.4.1.013.1644.zip
 |   +--- p32578972_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-20.4.1.351.1718.zip
+|   +--- sqlcl-21.1.0.104.1544.zip
 +--- Vagrantfile
 $
 ```
