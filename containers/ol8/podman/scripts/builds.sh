@@ -5,10 +5,10 @@ echo "export JAVA_HOME=/home/container_user/java/latest" >> ~/.bash_profile
 echo "alias sql=\"/home/container_user/sqlcl/bin/sql\"" >> ~/.bash_profile
 
 cd ~
-unzip -oq /vagrant/software/sqlcl-20.4.1.351.1718.zip
+unzip -oq /vagrant/software/sqlcl-21.1.0.104.1544.zip
 mkdir ~/java
 cd ~/java
-tar -xf /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.10_9.tar.gz
+tar -xf /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.11_9.tar.gz
 ln -s ./j* ./latest
 cd ~
 unzip -oq /vagrant/software/autorest_demo.zip
@@ -21,20 +21,20 @@ podman pull oraclelinux:8
 # Copy ORDS software and do build (OL7).
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_20.2_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.41.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.45.tar.gz .
 cp /vagrant/software/ords-20.4.1.013.1644.zip .
-cp /vagrant/software/sqlcl-20.4.1.351.1718.zip .
-cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.10_9.tar.gz .
+cp /vagrant/software/sqlcl-21.1.0.104.1544.zip .
+cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.11_9.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
 podman build --no-cache -t ol7_ords:latest .
 
 # Copy ORDS software and do build (OL8).
 cd /u01/dockerfiles/ords/ol8_ords/software
 cp /vagrant/software/apex_20.2_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.41.tar.gz .
+cp /vagrant/software/apache-tomcat-9.0.45.tar.gz .
 cp /vagrant/software/ords-20.4.1.013.1644.zip .
-cp /vagrant/software/sqlcl-20.4.1.351.1718.zip .
-cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.10_9.tar.gz .
+cp /vagrant/software/sqlcl-21.1.0.104.1544.zip .
+cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.11_9.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
 podman build --no-cache -t ol8_ords:latest .
 
@@ -50,7 +50,7 @@ cd /u01/dockerfiles/database/ol8_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
 cp /vagrant/software/apex_20.2_en.zip .
 cp /vagrant/software/p6880880_190000_Linux-x86-64.zip .
-cp /vagrant/software/p30783543_190000_Linux-x86-64.zip .
+cp /vagrant/software/p32578972_190000_Linux-x86-64.zip .
 cd /u01/dockerfiles/database/ol8_19
 podman build --no-cache -t ol8_19:latest .
 
