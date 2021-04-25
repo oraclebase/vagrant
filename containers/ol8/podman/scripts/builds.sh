@@ -115,7 +115,7 @@ podman logs --follow ol8_19_con
 podman run -dit \
            --name ol8_ords_con \
            --pod=my_pod \
-           -e="DB_HOSTNAME=localhost" \
+           -e="DB_HOSTNAME=ol8_19_con" \
            -v=/u01/volumes/ol8_19_ords_tomcat:/u01/config/instance1 \
            ol8_ords:latest
 podman logs --follow ol8_ords_con
