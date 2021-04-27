@@ -29,8 +29,8 @@ echo "**************************************************************************
 sh ${ORA_INVENTORY}/orainstRoot.sh
 sh ${ORACLE_HOME}/root.sh
 
-# Uncomment the following line if you want to apply patches.
-# You must have downloaded the patches and amended the "oracle_software_patch.sh" script.
-#su - oracle -c '/vagrant_scripts/oracle_software_patch.sh'
+if [ "${PATCH_DB}" = "true" ]; then
+  su - oracle -c 'sh /vagrant_scripts/oracle_software_patch.sh'
+fi
 
 su - oracle -c 'sh /vagrant/scripts/oracle_create_database.sh'
