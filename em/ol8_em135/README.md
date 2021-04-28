@@ -19,6 +19,7 @@ $ tree
 +--- README.md
 +--- config
 |   +--- install.env
+|   +--- vagrant.yml
 +--- scripts
 |   +--- em_config.sh
 |   +--- em_install.sh
@@ -40,3 +41,7 @@ $ tree
 +--- Vagrantfile
 $
 ```
+
+## Database Patches
+
+The documentation recommends applying the latest patches to the database. The installation works without the database patches, but if you want them enter the correct patch details and toggle the PATCH_DB switch in the "install.env" file. You will 
