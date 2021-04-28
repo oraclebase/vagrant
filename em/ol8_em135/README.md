@@ -44,4 +44,4 @@ $
 
 ## Database Patches
 
-The documentation recommends applying the latest patches to the database. The installation works without the database patches, but if you want them enter the correct patch details and toggle the PATCH_DB switch in the "install.env" file. You will 
+The documentation recommends applying the latest patches to the database. The installation works without the database patches, but if you want them, enter the correct patch details and toggle the PATCH_DB switch in the "install.env" file. You will of course need to place the database patches in the "software" directory.
