@@ -42,7 +42,7 @@ $ tree
 |   +--- linuxamd64_12102_database_1of2.zip
 |   +--- linuxamd64_12102_database_2of2.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.11_9.tar.gz
-|   +--- ords-20.4.1.013.1644.zip
+|   +--- ords-21.1.1.116.2032.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-21.1.0.104.1544.zip
 +--- Vagrantfile

@@ -41,7 +41,7 @@ $ tree
 |   +--- apex_20.2_en.zip
 |   +--- linuxx64_12201_database.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.11_9.tar.gz
-|   +--- ords-20.4.1.013.1644.zip
+|   +--- ords-21.1.1.116.2032.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-21.1.0.104.1544.zip
 +--- Vagrantfile

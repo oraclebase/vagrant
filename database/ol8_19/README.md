@@ -46,7 +46,7 @@ $ tree
 |   +--- apex_20.2_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.11_9.tar.gz
-|   +--- ords-20.4.1.013.1644.zip
+|   +--- ords-21.1.1.116.2032.zip
 |   +--- p32578972_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
