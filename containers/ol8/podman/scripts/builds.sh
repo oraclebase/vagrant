@@ -102,7 +102,7 @@ chmod -R g+s /u01/volumes
 usermod -aG container_fg container_user
 
 # Run an application.
-podman pod create --name my_pod --publish=1521 --publish=5500 --publish=8080 --publish=8443
+podman pod create --name my_pod --publish=1521:1521 --publish=5500:5500 --publish=8080:8080 --publish=8443:8443
 podman pod ls
 
 podman run -dit \
