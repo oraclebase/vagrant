@@ -19,7 +19,7 @@ docker pull oraclelinux:8-slim
 
 # Copy ORDS software and do build (OL7).
 cd /u01/dockerfiles/ords/ol7_ords/software
-cp /vagrant/software/apex_20.2_en.zip .
+cp /vagrant/software/apex_21.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.45.tar.gz .
 cp /vagrant/software/ords-21.1.1.116.2032.zip .
 cp /vagrant/software/sqlcl-21.1.0.104.1544.zip .
@@ -29,7 +29,7 @@ docker build --no-cache -t ol7_ords:latest .
 
 # Copy ORDS software and do build (OL8).
 cd /u01/dockerfiles/ords/ol8_ords/software
-cp /vagrant/software/apex_20.2_en.zip .
+cp /vagrant/software/apex_21.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.45.tar.gz .
 cp /vagrant/software/ords-21.1.1.116.2032.zip .
 cp /vagrant/software/sqlcl-21.1.0.104.1544.zip .
@@ -40,42 +40,42 @@ docker build --no-cache -t ol8_ords:latest .
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
-cp /vagrant/software/apex_20.2_en.zip .
+cp /vagrant/software/apex_21.1_en.zip .
 cd /u01/dockerfiles/database/ol7_19
 docker build --no-cache -t ol7_19:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
-cp /vagrant/software/apex_20.2_en.zip .
+cp /vagrant/software/apex_21.1_en.zip .
 cd /u01/dockerfiles/database/ol8_19
 docker build --no-cache -t ol8_19:latest .
 
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
-cp /vagrant/software/apex_20.2_en.zip .
+cp /vagrant/software/apex_21.1_en.zip .
 cd /u01/dockerfiles/database/ol7_183
 #docker build --no-cache -t ol7_183:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
-cp /vagrant/software/apex_20.2_en.zip .
+cp /vagrant/software/apex_21.1_en.zip .
 cd /u01/dockerfiles/database/ol8_183
 #docker build --no-cache -t ol8_183:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_122/software
 cp /vagrant/software/linuxx64_12201_database.zip .
-cp /vagrant/software/apex_20.2_en.zip .
+cp /vagrant/software/apex_21.1_en.zip .
 cd /u01/dockerfiles/database/ol7_122
 #docker build --no-cache -t ol7_122:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_121/software
 cp /vagrant/software/linuxamd64_12102_database_*of2.zip .
-cp /vagrant/software/apex_20.2_en.zip .
+cp /vagrant/software/apex_21.1_en.zip .
 cd /u01/dockerfiles/database/ol7_121
 #docker build --no-cache -t ol7_121:latest .
 
