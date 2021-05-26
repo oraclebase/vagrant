@@ -121,7 +121,7 @@
                noCompressionUserAgents="gozilla, traviata"
                compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json"
                >
-      <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol"/>
+      <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" compression="on"/>
     </Connector>
                <!--
                                    If you are using a proxy server, you may need to add the following two entries also.
