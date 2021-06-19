@@ -96,8 +96,8 @@ if [ ! -f ${KEYSTORE_DIR}/keystore.jks ]; then
   cp /vagrant/scripts/web.xml ${CATALINA_BASE}/conf/
   sed -i -e "s|###KEYSTORE_DIR###|${KEYSTORE_DIR}|g" ${CATALINA_BASE}/conf/server.xml
   sed -i -e "s|###KEYSTORE_PASSWORD###|${KEYSTORE_PASSWORD}|g" ${CATALINA_BASE}/conf/server.xml
-  sed -i -e "s|###AJP_SECRET###|${AJP_SECRET}|g" ${CATALINA_BASE}/server.xml
-  sed -i -e "s|###AJP_ADDRESS###|${AJP_ADDRESS}|g" ${CATALINA_BASE}/server.xml
+  sed -i -e "s|###AJP_SECRET###|${AJP_SECRET}|g" ${CATALINA_BASE}/conf/server.xml
+  sed -i -e "s|###AJP_ADDRESS###|${AJP_ADDRESS}|g" ${CATALINA_BASE}/conf/server.xml
 fi;
 
 
