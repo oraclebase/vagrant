@@ -2,7 +2,7 @@
   "builders": [
     {
       "boot_command": [
-        "<tab> net.ifnames=0 biosdevname=0 text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+        "<tab> net.ifnames=0 biosdevname=0 text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
       "boot_wait": "12s",
       "disk_size": "{{user `harddisk_size`}}",
