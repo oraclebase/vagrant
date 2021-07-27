@@ -200,9 +200,9 @@ vagrant destroy -f
 
 Check all the shared disks have been removed as expected. If they are left behind they will be reused, which will cause problems.
 
-## Windows Host Build Failure (Workaround)
+## DHCP Server Issue
 
-When using a Windows host, you may see something like this.
+If the VirtualBox DHCP server is enabled, you may see something like this.
 
 * DNS up and running.
 * Node2 up and running.
@@ -219,7 +219,11 @@ default:    ACTION: Provide name to use for the SCAN for which the domain can be
 
 I have seen this a few times on a Windows laptop (my main workstation). I've not seen it on macOS or Linux. It is almost like Node1 can't see the DNS, even though it is there, and Node2 can see it. I figure it must be some silly eccentricity of VirtualBox on Windows.
 
-I do have a workaround for this.
+There are two workarounds for this.
+
+Disable the VirtualBox DHCP server. Navigate to "File > Host Network Manager > DHCP Server (tab)". Uncheck the "Enable Server" checkbox and click the "Apply" button.
+
+Alternatively, do the following during the startup process.
 
 * Start up DNS.
 * Start Node2.
