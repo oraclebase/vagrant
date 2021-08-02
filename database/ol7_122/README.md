@@ -10,7 +10,7 @@ A simple Vagrant build for Oracle Database 12.2 on Oracle Linux 7.
 * [Oracle REST Data Services (ORDS)](https://www.oracle.com/technetwork/developer-tools/rest-data-services/downloads/)
 * [Oracle SQLcl](https://www.oracle.com/tools/downloads/sqlcl-downloads.html)
 * [Oracle Application Express (APEX)](https://www.oracle.com/tools/downloads/apex-downloads.html)
-* [OpenJDK 11](https://adoptopenjdk.net/releases.html?variant=openjdk11&jvmVariant=hotspot#x64_linux)
+* [OpenJDK 11](https://adoptium.net/releases.html?variant=openjdk11&jvmVariant=hotspot)
 * [Tomcat 9](https://tomcat.apache.org/download-90.cgi)
 
 Place the Oracle database software in the "software" directory before calling the `vagrant up` command.
@@ -43,7 +43,7 @@ $ tree
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.12_7.tar.gz
 |   +--- ords-21.2.0.174.1826.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-21.2.0.174.2245.zip
+|   +--- sqlcl-21.2.1.195.1252.zip
 +--- Vagrantfile
 $
 ```
