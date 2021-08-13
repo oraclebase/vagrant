@@ -50,7 +50,7 @@ $ tree
 |   +--- p32900021_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-21.2.1.195.1252.zip
+|   +--- sqlcl-21.2.2.223.0914.zip
 +--- Vagrantfile
 $
 ```
