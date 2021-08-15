@@ -1,3 +1,0 @@
-The software you put in this location will be visible inside the VM below this path.
-
-/vagrant/software/
