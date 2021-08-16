@@ -29,10 +29,14 @@ echo "Create non-root docker user." `date`
 echo "******************************************************************************"
 groupadd -g 1042 container_fg
 useradd -G container_fg container_user
+mkdir -p /u01/volumes/ol7_21_ords_tomcat
+mkdir -p /u01/volumes/ol7_21_ords_db
 mkdir -p /u01/volumes/ol7_19_ords_tomcat
 mkdir -p /u01/volumes/ol7_19_ords_db
 mkdir -p /u01/volumes/ol7_183_ords_tomcat
 mkdir -p /u01/volumes/ol7_183_ords_db
+mkdir -p /u01/volumes/ol8_21_ords_tomcat
+mkdir -p /u01/volumes/ol8_21_ords_db
 mkdir -p /u01/volumes/ol8_19_ords_tomcat
 mkdir -p /u01/volumes/ol8_19_ords_db
 mkdir -p /u01/volumes/ol8_183_ords_tomcat
