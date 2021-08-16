@@ -39,11 +39,25 @@ cd /u01/dockerfiles/ords/ol8_ords
 podman build --format docker --no-cache -t ol8_ords:latest .
 
 # Copy database software and do build (OL7).
+cd /u01/dockerfiles/database/ol7_21/software
+cp /vagrant/software/LINUX.X64_213000_db_home.zip .
+cp /vagrant/software/apex_21.1_en.zip .
+cd /u01/dockerfiles/database/ol7_21
+podman build --format docker --no-cache -t ol7_21:latest .
+
+# Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
 cp /vagrant/software/apex_21.1_en.zip .
 cd /u01/dockerfiles/database/ol7_19
 podman build --format docker --no-cache -t ol7_19:latest .
+
+# Copy database software and do build (OL8).
+cd /u01/dockerfiles/database/ol8_21/software
+cp /vagrant/software/LINUX.X64_213000_db_home.zip .
+cp /vagrant/software/apex_21.1_en.zip .
+cd /u01/dockerfiles/database/ol8_21
+podman build --format docker --no-cache -t ol8_21:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_19/software
@@ -86,10 +100,14 @@ cd /u01/dockerfiles/database/ol7_121
 # with podman host volumes.
 
 # This setup is now in the root_setup.sh
+mkdir -p /u01/volumes/ol7_21_ords_tomcat
+mkdir -p /u01/volumes/ol7_21_ords_db
 mkdir -p /u01/volumes/ol7_19_ords_tomcat
 mkdir -p /u01/volumes/ol7_19_ords_db
 mkdir -p /u01/volumes/ol7_183_ords_tomcat
 mkdir -p /u01/volumes/ol7_183_ords_db
+mkdir -p /u01/volumes/ol8_21_ords_tomcat
+mkdir -p /u01/volumes/ol8_21_ords_db
 mkdir -p /u01/volumes/ol8_19_ords_tomcat
 mkdir -p /u01/volumes/ol8_19_ords_db
 mkdir -p /u01/volumes/ol8_183_ords_tomcat
@@ -106,17 +124,17 @@ podman pod create --name my_pod --publish=1521:1521 --publish=5500:5500 --publis
 podman pod ls
 
 podman run -dit \
-           --name=ol8_19_con \
+           --name=ol8_21_con \
            --pod=my_pod \
-           --volume=/u01/volumes/ol8_19_ords_db/:/u02 \
-           ol8_19:latest
-podman logs --follow ol8_19_con
+           --volume=/u01/volumes/ol8_21_ords_db/:/u02 \
+           ol8_21:latest
+podman logs --follow ol8_21_con
 
 podman run -dit \
            --name ol8_ords_con \
            --pod=my_pod \
-           -e="DB_HOSTNAME=ol8_19_con" \
-           -v=/u01/volumes/ol8_19_ords_tomcat:/u01/config/instance1 \
+           -e="DB_HOSTNAME=ol8_21_con" \
+           -v=/u01/volumes/ol8_21_ords_tomcat:/u01/config/instance1 \
            ol8_ords:latest
 podman logs --follow ol8_ords_con
 
@@ -125,7 +143,34 @@ podman logs --follow ol8_ords_con
 podman pod stop my_pod
 
 podman rm -vf ol8_ords_con
-podman rm -vf ol8_19_con
+podman rm -vf ol8_21_con
+podman pod rm my_pod
+
+# Run an application.
+podman pod create --name my_pod --publish=1521:1521 --publish=5500:5500 --publish=8080:8080 --publish=8443:8443
+podman pod ls
+
+podman run -dit \
+           --name=ol7_21_con \
+           --pod=my_pod \
+           --volume=/u01/volumes/ol7_21_ords_db/:/u02 \
+           ol7_21:latest
+podman logs --follow ol7_21_con
+
+podman run -dit \
+           --name ol7_ords_con \
+           --pod=my_pod \
+           -e="DB_HOSTNAME=ol7_21_con" \
+           -v=/u01/volumes/ol7_21_ords_tomcat:/u01/config/instance1 \
+           ol7_ords:latest
+podman logs --follow ol7_ords_con
+
+~/sqlcl/bin/sql sys/SysPassword1@//localhost:1521/pdb1 as sysdba
+
+podman pod stop my_pod
+
+podman rm -vf ol7_ords_con
+podman rm -vf ol7_21_con
 podman pod rm my_pod
 
 podman ps -a
