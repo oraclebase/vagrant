@@ -8,7 +8,7 @@ dnf install -y dnf-utils zip unzip
 dnf install -y oracle-epel-release-el8
 dnf install -y sshpass
 
-dnf install -y oracle-database-preinstall-19c
+dnf install -y oracle-database-preinstall-21c
 
 
 echo "******************************************************************************"

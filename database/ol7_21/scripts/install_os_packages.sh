@@ -5,7 +5,7 @@ echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 
 yum install -y yum-utils zip unzip
 
-yum install -y oracle-database-preinstall-19c
+yum install -y oracle-database-preinstall-21c
 
 
 echo "******************************************************************************"

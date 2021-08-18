@@ -7,7 +7,7 @@ yum install -y yum-utils
 yum install -y oracle-epel-release-el7
 yum-config-manager --enable ol7_developer_EPEL
 yum install -y sshpass zip unzip
-yum install -y oracle-database-preinstall-19c
+yum install -y oracle-database-preinstall-21c
 
 echo "******************************************************************************"
 echo "Add extra OS packages. Most should be present." `date`
