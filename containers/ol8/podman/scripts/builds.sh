@@ -20,7 +20,7 @@ podman pull oraclelinux:8
 
 # Copy ORDS software and do build (OL7).
 cd /u01/dockerfiles/ords/ol7_ords/software
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_21.2_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.54.tar.gz .
 cp /vagrant/software/ords-21.3.0.266.1100.zip .
 cp /vagrant/software/sqlcl-21.3.2.287.1503.zip .
