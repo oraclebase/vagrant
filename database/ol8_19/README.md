@@ -46,11 +46,11 @@ $ tree
 |   +--- apex_21.2_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.13_8.tar.gz
-|   +--- ords-21.3.0.266.1100.zip
+|   +--- ords-21.3.1.301.2050.zip
 |   +--- p32900021_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-21.3.2.287.1503.zip
+|   +--- sqlcl-21.3.3.322.1724.zip
 +--- Vagrantfile
 $
 ```
