@@ -26,10 +26,6 @@ echo "**************************************************************************
 echo "Apply patches." `date`
 echo "******************************************************************************"
 
-cd ${PATCH_PATH1}
-opatch prereq CheckConflictAgainstOHWithDetail -ph ./
-opatch apply -silent
-
-cd ${PATCH_PATH2}
+cd ${PATCH_TOP}
 opatch prereq CheckConflictAgainstOHWithDetail -ph ./
 opatch apply -silent
