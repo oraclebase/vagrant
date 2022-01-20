@@ -43,7 +43,7 @@ $ tree
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.13_8.tar.gz
 |   +--- ords-21.4.0.348.1956.zip
 |   +--- put_software_here.txt
-|   +--- sqlcl-21.4.0.348.1716.zip
+|   +--- sqlcl-21.4.1.17.1458.zip
 +--- Vagrantfile
 $
 ```
