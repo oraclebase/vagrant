@@ -22,7 +22,7 @@ podman pull oraclelinux:8
 cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_21.2_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.56.tar.gz .
-cp /vagrant/software/ords-21.4.0.348.1956.zip .
+cp /vagrant/software/ords-21.4.1.025.0904.zip .
 cp /vagrant/software/sqlcl-21.4.1.17.1458.zip .
 cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.14_9.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
@@ -32,7 +32,7 @@ podman build --format docker --no-cache -t ol7_ords:latest .
 cd /u01/dockerfiles/ords/ol8_ords/software
 cp /vagrant/software/apex_21.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.56.tar.gz .
-cp /vagrant/software/ords-21.4.0.348.1956.zip .
+cp /vagrant/software/ords-21.4.1.025.0904.zip .
 cp /vagrant/software/sqlcl-21.4.1.17.1458.zip .
 cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.14_9.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
