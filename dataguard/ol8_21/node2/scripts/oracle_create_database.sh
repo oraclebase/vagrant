@@ -120,8 +120,8 @@ echo "**************************************************************************
 echo "Create auxillary instance." `date`
 echo "******************************************************************************"
 sqlplus / as sysdba <<EOF
---SHUTDOWN IMMEDIATE;
-STARTUP NOMOUNT PFILE='/tmp/init${ORACLE_SID}_stby.ora';
+--shutdown immediate;
+startup nomount pfile='/tmp/init${ORACLE_SID}_stby.ora';
 exit;
 EOF
 
@@ -129,15 +129,15 @@ EOF
 echo "******************************************************************************"
 echo "Create standby database using RMAN duplicate." `date`
 echo "******************************************************************************"
-rman TARGET sys/${SYS_PASSWORD}@${NODE1_DB_UNIQUE_NAME} AUXILIARY sys/${SYS_PASSWORD}@${NODE2_DB_UNIQUE_NAME} <<EOF
+rman target sys/${SYS_PASSWORD}@${NODE1_DB_UNIQUE_NAME} auxiliary sys/${SYS_PASSWORD}@${NODE2_DB_UNIQUE_NAME} <<EOF
 
-DUPLICATE TARGET DATABASE
-  FOR STANDBY
-  FROM ACTIVE DATABASE
-  DORECOVER
-  SPFILE
-    SET db_unique_name='${NODE2_DB_UNIQUE_NAME}' COMMENT 'Is standby'
-  NOFILENAMECHECK;
+duplicate target database
+  for standby
+  from active database
+  dorecover
+  spfile
+    set db_unique_name='${NODE2_DB_UNIQUE_NAME}' comment 'Is standby'
+  nofilenamecheck;
   
 exit;
 EOF
@@ -147,7 +147,7 @@ echo "Enable the broker." `date`
 echo "******************************************************************************"
 sqlplus / as sysdba <<EOF
 
-ALTER SYSTEM SET dg_broker_start=true;
+alter system set dg_broker_start=true;
 
 EXIT;
 EOF
@@ -157,14 +157,14 @@ echo "**************************************************************************
 echo "Configure broker (on primary) and display configuration." `date`
 echo "******************************************************************************"
 dgmgrl sys/${SYS_PASSWORD}@${NODE1_DB_UNIQUE_NAME} <<EOF
-REMOVE CONFIGURATION;
-CREATE CONFIGURATION my_dg_config AS PRIMARY DATABASE IS ${NODE1_DB_UNIQUE_NAME} CONNECT IDENTIFIER IS ${NODE1_DB_UNIQUE_NAME}${DB_DOMAIN_STR};
-ADD DATABASE ${NODE2_DB_UNIQUE_NAME} AS CONNECT IDENTIFIER IS ${NODE2_DB_UNIQUE_NAME}${DB_DOMAIN_STR} MAINTAINED AS PHYSICAL;
-ENABLE CONFIGURATION;
-SHOW CONFIGURATION;
-SHOW DATABASE ${NODE1_DB_UNIQUE_NAME};
-SHOW DATABASE ${NODE2_DB_UNIQUE_NAME};
-EXIT;
+remove configuration;
+create configuration my_dg_config as primary database is ${NODE1_DB_UNIQUE_NAME} connect identifier is ${NODE1_DB_UNIQUE_NAME}${DB_DOMAIN_STR};
+add database ${NODE2_DB_UNIQUE_NAME} as connect identifier is ${NODE2_DB_UNIQUE_NAME}${DB_DOMAIN_STR} maintained as physical;
+enable configuration;
+show configuration;
+show database ${NODE1_DB_UNIQUE_NAME};
+show database ${NODE2_DB_UNIQUE_NAME};
+exit;
 EOF
 
 echo "******************************************************************************"
@@ -173,10 +173,10 @@ echo "**************************************************************************
 # Adding the validation step was suggested by Claudia Hüffer, Peter Wahl and Richard Evans.
 sleep 60
 dgmgrl sys/${SYS_PASSWORD}@${NODE1_DB_UNIQUE_NAME} <<EOF
-VALIDATE DATABASE ${NODE1_DB_UNIQUE_NAME};
-VALIDATE DATABASE ${NODE2_DB_UNIQUE_NAME};
-VALIDATE DATABASE ${NODE2_DB_UNIQUE_NAME} SPFILE;
-VALIDATE STATIC CONNECT IDENTIFIER FOR ${NODE1_DB_UNIQUE_NAME};
-VALIDATE STATIC CONNECT IDENTIFIER FOR ${NODE2_DB_UNIQUE_NAME};
-EXIT;
+validate database ${NODE1_DB_UNIQUE_NAME};
+validate database ${NODE2_DB_UNIQUE_NAME};
+validate database ${NODE2_DB_UNIQUE_NAME} spfile;
+validate static connect identifier for ${NODE1_DB_UNIQUE_NAME};
+validate static connect identifier for ${NODE2_DB_UNIQUE_NAME};
+exit;
 EOF
