@@ -133,15 +133,19 @@ ALTER SYSTEM SET db_create_file_dest='${DATA_DIR}';
 ALTER SYSTEM SET db_create_online_log_dest_1='${DATA_DIR}';
 ALTER PLUGGABLE DATABASE ${PDB_NAME} SAVE STATE;
 ALTER SYSTEM RESET local_listener;
-ALTER SYSTEM SET db_recovery_file_dest_size=20G;
-ALTER SYSTEM SET db_recovery_file_dest='/u01/app/oracle';
 exit;
 EOF
 
 echo "******************************************************************************"
 echo "Configure archivelog mode, standby logs and flashback." `date`
 echo "******************************************************************************"
+mkdir -p ${ORACLE_BASE}/fast_recovery_area
+
 sqlplus / as sysdba <<EOF
+
+-- Set recovery destination.
+alter system set db_recovery_file_dest_size=20G;
+alter system set db_recovery_file_dest='${ORACLE_BASE}/fast_recovery_area';
 
 -- Enable archivelog mode.
 SHUTDOWN IMMEDIATE;
