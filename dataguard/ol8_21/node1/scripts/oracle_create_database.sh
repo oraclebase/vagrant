@@ -141,45 +141,10 @@ echo "Configure archivelog mode, standby logs and flashback." `date`
 echo "******************************************************************************"
 mkdir -p ${ORACLE_BASE}/fast_recovery_area
 
-sqlplus / as sysdba <<EOF
-
--- Set recovery destination.
-alter system set db_recovery_file_dest_size=20G;
-alter system set db_recovery_file_dest='${ORACLE_BASE}/fast_recovery_area';
-
--- Enable archivelog mode.
-shutdown immediate;
-startup mount;
-alter database archivelog;
-alter database open;
-
-alter database force logging;
--- Make sure at least one logfile is present.
-alter system switch logfile;
-
--- Add standby logs.
-alter database add standby logfile thread 1 group 10 size 50m;
-alter database add standby logfile thread 1 group 11 size 50m;
-alter database add standby logfile thread 1 group 12 size 50m;
-alter database add standby logfile thread 1 group 13 size 50m;
--- If you don't want to use OMF specify a path like this.
---alter database add standby logfile thread 1 group 10 ('${DATA_DIR}/${ORACLE_SID^^}/standby_redo01.log') size 50m;
-
--- Enable flashback database.
-alter database flashback on;
-
-alter system set standby_file_management=auto;
+dgmgrl / <<EOF
+prepare database for data guard
+  with db_unique_name is ${NODE1_DB_UNIQUE_NAME}
+  db_recovery_file_dest is "${ORACLE_BASE}/fast_recovery_area"
+  db_recovery_file_dest_size is 20g;
 exit;
-EOF
-
-
-
-echo "******************************************************************************"
-echo "Enable the broker." `date`
-echo "******************************************************************************"
-sqlplus / as sysdba <<EOF
-
-alter system set dg_broker_start=true;
-
-EXIT;
 EOF
