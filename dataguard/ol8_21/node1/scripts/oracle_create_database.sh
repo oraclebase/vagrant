@@ -129,43 +129,47 @@ echo "**************************************************************************
 echo "Set the PDB to auto-start." `date`
 echo "******************************************************************************"
 sqlplus / as sysdba <<EOF
-ALTER SYSTEM SET db_create_file_dest='${DATA_DIR}';
-ALTER SYSTEM SET db_create_online_log_dest_1='${DATA_DIR}';
-ALTER PLUGGABLE DATABASE ${PDB_NAME} SAVE STATE;
-ALTER SYSTEM RESET local_listener;
-ALTER SYSTEM SET db_recovery_file_dest_size=20G;
-ALTER SYSTEM SET db_recovery_file_dest='/u01/app/oracle';
+alter system set db_create_file_dest='${DATA_DIR}';
+alter system set db_create_online_log_dest_1='${DATA_DIR}';
+alter pluggable database ${PDB_NAME} save state;
+alter system reset local_listener;
 exit;
 EOF
 
 echo "******************************************************************************"
 echo "Configure archivelog mode, standby logs and flashback." `date`
 echo "******************************************************************************"
+mkdir -p ${ORACLE_BASE}/fast_recovery_area
+
 sqlplus / as sysdba <<EOF
 
--- Enable archivelog mode.
-SHUTDOWN IMMEDIATE;
-STARTUP MOUNT;
-ALTER DATABASE ARCHIVELOG;
-ALTER DATABASE OPEN;
+-- Set recovery destination.
+alter system set db_recovery_file_dest_size=20G;
+alter system set db_recovery_file_dest='${ORACLE_BASE}/fast_recovery_area';
 
-ALTER DATABASE FORCE LOGGING;
+-- Enable archivelog mode.
+shutdown immediate;
+startup mount;
+alter database archivelog;
+alter database open;
+
+alter database force logging;
 -- Make sure at least one logfile is present.
-ALTER SYSTEM SWITCH LOGFILE;
+alter system switch logfile;
 
 -- Add standby logs.
-ALTER DATABASE ADD STANDBY LOGFILE THREAD 1 GROUP 10 SIZE 50M;
-ALTER DATABASE ADD STANDBY LOGFILE THREAD 1 GROUP 11 SIZE 50M;
-ALTER DATABASE ADD STANDBY LOGFILE THREAD 1 GROUP 12 SIZE 50M;
-ALTER DATABASE ADD STANDBY LOGFILE THREAD 1 GROUP 13 SIZE 50M;
+alter database add standby logfile thread 1 group 10 size 50m;
+alter database add standby logfile thread 1 group 11 size 50m;
+alter database add standby logfile thread 1 group 12 size 50m;
+alter database add standby logfile thread 1 group 13 size 50m;
 -- If you don't want to use OMF specify a path like this.
---ALTER DATABASE ADD STANDBY LOGFILE THREAD 1 GROUP 10 ('${DATA_DIR}/${ORACLE_SID^^}/standby_redo01.log') SIZE 50M;
+--alter database add standby logfile thread 1 group 10 ('${DATA_DIR}/${ORACLE_SID^^}/standby_redo01.log') size 50m;
 
 -- Enable flashback database.
-ALTER DATABASE FLASHBACK ON;
+alter database flashback on;
 
-ALTER SYSTEM SET STANDBY_FILE_MANAGEMENT=AUTO;
-EXIT;
+alter system set standby_file_management=auto;
+exit;
 EOF
 
 
@@ -175,7 +179,7 @@ echo "Enable the broker." `date`
 echo "******************************************************************************"
 sqlplus / as sysdba <<EOF
 
-ALTER SYSTEM SET dg_broker_start=TRUE;
+alter system set dg_broker_start=true;
 
 EXIT;
 EOF
