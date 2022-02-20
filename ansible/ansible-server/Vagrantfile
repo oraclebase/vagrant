@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Variables
+var_box            = 'oraclebase/oracle-8'
+var_vm_name        = 'ansible_server_vagrant'
+var_ip             = "192.168.56.100"
+var_mem_size       = 1024  # More would be better.
+var_cpus           = 1
+var_non_rotational = 'on' # SSD
+
+Vagrant.configure("2") do |config|
+  config.vm.box = var_box
+
+  config.vm.network "private_network", ip: var_ip
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = var_mem_size
+    vb.cpus   = var_cpus
+    vb.name   = var_vm_name
+    
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', '0', '--nonrotational', var_non_rotational]
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    sh /vagrant/scripts/setup.sh
+  SHELL
+end
