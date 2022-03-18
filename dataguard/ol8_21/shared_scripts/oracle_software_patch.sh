@@ -19,8 +19,10 @@ echo "**************************************************************************
 echo "Unzip software." `date`
 echo "******************************************************************************"
 
+mkdir -p ${SOFTWARE_DIR}
+cp /vagrant_software/${PATCH_FILE} ${SOFTWARE_DIR}
 cd ${SOFTWARE_DIR}
-unzip -oq /vagrant_software/${PATCH_FILE}
+unzip -oq ${PATCH_FILE}
 
 echo "******************************************************************************"
 echo "Apply patches." `date`
