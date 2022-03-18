@@ -1,4 +1,4 @@
-. /vagrant/config/install.env
+. /vagrant_config/install.env
 
 # This patch script should only be used for a clean installation.
 # It doesn't patch existing databases.
@@ -13,14 +13,14 @@ echo "Prepare opatch." `date`
 echo "******************************************************************************"
 
 cd ${ORACLE_HOME}
-unzip -oq /vagrant/software/${OPATCH_FILE}
+unzip -oq /vagrant_software/${OPATCH_FILE}
 
 echo "******************************************************************************"
 echo "Unzip software." `date`
 echo "******************************************************************************"
 
 cd ${SOFTWARE_DIR}
-unzip -oq /vagrant/software/${PATCH_FILE}
+unzip -oq /vagrant_software/${PATCH_FILE}
 
 echo "******************************************************************************"
 echo "Apply patches." `date`
