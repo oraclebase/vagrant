@@ -1,4 +1,4 @@
-. /vagrant/config/install.env
+. /vagrant_config/install.env
 
 # This patch script should only be used for a clean installation.
 # It doesn't patch existing databases.
