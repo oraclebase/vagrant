@@ -28,7 +28,7 @@ export JAVA_HOME=${JAVA_HOME}
 export CATALINA_HOME=${CATALINA_HOME}
 export CATALINA_BASE=${CATALINA_BASE}
 export ORDS_CONFIG=${ORDS_CONF}
-export JAVA_OPTS="-Dconfig.url=${ORDS_CONF} -Xms1024M -Xmx1024M"
+export JAVA_OPTS="-Dconfig.url=${ORDS_CONF} -Xms1126M -Xmx1126M"
 export PATH=${ORDS_HOME}/bin:\$PATH
 EOF
 
