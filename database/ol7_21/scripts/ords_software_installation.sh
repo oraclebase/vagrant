@@ -30,7 +30,7 @@ cp -r ${CATALINA_HOME}/work $CATALINA_BASE
 mkdir -p ${ORDS_HOME}
 cd ${ORDS_HOME}
 unzip -oq /vagrant/software/${ORDS_SOFTWARE}
-mkdir -p ${ORDS_CONF}
+mkdir -p ${ORDS_CONF}/logs
 # SQLcl
 cd /u01
 unzip -oq /vagrant/software/${SQLCL_SOFTWARE}
@@ -42,44 +42,28 @@ cp -R ${SOFTWARE_DIR}/apex/images/* ${CATALINA_BASE}/webapps/i/
 
 
 echo "******************************************************************************"
-echo "Prep the ORDS parameter file." `date`
-echo "******************************************************************************"
-cat > ${ORDS_HOME}/params/ords_params.properties <<EOF
-db.hostname=${ORACLE_HOSTNAME}
-db.port=${DB_PORT}
-db.servicename=${DB_SERVICE}
-#db.sid=
-db.username=APEX_PUBLIC_USER
-db.password=${APEX_PUBLIC_USER_PASSWORD}
-migrate.apex.rest=false
-plsql.gateway.add=true
-rest.services.apex.add=true
-rest.services.ords.add=true
-schema.tablespace.default=${APEX_TABLESPACE}
-schema.tablespace.temp=${TEMP_TABLESPACE}
-standalone.mode=false
-#standalone.use.https=true
-#standalone.http.port=8080
-#standalone.static.images=/home/oracle/apex/images
-user.apex.listener.password=${APEX_LISTENER_PASSWORD}
-user.apex.restpublic.password=${APEX_REST_PASSWORD}
-user.public.password=${PUBLIC_PASSWORD}
-user.tablespace.default=${APEX_TABLESPACE}
-user.tablespace.temp=${TEMP_TABLESPACE}
-sys.user=SYS
-sys.password=${SYS_PASSWORD}
-restEnabledSql.active=true
-feature.sdw=true
-database.api.enabled=true
-EOF
-
-
-echo "******************************************************************************"
 echo "Configure ORDS. Safe to run on DB with existing config." `date`
 echo "******************************************************************************"
 cd ${ORDS_HOME}
-$JAVA_HOME/bin/java -jar ords.war configdir ${ORDS_CONF}
-$JAVA_HOME/bin/java -jar ords.war
+
+export ORDS_CONFIG=/u01/config/ords
+${ORDS_HOME}/bin/ords --config ${ORDS_CONF} install \
+     --log-folder ${ORDS_CONF}/logs \
+     --admin-user SYS \
+     --db-hostname ${HOSTNAME} \
+     --db-port ${DB_PORT} \
+     --db-servicename ${DB_SERVICE} \
+     --feature-db-api true \
+     --feature-rest-enabled-sql true \
+     --feature-sdw true \
+     --gateway-mode proxied \
+     --gateway-user APEX_PUBLIC_USER \
+     --proxy-user \
+     --password-stdin <<EOF
+${SYS_PASSWORD}
+${ORDS_PASSWORD}
+EOF
+
 cp ords.war ${CATALINA_BASE}/webapps/
 
 
