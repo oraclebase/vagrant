@@ -30,7 +30,7 @@ podman build --format docker --no-cache -t ol7_ords:latest .
 
 # Copy ORDS software and do build (OL8).
 cd /u01/dockerfiles/ords/ol8_ords/software
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.62.tar.gz .
 cp /vagrant/software/ords-22.1.0.105.1723.zip .
 cp /vagrant/software/sqlcl-22.1.0.90.1611.zip .
@@ -41,28 +41,28 @@ podman build --format docker --no-cache -t ol8_ords:latest .
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_21/software
 cp /vagrant/software/LINUX.X64_213000_db_home.zip .
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cd /u01/dockerfiles/database/ol7_21
 podman build --format docker --no-cache -t ol7_21:latest .
 
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cd /u01/dockerfiles/database/ol7_19
 podman build --format docker --no-cache -t ol7_19:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_21/software
 cp /vagrant/software/LINUX.X64_213000_db_home.zip .
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cd /u01/dockerfiles/database/ol8_21
 podman build --format docker --no-cache -t ol8_21:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cp /vagrant/software/p6880880_190000_Linux-x86-64.zip .
 cp /vagrant/software/p32578972_190000_Linux-x86-64.zip .
 cd /u01/dockerfiles/database/ol8_19
@@ -71,28 +71,28 @@ podman build --format docker --no-cache -t ol8_19:latest .
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cd /u01/dockerfiles/database/ol7_183
 #podman build --format docker --no-cache -t ol7_183:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cd /u01/dockerfiles/database/ol8_183
 #podman build --format docker --no-cache -t ol8_183:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_122/software
 cp /vagrant/software/linuxx64_12201_database.zip .
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cd /u01/dockerfiles/database/ol7_122
 #podman build --format docker --no-cache -t ol7_122:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_121/software
 cp /vagrant/software/linuxamd64_12102_database_*of2.zip .
-cp /vagrant/software/apex_21.1_en.zip .
+cp /vagrant/software/apex_22.1_en.zip .
 cd /u01/dockerfiles/database/ol7_121
 #podman build --format docker --no-cache -t ol7_121:latest .
 
@@ -133,7 +133,7 @@ podman logs --follow ol8_21_con
 podman run -dit \
            --name ol8_ords_con \
            --pod=my_pod \
-           -e="DB_HOSTNAME=ol8_21_con" \
+           -e="DB_HOSTNAME=localhost" \
            -v=/u01/volumes/ol8_21_ords_tomcat:/u01/config/instance1 \
            ol8_ords:latest
 podman logs --follow ol8_ords_con
@@ -160,7 +160,7 @@ podman logs --follow ol7_21_con
 podman run -dit \
            --name ol7_ords_con \
            --pod=my_pod \
-           -e="DB_HOSTNAME=ol7_21_con" \
+           -e="DB_HOSTNAME=localhost" \
            -v=/u01/volumes/ol7_21_ords_tomcat:/u01/config/instance1 \
            ol7_ords:latest
 podman logs --follow ol7_ords_con
