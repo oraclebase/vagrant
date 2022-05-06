@@ -13,12 +13,14 @@ cd /u01/java
 tar -xzf /vagrant/software/${JAVA_SOFTWARE}
 TEMP_FILE=`ls`
 ln -s ${TEMP_FILE} latest
+
 # Tomcat
 mkdir -p /u01/tomcat
 cd /u01/tomcat
 tar -xzf /vagrant/software/${TOMCAT_SOFTWARE}
 TEMP_FILE=`ls`
 ln -s ${TEMP_FILE} latest
+
 # CATALINA_BASE
 mkdir -p ${CATALINA_BASE}
 cp -r ${CATALINA_HOME}/conf $CATALINA_BASE
@@ -26,15 +28,18 @@ cp -r ${CATALINA_HOME}/logs $CATALINA_BASE
 cp -r ${CATALINA_HOME}/temp $CATALINA_BASE
 cp -r ${CATALINA_HOME}/webapps $CATALINA_BASE
 cp -r ${CATALINA_HOME}/work $CATALINA_BASE
+
 # ORDS
 mkdir -p ${ORDS_CONF}/logs
 cd ${ORDS_HOME}
 unzip -oq /vagrant/software/${ORDS_SOFTWARE}
 mkdir -p ${ORDS_CONF}
+
 # SQLcl
 cd /u01
 unzip -oq /vagrant/software/${SQLCL_SOFTWARE}
 cd ${SOFTWARE_DIR}
+
 # APEX Images
 rm -Rf ${CATALINA_BASE}/webapps/*
 mkdir -p ${CATALINA_BASE}/webapps/i/
@@ -46,7 +51,7 @@ echo "Configure ORDS. Safe to run on DB with existing config." `date`
 echo "******************************************************************************"
 cd ${ORDS_HOME}
 
-export ORDS_CONFIG=/u01/config/ords
+export ORDS_CONFIG=${ORDS_CONF}
 ${ORDS_HOME}/bin/ords --config ${ORDS_CONF} install \
      --log-folder ${ORDS_CONF}/logs \
      --admin-user SYS \
