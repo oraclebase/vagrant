@@ -5,7 +5,7 @@ echo "export JAVA_HOME=/home/container_user/java/latest" >> ~/.bash_profile
 echo "alias sql=\"/home/container_user/sqlcl/bin/sql\"" >> ~/.bash_profile
 
 cd ~
-unzip -oq /vagrant/software/sqlcl-22.1.0.90.1611.zip
+unzip -oq /vagrant/software/sqlcl-22.1.1.131.0820.zip
 mkdir ~/java
 cd ~/java
 tar -xf /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.15_10.tar.gz
@@ -23,7 +23,7 @@ cd /u01/dockerfiles/ords/ol7_ords/software
 cp /vagrant/software/apex_22.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.62.tar.gz .
 cp /vagrant/software/ords-22.1.0.105.1723.zip .
-cp /vagrant/software/sqlcl-22.1.0.90.1611.zip .
+cp /vagrant/software/sqlcl-22.1.1.131.0820.zip .
 cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.15_10.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
 podman build --format docker --no-cache -t ol7_ords:latest .
@@ -33,7 +33,7 @@ cd /u01/dockerfiles/ords/ol8_ords/software
 cp /vagrant/software/apex_22.1_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.62.tar.gz .
 cp /vagrant/software/ords-22.1.0.105.1723.zip .
-cp /vagrant/software/sqlcl-22.1.0.90.1611.zip .
+cp /vagrant/software/sqlcl-22.1.1.131.0820.zip .
 cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.15_10.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
 podman build --format docker --no-cache -t ol8_ords:latest .
