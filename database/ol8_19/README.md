@@ -42,11 +42,11 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.62.tar.gz
+|   +--- apache-tomcat-9.0.63.tar.gz
 |   +--- apex_22.1_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.14_9.tar.gz
-|   +--- ords-21.4.1.025.0904.zip
+|   +--- ords-22.1.1.133.1148.zip
 |   +--- p32900021_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt

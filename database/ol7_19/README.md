@@ -37,11 +37,11 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.62.tar.gz
+|   +--- apache-tomcat-9.0.63.tar.gz
 |   +--- apex_22.1_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.15_10.tar.gz
-|   +--- ords-22.1.0.105.1723.zip
+|   +--- ords-22.1.1.133.1148.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-22.1.1.131.0820.zip
 +--- Vagrantfile
