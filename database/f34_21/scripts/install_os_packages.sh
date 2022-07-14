@@ -36,7 +36,7 @@ yum install -y unixODBC
 dnf install -y libnsl2
 dnf install -y libnsl2.i686
 dnf install -y libxcrypt-compat
-dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.34.9000-13.fc36.x86_64.rpm
+dnf install -y http://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/c/compat-libpthread-nonshared-2.35.9000-29.fc37.x86_64.rpm
 
 # Downgrade binutils to F31.
 dnf downgrade -y https://kojipkgs.fedoraproject.org//vol/fedora_koji_archive04/packages/binutils/2.32/33.fc31/x86_64/binutils-gold-2.32-33.fc31.x86_64.rpm \
