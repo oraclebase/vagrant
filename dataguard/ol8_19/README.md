@@ -60,7 +60,7 @@ tree
 |   +--- prepare_u01_disk.sh
 +--- software
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- p33567270_190000_Linux-x86-64.zip
+|   +--- p34160831_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.tx
 ```
