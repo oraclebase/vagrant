@@ -62,10 +62,16 @@
       "expect_disconnect": true
     },
     {
-      "scripts": [
-        "scripts/vbox_guest_additions.sh",
-        "scripts/cleanup.sh"
-      ],
+      "script": "scripts/vbox_guest_additions.sh",
+      "type": "shell"
+    },
+    {
+      "inline": "reboot",
+      "type": "shell",
+      "expect_disconnect": true
+    },
+    {
+      "scripts": "scripts/cleanup.sh",
       "type": "shell",
       "pause_before": "10s",
       "timeout": "10s"
