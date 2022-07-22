@@ -41,7 +41,7 @@ $ tree
 |   +--- apex_22.1_en.zip
 |   +--- linuxamd64_12102_database_1of2.zip
 |   +--- linuxamd64_12102_database_2of2.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.15_10.tar.gz
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.16_8.tar.gz
 |   +--- ords-22.2.0.172.1758.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-22.2.0.172.1718.zip
