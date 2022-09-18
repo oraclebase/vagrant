@@ -30,7 +30,7 @@
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "1"
+          "2"
         ]
       ],
       "virtualbox_version_file": "/tmp/.vbox_version",
