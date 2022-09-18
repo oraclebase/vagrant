@@ -13,7 +13,7 @@ shared:
 dns:
   vm_name: ol8_19_dns
   mem_size: 1024
-  cpus: 1
+  cpus: 2
   public_ip: 192.168.56.100
 
 node1:
