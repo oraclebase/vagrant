@@ -30,10 +30,10 @@ cp -r ${CATALINA_HOME}/webapps $CATALINA_BASE
 cp -r ${CATALINA_HOME}/work $CATALINA_BASE
 
 # ORDS
-mkdir -p ${ORDS_CONF}/logs
+mkdir -p ${ORDS_HOME}
 cd ${ORDS_HOME}
 unzip -oq /vagrant/software/${ORDS_SOFTWARE}
-mkdir -p ${ORDS_CONF}
+mkdir -p ${ORDS_CONF}/logs
 
 # SQLcl
 cd /u01
