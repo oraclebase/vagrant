@@ -40,7 +40,7 @@ $ tree
 |   +--- apex_21.1_en.zip
 |   +--- p13390677_112040_Linux-x86-64_1of7.zip
 |   +--- p13390677_112040_Linux-x86-64_2of7.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.16_8.tar.gz
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.16.1_1.tar.gz
 |   +--- ords-latest.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-latest.zip
