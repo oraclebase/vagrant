@@ -47,7 +47,7 @@ $ tree
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.16.1_1.tar.gz
 |   +--- ords-latest.zip
-|   +--- p34160831_190000_Linux-x86-64.zip
+|   +--- p34419443_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-latest.zip
