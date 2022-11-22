@@ -24,6 +24,6 @@ This will create a box called "f37-x86_64-virtualbox.box" in the "build" directo
 You can then upload the resulting box to Vagrant Cloud, or just use it locally by adding it to you local box list.
 
 ```
-vagrant box remove oraclebase/fedora-36
+vagrant box remove oraclebase/fedora-37
 vagrant box add build/f37-x86_64-virtualbox.box --name oraclebase/fedora-37
 ```
