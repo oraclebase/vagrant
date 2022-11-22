@@ -78,6 +78,6 @@
   "variables": {
     "harddisk_size": "65536",
     "iso_location": "/iso",
-    "vm_name": "f36"
+    "vm_name": "f37"
   }
 }
