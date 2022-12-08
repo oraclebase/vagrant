@@ -31,7 +31,14 @@
           "{{.Name}}",
           "--cpus",
           "2"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--nat-localhostreachable1",
+          "on"
         ]
+
       ],
       "virtualbox_version_file": "/tmp/.vbox_version",
       "vm_name": "{{user `vm_name`}}"
