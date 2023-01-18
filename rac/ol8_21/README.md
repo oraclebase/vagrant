@@ -20,7 +20,7 @@ Download and install the following software. If you can't figure out this step, 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * Git client. Pick one that matches your OS.
 
-You will also need to download the 19c grid and database software, along with the latest combo patch for grid. This means you must have an Oracle Support account to complete this installation.
+You will also need to download the 21c grid and database software, along with the latest combo patch for grid. This means you must have an Oracle Support account to complete this installation.
 
 * [Grid : LINUX.X64_213000_grid_home.zip](https://www.oracle.com/database/technologies/oracle21c-linux-downloads.html)
 * [Database : LINUX.X64_213000_db_home.zip](https://www.oracle.com/database/technologies/oracle21c-linux-downloads.html)
@@ -126,7 +126,7 @@ At minimum you will have to amend the following paths in the "vagrant.yml" file,
   asm_reco_disk_size: 20
 ```
 
-For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol8_19_rac" and use the following settings.
+For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol8_21_rac" and use the following settings.
 
 ```
   asm_crs_disk_1: C:\VirtualBox\shared\ol8_21_rac\asm_crs_disk_1.vdi
