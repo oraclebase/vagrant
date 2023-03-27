@@ -2,6 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "f36"
+  config.vm.box = "f37"
   config.vm.synced_folder ".","/vagrant", disabled: true
 end
