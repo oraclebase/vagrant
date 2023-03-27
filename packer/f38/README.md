@@ -25,5 +25,5 @@ You can then upload the resulting box to Vagrant Cloud, or just use it locally b
 
 ```
 vagrant box remove oraclebase/fedora-38
-vagrant box add build/f37-x86_64-virtualbox.box --name oraclebase/fedora-38
+vagrant box add build/f38-x86_64-virtualbox.box --name oraclebase/fedora-38
 ```
