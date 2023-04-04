@@ -30,7 +30,7 @@ $ tree
 $
 ```
 
-The database password is set in the "install.env" file. By default it is set to "MyPassword123".
+The database password is set in the "install.env" file. By default it is set to "SysPassword1".
 
 ## Using-It
 
@@ -41,10 +41,10 @@ export ORACLE_HOME=/opt/oracle/product/23c/dbhomeFree
 export PATH=$ORACLE_HOME/bin:$PATH
 
 -- Root container
-sqlplus sys/MyPassword123@//localhost:1521/free as sysdba
+sqlplus sys/SysPassword1@//localhost:1521/free as sysdba
 
 -- Pluggable database
-sqlplus sys/MyPassword123@//localhost:1521/freepdb1 as sysdba
+sqlplus sys/SysPassword1@//localhost:1521/freepdb1 as sysdba
 ```
 
 We can stop and start the service from the root user with the following commands.
