@@ -7,6 +7,11 @@ A simple Vagrant build for Oracle Database 23c Free Developer-Release on Oracle 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Oracle Database 23c](https://www.oracle.com/database/technologies/free-downloads.html)
+* [Oracle REST Data Services (ORDS)](https://www.oracle.com/technetwork/developer-tools/rest-data-services/downloads/)
+* [Oracle SQLcl](https://www.oracle.com/tools/downloads/sqlcl-downloads.html)
+* [Oracle Application Express (APEX)](https://www.oracle.com/tools/downloads/apex-downloads.html)
+* [OpenJDK 11](https://adoptium.net/releases.html?variant=openjdk11&jvmVariant=hotspot)
+* [Tomcat 9](https://tomcat.apache.org/download-90.cgi)
 
 Place the Oracle database RPM software in the "software" directory before calling the `vagrant up` command.
 
@@ -15,22 +20,42 @@ Directory contents when software is included.
 ```
 $ tree
 .
-+--- README.md
 +--- config
 |   +--- install.env
++--- README.md
 +--- scripts
+|   +--- apex_software_installation.sh
+|   +--- dbora.service
 |   +--- install_os_packages.sh
 |   +--- oracle_create_database.sh
+|   +--- oracle_service_setup.sh
+|   +--- oracle_user_environment_setup.sh
+|   +--- ords_software_installation.sh
 |   +--- root_setup.sh
+|   +--- server.xml
 |   +--- setup.sh
+|   +--- web.xml
 +--- software
+|   +--- apache-tomcat-9.0.73.tar.gz
+|   +--- apex_22.2_en.zip
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.18_10.tar.gz
 |   +--- oracle-database-free-23c-1.0-1.el8.x86_64.rpm
+|   +--- ords-latest.zip
 |   +--- put_software_here.txt
+|   +--- sqlcl-latest.zip
 +--- Vagrantfile
 $
 ```
 
 The database password is set in the "install.env" file. By default it is set to "SysPassword1".
+
+With everything in place, you can initiate the build as follows.
+
+```
+cd C:\git\oraclebase\vagrant\database\ol8_23_free\
+vagrant up
+```
+
 
 ## Using-It
 
