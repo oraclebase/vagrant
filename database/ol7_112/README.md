@@ -36,11 +36,11 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.73.tar.gz
+|   +--- apache-tomcat-9.0.74.tar.gz
 |   +--- apex_21.1_en.zip
 |   +--- p13390677_112040_Linux-x86-64_1of7.zip
 |   +--- p13390677_112040_Linux-x86-64_2of7.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.18_10.tar.gz
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz
 |   +--- ords-latest.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-latest.zip
