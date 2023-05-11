@@ -11,8 +11,8 @@
       "hard_drive_interface": "sata",
       "headless": false,
       "http_directory": "http",
-      "iso_checksum": "MD5:5275d4db7355fb217381a49cdde2ffbb",
-      "iso_url": "{{user `iso_location`}}/OracleLinux-R9-U0-x86_64-dvd.iso",
+      "iso_checksum": "MD5:0430a94e210ad6d1e6089721d81992c8",
+      "iso_url": "{{user `iso_location`}}/OracleLinux-R9-U1-x86_64-dvd.iso",
       "shutdown_command": "/sbin/halt -h -p",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -24,13 +24,13 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "1024"
+          "4096"
         ],
         [
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "2"
+          "4"
         ],
         [
           "modifyvm",
