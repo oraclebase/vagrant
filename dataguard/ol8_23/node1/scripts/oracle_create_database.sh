@@ -148,7 +148,7 @@ echo "Configure archivelog mode, standby logs and flashback." `date`
 echo "******************************************************************************"
 mkdir -p ${ORACLE_BASE}/fast_recovery_area
 
-dgmgrl / <<EOF
+dgmgrl / as sysdba <<EOF
 prepare database for data guard
   with db_unique_name is ${NODE1_DB_UNIQUE_NAME}
   db_recovery_file_dest is "${ORACLE_BASE}/fast_recovery_area"
