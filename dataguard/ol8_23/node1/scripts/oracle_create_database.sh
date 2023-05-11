@@ -152,6 +152,7 @@ dgmgrl / <<EOF
 prepare database for data guard
   with db_unique_name is ${NODE1_DB_UNIQUE_NAME}
   db_recovery_file_dest is "${ORACLE_BASE}/fast_recovery_area"
-  db_recovery_file_dest_size is 20g;
+  db_recovery_file_dest_size is 20g
+  restart;
 exit;
 EOF
