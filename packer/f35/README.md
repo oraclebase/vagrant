@@ -13,7 +13,7 @@ Get the Packer software.
 To build the VirtualBox box add the Packer software to your path, switch to the root of the Packer build directory and run the Packer command. Amend your paths as needed.
 
 ```
-set PATH=%USERPROFILE%\u01\software\hashicorp\packer_1.8.4_windows_amd64;%PATH%
+set PATH=%USERPROFILE%\u01\software\hashicorp\packer_1.8.7_windows_amd64;%PATH%
 cd \git\oraclebase\vagrant\packer\f35
 
 packer build -only virtualbox-iso f35.json
