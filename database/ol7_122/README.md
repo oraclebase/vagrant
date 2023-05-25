@@ -38,7 +38,7 @@ $ tree
 |   +--- setup.sh
 +--- software
 |   +--- apache-tomcat-9.0.74.tar.gz
-|   +--- apex_23.1_en.zip
+|   +--- apex_22.2_en.zip
 |   +--- linuxx64_12201_database.zip
 |   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz
 |   +--- ords-latest.zip
