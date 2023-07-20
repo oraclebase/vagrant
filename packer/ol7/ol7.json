@@ -70,7 +70,8 @@
     },
     {
       "script": "scripts/vbox_guest_additions.sh",
-      "type": "shell"
+      "type": "shell",
+      "expect_disconnect": true
     },
     {
       "inline": "reboot",

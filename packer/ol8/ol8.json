@@ -70,7 +70,8 @@
     },
     {
       "script": "scripts/vbox_guest_additions.sh",
-      "type": "shell"
+      "type": "shell",
+      "expect_disconnect": true
     },
     {
       "inline": "reboot",
@@ -81,7 +82,7 @@
       "scripts": "scripts/cleanup.sh",
       "type": "shell",
       "pause_before": "10s",
-      "timeout": "10s"
+      "timeout": "60s"
     }
   ],
   "variables": {
