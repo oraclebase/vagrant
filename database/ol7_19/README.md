@@ -37,10 +37,10 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.74.tar.gz
+|   +--- apache-tomcat-9.0.78.tar.gz
 |   +--- apex_23.1_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz
+|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz
 |   +--- ords-latest.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-latest.zip
