@@ -3,7 +3,7 @@
 
 # Variables
 var_box            = 'oraclebase/oracle-8'
-var_vm_name        = 'ol8_23_rpm'
+var_vm_name        = 'ol8_23_free'
 var_mem_size       = 4096
 var_cpus           = 2
 var_non_rotational = 'on' # SSD
