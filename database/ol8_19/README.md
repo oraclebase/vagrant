@@ -42,10 +42,10 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.78.tar.gz
+|   +--- apache-tomcat-9.0.82.tar.gz
 |   +--- apex_23.1_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
-|   +--- OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz
+|   +--- graalvm-jdk-17_linux-x64_bin.tar.gz
 |   +--- ords-latest.zip
 |   +--- p35058163_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
