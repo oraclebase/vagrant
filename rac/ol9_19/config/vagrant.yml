@@ -1,0 +1,33 @@
+shared:
+  box: oraclebase/oracle-9
+  non_rotational: 'on'
+  asm_crs_disk_1: /u05/VirtualBox/shared/ol9_19_rac/asm_crs_disk_1.vdi
+  asm_crs_disk_2: /u05/VirtualBox/shared/ol9_19_rac/asm_crs_disk_2.vdi
+  asm_crs_disk_3: /u05/VirtualBox/shared/ol9_19_rac/asm_crs_disk_3.vdi
+  asm_crs_disk_size: 2
+  asm_data_disk_1: /u05/VirtualBox/shared/ol9_19_rac/asm_data_disk_1.vdi
+  asm_data_disk_size: 40
+  asm_reco_disk_1: /u05/VirtualBox/shared/ol9_19_rac/asm_reco_disk_1.vdi
+  asm_reco_disk_size: 20
+
+dns:
+  vm_name: ol9_19_dns
+  mem_size: 1024
+  cpus: 2
+  public_ip: 192.168.56.100
+
+node1:
+  vm_name: ol9_19_rac1
+  mem_size: 7168
+  cpus: 4
+  public_ip: 192.168.56.101
+  private_ip: 192.168.1.101
+  u01_disk: ./ol9_19_rac1_u01.vdi
+
+node2:
+  vm_name: ol9_19_rac2
+  mem_size: 6144
+  cpus: 4
+  public_ip: 192.168.56.102
+  private_ip: 192.168.1.102
+  u01_disk: ./ol9_19_rac2_u01.vdi
