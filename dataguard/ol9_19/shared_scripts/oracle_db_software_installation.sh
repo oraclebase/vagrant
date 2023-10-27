@@ -15,6 +15,8 @@ unzip -oq /vagrant_software/${PATCH_FILE}
 echo "******************************************************************************"
 echo "Do database software-only installation." `date`
 echo "******************************************************************************"
+export CV_ASSUME_DISTID=OEL7.9
+
 ${ORACLE_HOME}/runInstaller -ignorePrereq -waitforcompletion -silent \
         -applyRU ${PATCH_PATH1} \
         -responseFile ${ORACLE_HOME}/install/response/db_install.rsp \
