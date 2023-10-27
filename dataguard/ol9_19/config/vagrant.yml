@@ -1,0 +1,17 @@
+shared:
+  box: oraclebase/oracle-9
+  non_rotational: 'on'
+
+node1:
+  vm_name: ol9_19_dg1
+  mem_size: 4096
+  cpus: 2
+  public_ip: 192.168.56.101
+  u01_disk: ./ol9_19_dg1_u01.vdi
+
+node2:
+  vm_name: ol9_19_dg2
+  mem_size: 4096
+  cpus: 2
+  public_ip: 192.168.56.102
+  u01_disk: ./ol9_19_dg2_u01.vdi
