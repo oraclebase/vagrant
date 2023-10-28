@@ -15,6 +15,8 @@ unzip -oq /vagrant_software/${PATCH_FILE}
 echo "******************************************************************************"
 echo "Do database software-only installation." `date`
 echo "******************************************************************************"
+# Fake Oracle Linux 7.
+# Should not be necessary, but the installation fails without it on 19.21 DB RU + OJVM combo.
 export CV_ASSUME_DISTID=OEL7.9
 
 ${ORACLE_HOME}/runInstaller -ignorePrereq -waitforcompletion -silent \
