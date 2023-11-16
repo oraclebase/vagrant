@@ -6,20 +6,19 @@ echo "**************************************************************************
 mkdir -p ${ORACLE_HOME}
 cd ${ORACLE_HOME}
 unzip -oq /vagrant/software/${DB_SOFTWARE}
-unzip -oq /vagrant/software/${OPATCH_FILE}
 
-cd ${SOFTWARE_DIR}
-unzip -oq /vagrant/software/${PATCH_FILE}
+# Fix suggested by Steven Kennedy.
+cd $ORACLE_HOME/lib/stubs
+mv libc.so libc.so.hide
+mv libc.so.6 libc.so.6.hide
 
 echo "******************************************************************************"
 echo "Do software-only installation." `date`
 echo "******************************************************************************"
-# Fake Oracle Linux 8.
-# Should not be necessary, but the installation fails without it on 19.21 DB RU + OJVM combo.
-export CV_ASSUME_DISTID=OL8
+# Fake OS.
+export CV_ASSUME_DISTID=OEL7.8
 
 ${ORACLE_HOME}/runInstaller -ignorePrereq -waitforcompletion -silent           \
-    -applyRU ${PATCH_PATH1}                                                    \
     -responseFile ${ORACLE_HOME}/install/response/db_install.rsp               \
     oracle.install.option=INSTALL_DB_SWONLY                                    \
     ORACLE_HOSTNAME=${ORACLE_HOSTNAME}                                         \
