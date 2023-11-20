@@ -27,6 +27,7 @@ ${ORACLE_SID}=
     (SERVICE_NAME = ${ORACLE_SID})
   )
 )
+EOF
 
   cat > ${ORACLE_HOME}/network/admin/sqlnet.ora <<EOF
 SQLNET.INBOUND_CONNECT_TIMEOUT=400
