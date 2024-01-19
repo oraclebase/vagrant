@@ -8,7 +8,7 @@ cd ~
 unzip -oq /vagrant/software/sqlcl-latest.zip
 mkdir ~/java
 cd ~/java
-tar -xf /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz
+tar -xf /vagrant/software/graalvm-jdk-17_linux-x64_bin.tar.gz
 ln -s ./j* ./latest
 cd ~
 unzip -oq /vagrant/software/autorest_demo.zip
@@ -20,49 +20,49 @@ podman pull oraclelinux:8
 
 # Copy ORDS software and do build (OL7).
 cd /u01/dockerfiles/ords/ol7_ords/software
-cp /vagrant/software/apex_23.1_en.zip .
-cp /vagrant/software/apache-tomcat-9.0.82.tar.gz .
+cp /vagrant/software/apex_23.2_en.zip .
+cp /vagrant/software/apache-tomcat-9.0.85.tar.gz .
 cp /vagrant/software/ords-latest.zip .
 cp /vagrant/software/sqlcl-latest.zip .
-cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz .
+cp /vagrant/software/graalvm-jdk-17_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol7_ords
 podman build --format docker --no-cache -t ol7_ords:latest .
 
 # Copy ORDS software and do build (OL8).
 cd /u01/dockerfiles/ords/ol8_ords/software
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cp /vagrant/software/apache-tomcat-9.0.67.tar.gz .
 cp /vagrant/software/ords-latest.zip .
 cp /vagrant/software/sqlcl-latest.zip .
-cp /vagrant/software/OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz .
+cp /vagrant/software/graalvm-jdk-17_linux-x64_bin.tar.gz .
 cd /u01/dockerfiles/ords/ol8_ords
 podman build --format docker --no-cache -t ol8_ords:latest .
 
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_21/software
 cp /vagrant/software/LINUX.X64_213000_db_home.zip .
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cd /u01/dockerfiles/database/ol7_21
 podman build --format docker --no-cache -t ol7_21:latest .
 
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cd /u01/dockerfiles/database/ol7_19
 podman build --format docker --no-cache -t ol7_19:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_21/software
 cp /vagrant/software/LINUX.X64_213000_db_home.zip .
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cd /u01/dockerfiles/database/ol8_21
 podman build --format docker --no-cache -t ol8_21:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_19/software
 cp /vagrant/software/LINUX.X64_193000_db_home.zip .
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cp /vagrant/software/p6880880_190000_Linux-x86-64.zip .
 cp /vagrant/software/p32578972_190000_Linux-x86-64.zip .
 cd /u01/dockerfiles/database/ol8_19
@@ -71,28 +71,28 @@ podman build --format docker --no-cache -t ol8_19:latest .
 # Copy database software and do build (OL7).
 cd /u01/dockerfiles/database/ol7_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cd /u01/dockerfiles/database/ol7_183
 #podman build --format docker --no-cache -t ol7_183:latest .
 
 # Copy database software and do build (OL8).
 cd /u01/dockerfiles/database/ol8_183/software
 cp /vagrant/software/LINUX.X64_180000_db_home.zip .
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cd /u01/dockerfiles/database/ol8_183
 #podman build --format docker --no-cache -t ol8_183:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_122/software
 cp /vagrant/software/linuxx64_12201_database.zip .
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cd /u01/dockerfiles/database/ol7_122
 #podman build --format docker --no-cache -t ol7_122:latest .
 
 # Copy database software and don't do build.
 cd /u01/dockerfiles/database/ol7_121/software
 cp /vagrant/software/linuxamd64_12102_database_*of2.zip .
-cp /vagrant/software/apex_23.1_en.zip .
+cp /vagrant/software/apex_23.2_en.zip .
 cd /u01/dockerfiles/database/ol7_121
 #podman build --format docker --no-cache -t ol7_121:latest .
 
