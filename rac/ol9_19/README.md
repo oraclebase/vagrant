@@ -18,7 +18,7 @@ You will also need to download the 19c grid and database software, along with th
 
 * [Grid : LINUX.X64_193000_grid_home.zip](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html)
 * [Database : LINUX.X64_193000_db_home.zip](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html)
-* [Patch 35742441: COMBO OF OJVM RU COMPONENT 19.21.0.0.231017 + GI RU 19.21.0.0.231017](https://support.oracle.com)
+* [Patch 36031453: COMBO OF OJVM RU COMPONENT 19.22.0.0.240116 + GI RU 19.22.0.0.240116](https://support.oracle.com)
 * [Patch 6880880: OPatch 19.x](https://updates.oracle.com/download/6880880.html)
 
 ## Warning

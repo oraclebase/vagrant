@@ -47,7 +47,7 @@ $ tree
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- graalvm-jdk-17_linux-x64_bin.tar.gz
 |   +--- ords-latest.zip
-|   +--- p35742413_190000_Linux-x86-64.zip
+|   +--- p35058163_190000_Linux-x86-64.zip
 |   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-latest.zip
