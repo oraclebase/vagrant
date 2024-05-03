@@ -19,7 +19,7 @@ sqlplus sys/${SYS_PASSWORD}@//localhost:1521/${PDB_NAME} as sysdba <<EOF
 
 alter system set db_create_file_dest='${DATA_DIR}';
 
-create tablespace apex datafile size 1m autoextend on next 1m;
+create tablespace apex datafile size 100m autoextend on next 100m;
 @apexins.sql APEX APEX TEMP /i/
 BEGIN
     APEX_UTIL.set_security_group_id( 10 );

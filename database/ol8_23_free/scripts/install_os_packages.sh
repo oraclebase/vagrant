@@ -1,3 +1,5 @@
+. /vagrant/config/install.env
+
 echo "******************************************************************************"
 echo "Prepare yum with the latest repos." `date`
 echo "******************************************************************************"
@@ -9,13 +11,14 @@ echo "**************************************************************************
 echo "Install Oracle prerequisite package." `date`
 echo "Not necessary, but oracle OS user has no home directory if this is not run first."
 echo "******************************************************************************"
-dnf install -y oraclelinux-developer-release-el8
-dnf install -y oracle-database-preinstall-23c
+#dnf install -y oraclelinux-developer-release-el8
+dnf install -y oracle-database-preinstall-23ai
 
 echo "******************************************************************************"
 echo "Install Oracle RPM." `date`
 echo "******************************************************************************"
-dnf -y localinstall /vagrant/software/oracle-database-free-23c-1.0-1.el8.x86_64.rpm
+dnf -y localinstall /vagrant/software/${DB_SOFTWARE}
+
 #dnf update -y
 
 
