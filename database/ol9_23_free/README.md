@@ -1,6 +1,6 @@
-# Oracle Database 23ai Free (RPM) on Oracle Linux 8
+# Oracle Databse 23ai Free (RPM) on Oracle Linux 9
 
-A simple Vagrant build for Oracle Database 23ai Free on Oracle Linux 8 using the RPM installation.
+A simple Vagrant build for Oracle Database 23ai Free on Oracle Linux 9 using the RPM installation.
 
 ## Required Software
 
@@ -39,7 +39,7 @@ $ tree
 |   +--- apache-tomcat-9.0.88.tar.gz
 |   +--- apex_23.2_en.zip
 |   +--- graalvm-jdk-17_linux-x64_bin.tar.gz
-|   +--- oracle-database-free-23ai-1.0-1.el8.x86_64.rpm
+|   +--- oracle-database-free-23ai-1.0-1.el9.x86_64.rpm
 |   +--- ords-latest.zip
 |   +--- put_software_here.txt
 |   +--- sqlcl-latest.zip
