@@ -1,9 +1,5 @@
 # Packer Fedora 35
 
-Packer config for this box.
-
-* [https://app.vagrantup.com/oraclebase/boxes/fedora-35](https://app.vagrantup.com/oraclebase/boxes/fedora-35)
-
 This box is based on the initial Fedora 35 release.
 
 Get the Packer software.

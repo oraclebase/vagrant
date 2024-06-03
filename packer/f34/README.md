@@ -1,9 +1,5 @@
 # Packer Fedora 34
 
-Packer config for this box.
-
-* [https://app.vagrantup.com/oraclebase/boxes/fedora-34](https://app.vagrantup.com/oraclebase/boxes/fedora-34)
-
 This box is based on the initial Fedora 34 release.
 
 Get the Packer software.

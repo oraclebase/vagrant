@@ -1,9 +1,5 @@
 # Packer Fedora 33
 
-Packer config for this box.
-
-* [https://app.vagrantup.com/oraclebase/boxes/fedora-33](https://app.vagrantup.com/oraclebase/boxes/fedora-33)
-
 This box is based on the initial Fedora 33 release.
 
 Get the Packer software.
