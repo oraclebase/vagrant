@@ -114,7 +114,7 @@ EOF
     echo "******************************************************************************"
     sqlplus / as sysdba <<EOF
 alter session set container = ${PDB_NAME};
-create tablespace apex datafile size 1m autoextend on next 1m;
+create tablespace apex datafile size 10m autoextend on next 10m;
 @apexins.sql APEX APEX TEMP /i/
 BEGIN
     APEX_UTIL.set_security_group_id( 10 );
