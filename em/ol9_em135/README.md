@@ -7,6 +7,7 @@ A simple Vagrant build of Enterprise Manager Cloud Control 13.4 on Oracle Databa
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Oracle Database 19c](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html)
+* [Oracle Database 19c Patches](https://support.oracle.com)
 * [Enterprise Manager Cloud Control 13.5](http://www.oracle.com/technetwork/oem/enterprise-manager/downloads/index.html)
 
 Place the Oracle database and Cloud Control software in the "software" directory before calling the `vagrant up` command.
@@ -37,6 +38,8 @@ $ tree
 |   +--- em13500_linux64-5.zip
 |   +--- em13500_linux64.bin
 |   +--- LINUX.X64_193000_db_home.zip
+|   +--- p36209492_190000_Linux-x86-64.zip
+|   +--- p6880880_190000_Linux-x86-64.zip
 |   +--- put_software_here.txt
 +--- Vagrantfile
 $
