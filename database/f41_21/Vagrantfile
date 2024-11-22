@@ -3,12 +3,12 @@
 
 # Variables
 var_box            = 'oraclebase/fedora-41'
-var_vm_name        = 'f41_19'
+var_vm_name        = 'f41_21'
 var_mem_size       = 6144  # More would be better.
 var_cpus           = 2
 var_non_rotational = 'on' # SSD
-var_disk1_name     = './f41_19_u01.vdi'
-var_disk2_name     = './f41_19_u02.vdi'
+var_disk1_name     = './f41_21_u01.vdi'
+var_disk2_name     = './f41_21_u02.vdi'
 var_disk_size      = 100
 var_public_ip      = '192.168.56.140'
 
