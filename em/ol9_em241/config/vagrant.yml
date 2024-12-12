@@ -1,0 +1,8 @@
+box: oraclebase/oracle-9
+vm_name: ol9_em241
+mem_size: 12288
+cpus: 6
+public_ip: 192.168.56.140
+disk1_name: ./ol9_em241_u01.vdi
+non_rotational: 'on'
+disk_size: 100
