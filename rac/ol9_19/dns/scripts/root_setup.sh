@@ -22,13 +22,7 @@ echo "**************************************************************************
 systemctl stop firewalld
 systemctl disable firewalld
 
-echo "******************************************************************************"
-echo "Install dnsmasq." `date`
-echo "******************************************************************************"
-dnf install -y dnsmasq
-sed -i -e "s|interface=lo|\#interface=lo|g" /etc/dnsmasq.conf
-systemctl enable dnsmasq
-systemctl restart dnsmasq
+sh /vagrant/scripts/dnsmasq_setup.sh
 
 echo "******************************************************************************"
 echo "Setup End." `date`
