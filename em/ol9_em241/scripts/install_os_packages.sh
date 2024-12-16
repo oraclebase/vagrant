@@ -23,6 +23,7 @@ dnf install -y motif-devel
 dnf install -y redhat-lsb
 dnf install -y redhat-lsb-core
 dnf install -y openssl
+dnf install -y openssh-server
 dnf install -y make
 
 dnf install -y https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackage/compat-libpthread-nonshared-2.28-72.0.1.el8_1.1.x86_64.rpm
