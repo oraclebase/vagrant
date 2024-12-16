@@ -23,20 +23,7 @@ dnf install -y motif-devel
 dnf install -y redhat-lsb
 dnf install -y redhat-lsb-core
 dnf install -y openssl
+dnf install -y openssh-server
 dnf install -y make
-
-# OL7 Packages
-#dnf install -y libgcc.i686
-#dnf install -y libstdc++.i686
-#dnf install -y compat-libcap1
-#dnf install -y compat-libstdc++-33
-#dnf install -y compat-libstdc++-33.i686
-#dnf install -y dejavu-serif-fonts
-#dnf install -y ksh
-#dnf install -y numactl
-#dnf install -y numactl-devel
-
-#dnf -y groupinstall "Server with GUI"
-#systemctl set-default graphical.target
 
 #dnf -y update
