@@ -37,8 +37,8 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.98.tar.gz
-|   +--- apex_24.1_en.zip
+|   +--- apache-tomcat-9.0.102.tar.gz
+|   +--- apex_24.2_en.zip
 |   +--- LINUX.X64_193000_db_home.zip
 |   +--- graalvm-jdk-21_linux-x64_bin.tar.gz
 |   +--- ords-latest.zip

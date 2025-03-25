@@ -37,7 +37,7 @@ $ tree
 |   +--- server.xml
 |   +--- setup.sh
 +--- software
-|   +--- apache-tomcat-9.0.98.tar.gz
+|   +--- apache-tomcat-9.0.102.tar.gz
 |   +--- apex_22.2_en.zip
 |   +--- linuxamd64_12102_database_1of2.zip
 |   +--- linuxamd64_12102_database_2of2.zip
