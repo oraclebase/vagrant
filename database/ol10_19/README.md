@@ -60,6 +60,6 @@ If you want to include the patches, edit the PATCH_DB parameter in the "install.
 With everything in place, you can initiate the build as follows.
 
 ```
-cd C:\git\oraclebase\vagrant\database\ol8_19\
+cd C:\git\oraclebase\vagrant\database\ol10_19\
 vagrant up
 ```
