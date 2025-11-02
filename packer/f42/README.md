@@ -1,6 +1,6 @@
-# Packer Fedora 41
+# Packer Fedora 42
 
-This box is based on the initial Fedora 41 release.
+This box is based on the initial Fedora 42 release.
 
 Get the Packer software.
 
