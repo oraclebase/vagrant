@@ -16,6 +16,9 @@ systemctl daemon-reload
 systemctl restart ollama
 #systemctl status ollama
 
+# Pause while service restarts.
+sleep 20
+
 echo "******************************************************************************"
 echo "Get llama3 Model." `date`
 echo "******************************************************************************"
