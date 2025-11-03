@@ -8,7 +8,13 @@ mkdir -p ${OLLAMA_MODELS}
 curl -fsSL https://ollama.com/install.sh | sh
 systemctl start ollama
 systemctl enable ollama
-systemctl status ollama
+
+# Make sure the service responds to all IP addresses.
+sed -i -e "s|Environment=\"|Environment=\"OLLAMA_HOST=0.0.0.0:11434\"\nEnvironment=\"|g" /etc/systemd/system/ollama.service
+
+systemctl daemon-reload
+systemctl restart ollama
+#systemctl status ollama
 
 echo "******************************************************************************"
 echo "Get llama3 Model." `date`

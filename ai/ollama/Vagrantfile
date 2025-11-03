@@ -8,7 +8,7 @@ var_box            = params['box']
 var_vm_name        = params['vm_name']
 var_mem_size       = params['mem_size']
 var_cpus           = params['cpus']
-var_public_ip      = params['public_ip']
+#var_public_ip      = params['public_ip']
 var_disk1_name     = params['disk1_name']
 var_disk_size      = params['disk_size']
 var_non_rotational = params['non_rotational']
@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: var_public_ip
+  #config.vm.network "private_network", ip: var_public_ip
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
