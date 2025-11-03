@@ -27,7 +27,7 @@ ollama pull llama3
 echo "******************************************************************************"
 echo "Create an Oracle Linux Bot." `date`
 echo "******************************************************************************"
-ollama create oracle-linux-bot -f /vagrant/scripts/ModelFile
+ollama create short-answer-bot -f /vagrant/scripts/ModelFile
 
 echo "******************************************************************************"
 echo "Show Models." `date`

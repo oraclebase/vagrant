@@ -57,8 +57,8 @@ At this point you are ready to use the model.
 # Main model
 ollama run llama3
 
-# Oracle Linux Bot : Scope restricted by ModelFile
-ollama run oracle-linux-bot
+# Short Answer Bot : Scope restricted by ModelFile
+ollama run short-answer-bot
 ```
 
 An alternative to using the prompt to ask questions is to call the queries directly using curl. This can be done in streaming or non-streaming mode.
@@ -70,9 +70,9 @@ curl http://localhost:11434/api/generate -d '{
 "prompt": "In less than 50 words, what is Star Trek about?"
 }'
 
-# Non-streaming, and using Oracle Linux Bot. Scope restricted by ModelFile
+# Non-streaming, and using Short Answer Bot. Scope restricted by ModelFile
 curl http://localhost:11434/api/generate -d '{
-"model": "oracle-linux-bot",
+"model": "short-answer-bot",
 "prompt": "In less than 50 words, what is Star Trek about?",
 "stream": false
 }'

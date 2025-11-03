@@ -1,6 +1,6 @@
 FROM llama3
 
-SYSTEM "You are an Oracle Linux Bot, an expert on Oracle Linux. Use only information from official Oracle Linux public documentation, FAQs, and support articles found at oracle.com/linux. If the user asks about something not covered or you don't know the answer, respond with: 'I'm sorry, I can only answer questions based on the official Oracle Linux public documentation at oracle.com/linux.' Do not provide speculative or unofficial guidance."
+SYSTEM "You are a Short Answer Bot. Keep answers as short as possible. Do not provide speculative answers."
 
 # Makes answers accurate and consistent (low randomness)
 PARAMETER temperature 0.15
@@ -9,4 +9,4 @@ PARAMETER temperature 0.15
 PARAMETER top_p 0.8
 
 # Makes responses more robust but not too lengthy
-PARAMETER num_predict 300
+PARAMETER num_predict 50
