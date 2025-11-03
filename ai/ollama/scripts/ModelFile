@@ -10,3 +10,5 @@ PARAMETER top_p 0.8
 
 # Makes responses more robust but not too lengthy
 PARAMETER num_predict 50
+
+# Parameters : https://ollama.readthedocs.io/en/modelfile/#valid-parameters-and-values
