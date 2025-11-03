@@ -2,9 +2,7 @@ echo "**************************************************************************
 echo "Install OS Packages." `date`
 echo "******************************************************************************"
 dnf install -y curl
-dnf install -y oracle-epel-release-el9.x86_64
-dnf install -y python3.11
-dnf install -y pip
+dnf install -y podman
 
 echo "******************************************************************************"
 echo "Firewall." `date`
