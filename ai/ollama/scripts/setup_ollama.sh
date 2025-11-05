@@ -20,9 +20,14 @@ systemctl restart ollama
 sleep 20
 
 echo "******************************************************************************"
-echo "Get llama3 Model." `date`
+echo "Get Model(s)." `date`
 echo "******************************************************************************"
 ollama pull llama3
+#ollama pull deepseek-r1
+#ollama pull gpt-oss:20b
+#ollama pull codellama
+#ollama pull deepseek-coder
+#ollama pull codestral
 
 echo "******************************************************************************"
 echo "Create an Oracle Linux Bot." `date`
