@@ -1,6 +1,9 @@
 box: oraclebase/oracle-9
 vm_name: ollama
-mem_size: 8192
+# 10240 works for most of the models
+mem_size: 10240
+# 16384 works for gpt-oss:20b and codestral
+#mem_size: 16384
 cpus: 4
 public_ip: 192.168.56.140
 disk1_name: ./ollama_u01.vdi
