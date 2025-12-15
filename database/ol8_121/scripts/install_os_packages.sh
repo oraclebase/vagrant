@@ -19,5 +19,5 @@ systemctl disable firewalld
 echo "******************************************************************************"
 echo "SELinux." `date`
 echo "******************************************************************************"
-sed -i -e "s|SELINUX=enabled|SELINUX=permissive|g" /etc/selinux/config
+sed -i -e "s|SELINUX=enforcing|SELINUX=permissive|g" /etc/selinux/config
 setenforce permissive
