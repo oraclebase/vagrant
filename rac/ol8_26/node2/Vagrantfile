@@ -1,0 +1,130 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+require 'yaml'
+
+# You might need this in the session.
+# export SSH_AUTH_SOCK=""
+
+# Variables
+params = YAML.load_file '../config/vagrant.yml'
+var_box                     = params['shared']['box']
+var_non_rotational          = params['shared']['non_rotational']
+
+var_asm_crs_disk_1          = params['shared']['asm_crs_disk_1']
+var_asm_crs_disk_2          = params['shared']['asm_crs_disk_2']
+var_asm_crs_disk_3          = params['shared']['asm_crs_disk_3']
+var_asm_crs_disk_size       = params['shared']['asm_crs_disk_size']
+var_asm_data_disk_1         = params['shared']['asm_data_disk_1']
+var_asm_data_disk_size      = params['shared']['asm_data_disk_size']
+var_asm_reco_disk_1         = params['shared']['asm_reco_disk_1']
+var_asm_reco_disk_size      = params['shared']['asm_reco_disk_size']
+
+var_vm_name                 = params['node2']['vm_name']
+var_mem_size                = params['node2']['mem_size']
+var_cpus                    = params['node2']['cpus']
+var_public_ip               = params['node2']['public_ip']
+var_private_ip              = params['node2']['private_ip']
+var_u01_disk                = params['node2']['u01_disk']
+
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://vagrantcloud.com/search.
+  config.vm.box = var_box
+
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  # config.vm.box_check_update = false
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # NOTE: This will enable public access to the opened port
+  config.vm.network "forwarded_port", guest: 1521, host: 1522
+  config.vm.network "forwarded_port", guest: 5500, host: 5502
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine and only allow access
+  # via 127.0.0.1 to disable public access
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  config.vm.network "private_network", ip: var_public_ip
+  config.vm.network "private_network", ip: var_private_ip, virtualbox__intnet: "private"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  # config.vm.network "public_network"
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  config.vm.synced_folder "../config", "/vagrant_config"
+  config.vm.synced_folder "../shared_scripts", "/vagrant_scripts"
+  config.vm.synced_folder "../software", "/vagrant_software"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = var_mem_size
+    vb.cpus   = var_cpus
+    vb.name   = var_vm_name
+
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', '0', '--nonrotational', var_non_rotational]
+
+    unless File.exist?(var_u01_disk)
+      vb.customize ['createhd', '--filename', var_u01_disk, '--size', 100 * 1024]
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', var_u01_disk, '--nonrotational', var_non_rotational]
+    
+    unless File.exist?(var_asm_crs_disk_1)
+      vb.customize ['createhd', '--filename', var_asm_crs_disk_1, '--size', var_asm_crs_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', var_asm_crs_disk_1, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+
+    unless File.exist?(var_asm_crs_disk_2)
+      vb.customize ['createhd', '--filename', var_asm_crs_disk_2, '--size', var_asm_crs_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 3, '--device', 0, '--type', 'hdd', '--medium', var_asm_crs_disk_2, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+
+    unless File.exist?(var_asm_crs_disk_3)
+      vb.customize ['createhd', '--filename', var_asm_crs_disk_3, '--size', var_asm_crs_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 4, '--device', 0, '--type', 'hdd', '--medium', var_asm_crs_disk_3, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+
+    unless File.exist?(var_asm_data_disk_1)
+      vb.customize ['createhd', '--filename', var_asm_data_disk_1, '--size', var_asm_data_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 5, '--device', 0, '--type', 'hdd', '--medium', var_asm_data_disk_1, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+
+    unless File.exist?(var_asm_reco_disk_1)
+      vb.customize ['createhd', '--filename', var_asm_reco_disk_1, '--size', var_asm_reco_disk_size * 1024, '--format', 'VDI', '--variant', 'Fixed']
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 6, '--device', 0, '--type', 'hdd', '--medium', var_asm_reco_disk_1, '--mtype', 'shareable', '--nonrotational', var_non_rotational]
+  end
+
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  config.vm.provision "shell", inline: <<-SHELL
+    sh /vagrant/scripts/setup.sh
+  SHELL
+end
