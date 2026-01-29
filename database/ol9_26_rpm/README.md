@@ -51,10 +51,10 @@ export PATH=$ORACLE_HOME/bin:$PATH
 export ORACLE_SID=ORCLCDB
 
 -- Root container
-sqlplus sys/SysPassword1@//localhost:1521/free as sysdba
+sqlplus sys/SysPassword1@//localhost:1521/orclcdb as sysdba
 
 -- Pluggable database
-sqlplus sys/SysPassword1@//localhost:1521/freepdb1 as sysdba
+sqlplus sys/SysPassword1@//localhost:1521/orclpdb1 as sysdba
 ```
 
 We can stop and start the service from the root user with the following commands.
