@@ -3,6 +3,7 @@
 echo "******************************************************************************"
 echo "Do grid software-only installation." `date`
 echo "******************************************************************************"
+# Use deprecated parameters, as new variants have compatibility issues.
 ${GRID_HOME}/gridSetup.sh -ignorePrereq -waitforcompletion -silent \
         -responseFile ${GRID_HOME}/install/response/gridsetup.rsp \
         INVENTORY_LOCATION=${ORA_INVENTORY} \
