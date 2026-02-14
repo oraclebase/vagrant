@@ -2,6 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ol9"
+  config.vm.box = "ol10"
   config.vm.synced_folder ".","/vagrant", disabled: true
 end

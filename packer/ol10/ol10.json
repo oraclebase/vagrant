@@ -2,7 +2,7 @@
   "builders": [
     {
       "boot_command": [
-        "<tab> net.ifnames=0 biosdevname=0 text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+        "<wait><up><wait>e<wait><down><down><end><wait> inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg <leftCtrlOn>x<leftCtrlOff>"
       ],
       "boot_wait": "12s",
       "disk_size": "{{user `harddisk_size`}}",
@@ -11,8 +11,8 @@
       "hard_drive_interface": "sata",
       "headless": false,
       "http_directory": "http",
-      "iso_checksum": "MD5:5fdc5266538cd3a3d240c5eee266b640",
-      "iso_url": "{{user `iso_location`}}/OracleLinux-R10-U0-x86_64-dvd.iso",
+      "iso_checksum": "MD5:d9564e200c939934c5aff95c2d0dc91c",
+      "iso_url": "{{user `iso_location`}}/OracleLinux-R10-U1-x86_64-dvd.iso",
       "shutdown_command": "/sbin/halt -h -p",
       "ssh_password": "vagrant",
       "ssh_port": 22,
