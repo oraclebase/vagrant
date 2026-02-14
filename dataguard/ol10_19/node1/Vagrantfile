@@ -73,12 +73,12 @@ Vagrant.configure("2") do |config|
     vb.cpus   = var_cpus
     vb.name   = var_vm_name
 
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA', '--port', '0', '--nonrotational', var_non_rotational]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', '0', '--nonrotational', var_non_rotational]
     
     unless File.exist?(var_u01_disk)
       vb.customize ['createhd', '--filename', var_u01_disk, '--size', 100 * 1024]
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', var_u01_disk, '--nonrotational', var_non_rotational]
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', var_u01_disk, '--nonrotational', var_non_rotational]
   end
 
   #
