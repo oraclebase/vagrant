@@ -22,7 +22,7 @@ sh ${ORA_INVENTORY}/orainstRoot.sh
 sh ${ORACLE_HOME}/root.sh
 
 if [ "${PATCH_DB}" = "true" ]; then
-  su - oracle -c 'sh /vagrant/scripts/oracle_software_patch.sh'
+  #su - oracle -c 'sh /vagrant/scripts/oracle_software_patch.sh'
 fi
 
 echo "******************************************************************************"

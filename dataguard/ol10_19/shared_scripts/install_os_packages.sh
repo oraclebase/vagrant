@@ -53,7 +53,7 @@ dnf install -y sysstat
 
 # Added by me.
 yum install -y unixODBC
-dnf install -y libnsl2
+dnf install -y libnsl
 dnf install -y libxcrypt-compat
 
 
@@ -117,10 +117,3 @@ groupadd -g 54322 dba
 groupadd -g 54323 oper
 
 useradd -u 54321 -g oinstall -G dba,oper oracle
-
-
-echo "******************************************************************************"
-echo "Fix for Oracle on OL10." `date`
-echo "******************************************************************************"
-rm -f /usr/lib64/libnsl.so.1
-ln -s /usr/lib64/libnsl.so.3.0.0 /usr/lib64/libnsl.so.1
