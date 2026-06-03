@@ -19,6 +19,7 @@ chmod -R 775 /u01
 usermod -aG vagrant oracle
 
 sh /vagrant_scripts/configure_hosts_base.sh
+sh /vagrant_scripts/configure_hosts_scan.sh
 
 cat > /etc/resolv.conf <<EOF
 search localdomain
