@@ -12,7 +12,7 @@
       "headless": false,
       "http_directory": "http",
       "iso_checksum": "MD5:d9564e200c939934c5aff95c2d0dc91c",
-      "iso_url": "{{user `iso_location`}}/OracleLinux-R10-U1-x86_64-dvd.iso",
+      "iso_url": "iso/OracleLinux-R10-U1-x86_64-dvd.iso",
       "shutdown_command": "/sbin/halt -h -p",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -20,6 +20,20 @@
       "ssh_username": "root",
       "type": "virtualbox-iso",
       "vboxmanage": [
+         [
+           "storagectl",
+           "{{.Name}}",
+           "--name",
+           "SATA",
+           "--rename",
+           "SATA Controller"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "4096"
+        ],
         [
           "modifyvm",
           "{{.Name}}",
