@@ -25,7 +25,7 @@ $ tree
 |   +--- root_setup.sh
 |   +--- setup.sh
 +--- software
-|   +--- oracle-ai-database-free-26ai-23.26.0-1.el9.x86_64.rpm
+|   +--- oracle-ai-database-free-26ai-23.26.0-1.el10.x86_64.rpm
 |   +--- put_software_here.txt
 +--- Vagrantfile
 $
@@ -36,7 +36,7 @@ The database password is set in the "install.env" file. By default it is set to 
 With everything in place, you can initiate the build as follows.
 
 ```
-cd C:\git\oraclebase\vagrant\database\ol9_26_rpm\
+cd C:\git\oraclebase\vagrant\database\ol10_26_rpm\
 vagrant up
 ```
 
