@@ -1,4 +1,4 @@
-# Oracle AI Database 26ai Free (RPM) on Oracle Linux 9
+# Oracle AI Database 26ai Free (RPM) on Oracle Linux 10
 
 A simple Vagrant build for Oracle AI Database 26ai Free on Oracle Linux 10 using the RPM installation.
 
