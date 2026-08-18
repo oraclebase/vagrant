@@ -7,4 +7,5 @@
 *.bin
 *.vdi
 *.rpm
+*.log
 database/ol7_19/demo/
