@@ -2,7 +2,7 @@
   "builders": [
     {
       "boot_command": [
-        "<wait><up><wait>e<wait><down><down><end><wait> inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg <leftCtrlOn>x<leftCtrlOff>"
+        "<wait><up><wait>e<wait><down><down><end><wait> net.ifnames=0 inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg <leftCtrlOn>x<leftCtrlOff>"
       ],
       "boot_wait": "12s",
       "disk_size": "{{user `harddisk_size`}}",
