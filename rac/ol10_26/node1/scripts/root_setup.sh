@@ -41,7 +41,6 @@ hostnamectl set-hostname ${NODE1_HOSTNAME}
 su - oracle -c 'sh /vagrant/scripts/oracle_user_environment_setup.sh'
 . /home/oracle/scripts/setEnv.sh
 
-
 echo "******************************************************************************"
 echo "Passwordless SSH Setup for root." `date`
 echo "******************************************************************************"
@@ -78,34 +77,35 @@ EOF
 
 ssh ${NODE2_HOSTNAME} 'bash -s' < /tmp/ssh-setup.sh
 
-echo "******************************************************************************"
-echo "Install cvuqdisk package." `date`
-echo "******************************************************************************"
-dnf install -y ${GRID_HOME}/cv/rpm/cvuqdisk-1.0.10-1.rpm
-ssh root@${NODE2_HOSTNAME} dnf install -y /tmp/cvuqdisk-1.0.10-1.rpm
+#echo "******************************************************************************"
+#echo "Install cvuqdisk package." `date`
+#echo "******************************************************************************"
+#dnf install -y ${GRID_HOME}/cv/rpm/cvuqdisk-1.0.10-1.rpm
+#ssh root@${NODE2_HOSTNAME} dnf install -y /tmp/cvuqdisk-1.0.10-1.rpm
 
-su - oracle -c 'sh /vagrant/scripts/oracle_grid_software_installation.sh'
+#su - oracle -c 'sh /vagrant/scripts/oracle_grid_software_installation.sh'
 
-echo "******************************************************************************"
-echo "Run grid root scripts." `date`
-echo "******************************************************************************"
-sh ${ORA_INVENTORY}/orainstRoot.sh
-ssh root@${NODE2_HOSTNAME} sh ${ORA_INVENTORY}/orainstRoot.sh
-sh ${GRID_HOME}/root.sh
-ssh root@${NODE2_HOSTNAME} sh ${GRID_HOME}/root.sh
+#echo "******************************************************************************"
+#echo "Run grid root scripts." `date`
+#echo "******************************************************************************"
+#sh ${ORA_INVENTORY}/orainstRoot.sh
+#ssh root@${NODE2_HOSTNAME} sh ${ORA_INVENTORY}/orainstRoot.sh
+#sh ${GRID_HOME}/root.sh
+#ssh root@${NODE2_HOSTNAME} sh ${GRID_HOME}/root.sh
 
-su - oracle -c 'sh /vagrant/scripts/oracle_grid_software_config.sh'
+#su - oracle -c 'sh /vagrant/scripts/oracle_grid_software_config.sh'
 
-su - oracle -c 'sh /vagrant/scripts/oracle_db_software_installation.sh'
+#su - oracle -c 'sh /vagrant/scripts/oracle_db_software_installation.sh'
 
-echo "******************************************************************************"
-echo "Run DB root scripts." `date` 
-echo "******************************************************************************"
-sh ${ORACLE_HOME}/root.sh
-ssh root@${NODE2_HOSTNAME} sh ${ORACLE_HOME}/root.sh
+#echo "******************************************************************************"
+#echo "Run DB root scripts." `date` 
+#echo "******************************************************************************"
+#sh ${ORACLE_HOME}/root.sh
+#ssh root@${NODE2_HOSTNAME} sh ${ORACLE_HOME}/root.sh
 
-su - oracle -c 'sh /vagrant/scripts/oracle_create_database.sh'
+#su - oracle -c 'sh /vagrant/scripts/oracle_create_database.sh'
 
-echo "******************************************************************************"
-echo "Setup End." `date`
-echo "******************************************************************************"
+#echo "******************************************************************************"
+#echo "Setup End." `date`
+#echo "******************************************************************************"
+

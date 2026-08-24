@@ -67,19 +67,13 @@ setenforce permissive
 echo "******************************************************************************"
 echo "Allow SSH login as root." `date`
 echo "******************************************************************************"
-cat /dev/zero | ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -q -N "" > /dev/null
-
-#update-crypto-policies --set LEGACY
-#rm -f /etc/ssh/sshd_config.d/01-permitrootlogin.conf
-#rm -f /etc/ssh/sshd_config.d/90-vagrant.conf
+rm -f /etc/ssh/sshd_config.d/01-permitrootlogin.conf
+rm -f /etc/ssh/sshd_config.d/90-vagrant.conf
 echo "PermitRootLogin yes" > /etc/ssh/sshd_config.d/99-custom.conf
-#echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config.d/99-custom.conf
-#echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-#echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
-#echo "UseDNS no" >> /etc/ssh/sshd_config
-#echo "MaxStartups 20:30:100" >> /etc/ssh/sshd_config
-#echo "MaxSessions 20" >> /etc/ssh/sshd_config
-#systemctl restart sshd
-#echo "+:oracle:${NODE1_PUBLIC_IP} ${NODE2_PUBLIC_IP} 127.0.0.1" >> /etc/security/access.conf
-#echo "+:root:${NODE1_PUBLIC_IP} ${NODE2_PUBLIC_IP} 127.0.0.1" >> /etc/security/access.conf
+echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config.d/99-custom.conf
+echo "UseDNS no" >> /etc/ssh/sshd_config.d/99-custom.conf
+systemctl restart sshd
+echo "+:oracle:${NODE1_PUBLIC_IP} ${NODE2_PUBLIC_IP} LOCAL" >> /etc/security/access.conf
+echo "+:root:${NODE1_PUBLIC_IP} ${NODE2_PUBLIC_IP} LOCAL" >> /etc/security/access.conf
+echo "+:dba:${NODE1_PUBLIC_IP} ${NODE2_PUBLIC_IP} LOCAL" >> /etc/security/access.conf
 

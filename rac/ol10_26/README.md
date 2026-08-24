@@ -4,13 +4,13 @@ The Vagrant scripts here will allow you to build a 26ai Real Application Cluster
 
 If you need a more detailed description of this build, check out the article here.
 
-* [Oracle Database 26ai RAC On Oracle Linux 9 Using VirtualBox and Vagrant](https://oracle-base.com/articles/26/oracle-db-26-rac-installation-on-oracle-linux-9-using-virtualbox)
+* [Oracle Database 26ai RAC On Oracle Linux 10 Using VirtualBox and Vagrant](https://oracle-base.com/articles/26/oracle-db-26-rac-installation-on-oracle-linux-1-using-virtualbox)
 
 ## Required Software
 
 I've completed RAC installations using this method on the following host operating systems.
 
-* Windows 10, 11
+* Linux Mint and Windows 11
 
 Download and install the following software. If you can't figure out this step, you probably shouldn't be considering a RAC installation.
 
@@ -24,6 +24,8 @@ You will also need to download the 26ai grid and database software, along with t
 * [Database : db_home.zip](https://www.oracle.com/database/technologies/oracle26ai-linux-downloads.html)
 
 ## Warning
+
+There is currently an issue with setting up passwordless authentication. Normally this is done using "sshpass" and "ssh-copy-id"", but it is currently failing on OL10. A lot of the "root_setup.sh" script for node1 is commented out. The SSL config needs to be done manually, followed by the commented out commands.
 
 This installation requires a lot of memory.
 
@@ -114,30 +116,30 @@ The "config" directory contains a "install.env" and a "vagrant.yml" file. The co
 At minimum you will have to amend the following paths in the "vagrant.yml" file, providing suitable paths for the shared disks.
 
 ```
-  asm_crs_disk_1: /u05/VirtualBox/shared/ol9_26_rac/asm_crs_disk_1.vdi
-  asm_crs_disk_2: /u05/VirtualBox/shared/ol9_26_rac/asm_crs_disk_2.vdi
-  asm_crs_disk_3: /u05/VirtualBox/shared/ol9_26_rac/asm_crs_disk_3.vdi
+  asm_crs_disk_1: /u05/VirtualBox/shared/ol10_26_rac/asm_crs_disk_1.vdi
+  asm_crs_disk_2: /u05/VirtualBox/shared/ol10_26_rac/asm_crs_disk_2.vdi
+  asm_crs_disk_3: /u05/VirtualBox/shared/ol10_26_rac/asm_crs_disk_3.vdi
   asm_crs_disk_size: 2
-  asm_data_disk_1: /u05/VirtualBox/shared/ol9_26_rac/asm_data_disk_1.vdi
+  asm_data_disk_1: /u05/VirtualBox/shared/ol10_26_rac/asm_data_disk_1.vdi
   asm_data_disk_size: 40
-  asm_reco_disk_1: /u05/VirtualBox/shared/ol9_26_rac/asm_reco_disk_1.vdi
+  asm_reco_disk_1: /u05/VirtualBox/shared/ol10_26_rac/asm_reco_disk_1.vdi
   asm_reco_disk_size: 20
 ```
 
-For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol9_26_rac" and use the following settings.
+For example, if you were working on a Windows PC, you might create a path called "C:\VirtualBox\shared\ol10_26_rac" and use the following settings.
 
 ```
-  asm_crs_disk_1: C:\VirtualBox\shared\ol9_26_rac\asm_crs_disk_1.vdi
-  asm_crs_disk_2: C:\VirtualBox\shared\ol9_26_rac\asm_crs_disk_2.vdi
-  asm_crs_disk_3: C:\VirtualBox\shared\ol9_26_rac\asm_crs_disk_3.vdi
+  asm_crs_disk_1: C:\VirtualBox\shared\ol10_26_rac\asm_crs_disk_1.vdi
+  asm_crs_disk_2: C:\VirtualBox\shared\ol10_26_rac\asm_crs_disk_2.vdi
+  asm_crs_disk_3: C:\VirtualBox\shared\ol10_26_rac\asm_crs_disk_3.vdi
   asm_crs_disk_size: 2
-  asm_data_disk_1: C:\VirtualBox\shared\ol9_26_rac\asm_data_disk_1.vdi
+  asm_data_disk_1: C:\VirtualBox\shared\ol10_26_rac\asm_data_disk_1.vdi
   asm_data_disk_size: 40
-  asm_reco_disk_1: C:\VirtualBox\shared\ol8_26_rac\asm_reco_disk_1.vdi
+  asm_reco_disk_1: C:\VirtualBox\shared\ol10_26_rac\asm_reco_disk_1.vdi
   asm_reco_disk_size: 20
 ```
 
-If you don't alter them, they will get written to "C:\u05\VirtualBox\shared\ol9_26_rac".
+If you don't alter them, they will get written to "C:\u05\VirtualBox\shared\ol10_26_rac".
 
 ## Build the RAC
 
@@ -173,6 +175,7 @@ Start the first node of the cluster. This will perform all of the installations 
 cd ../node1
 vagrant up
 ```
+
 
 ## Turn Off RAC
 

@@ -65,7 +65,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 cd ~/.ssh
 rm -f *
-cat /dev/zero | ssh-keygen -t rsa -b 3072 -q -N "" > /dev/null
+cat /dev/zero | ssh-keygen -t rsa -q -N "" > /dev/null
 cat id_rsa.pub >> authorized_keys
 ssh-keyscan -H ${NODE2_HOSTNAME} >> ~/.ssh/known_hosts
 ssh-keyscan -H ${NODE2_FQ_HOSTNAME} >> ~/.ssh/known_hosts
