@@ -14,8 +14,8 @@ unzip -oq /vagrant/software/${PATCH_FILE}
 echo "******************************************************************************"
 echo "Do software-only installation." `date`
 echo "******************************************************************************"
-# Fake Oracle Linux 8.
-export CV_ASSUME_DISTID=OL8
+# Fake Oracle Linux 9.
+export CV_ASSUME_DISTID=OL9
 
 ${ORACLE_HOME}/runInstaller -ignorePrereq -waitforcompletion -silent           \
     -applyRU ${PATCH_PATH1}                                                    \
