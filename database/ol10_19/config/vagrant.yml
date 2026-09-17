@@ -1,4 +1,4 @@
-box: oraclebase/oracle-10
+box: oraclelinux/10
 vm_name: ol10_19_vagrant
 mem_size: 4096
 cpus: 4
