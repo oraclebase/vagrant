@@ -23,6 +23,8 @@ You will also need to download the 19c grid and database software, along with th
 
 ## Warning
 
+There is currently an issue with setting up passwordless authentication. Normally this is done using "sshpass" and "ssh-copy-id"", but it is currently failing on OL10. A lot of the "root_setup.sh" script for node1 is commented out. The SSL config needs to be done manually, followed by the commented out commands.
+
 This installation requires a lot of memory.
 
 The smallest system I've completed this on had 16G RAM, with the VM memory settings as follows and nothing else running.
